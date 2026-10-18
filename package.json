@@ -1,27 +1,24 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
+  "name": "ahmed-alsalman-portfolio",
+  "version": "1.0.0",
   "private": true,
+  "description": "Ahmed Al-Salman — portfolio, hung as an exhibition.",
   "scripts": {
-    "dev": "next dev --turbopack",
+    "sync": "node scripts/sync-works.mjs",
+    "dev": "next dev -p 4000",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "npx serve out -l 4000"
   },
   "dependencies": {
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.4.6"
+    "next": "16.2.7",
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
-    "eslint": "^9",
-    "eslint-config-next": "15.4.6",
-    "@eslint/eslintrc": "^3"
+    "@types/node": "^22.0.0",
+    "@types/react": "19.2.16",
+    "@types/react-dom": "19.2.3",
+    "sharp": "^0.34.4",
+    "typescript": "^5.6.0"
   }
 }

@@ -1,0 +1,39 @@
+{
+  "_readme": "Editorial layer. Rooms decide what hangs in the main gallery and in what order. Any work not placed in a room, or listed in 'storeroom', goes to the Storeroom (the reserve collection) at the bottom of the page. Works their builder marked as not polished also go to the Storeroom unless listed in 'promote'. 'hidden' removes a work entirely. 'demoUrls' overrides the local http://localhost:<port> link once a demo is deployed.",
+  "rooms": [
+    {
+      "id": "carrier",
+      "title": "Made for the carrier",
+      "note": "Arabic-first portals sold through mobile operators across the Middle East and Africa. Visitors arrive on a phone, often on a slow connection, and are billed through their SIM. Every screen is built right-to-left first.",
+      "works": ["yalla-kora", "snap-games", "3abee"]
+    },
+    {
+      "id": "courts",
+      "title": "Keeping the courts booked",
+      "note": "One sports academy in Amman, four surfaces: a staff portal, a booking site for customers, a staff phone app, and a tennis variant built for another club.",
+      "works": ["first-step", "first-step-customer", "first-step-mobile", "tennis-booking"]
+    },
+    {
+      "id": "operations",
+      "title": "Software that runs a business",
+      "note": "Products for people who use them every day: gym owners, lab technicians, nursery staff. Offline-first where the wifi is bad, bilingual where the staff are.",
+      "works": ["kinetiq", "ims", "roost", "hax-oi", "lumio"]
+    },
+    {
+      "id": "shopraha",
+      "title": "ShopRaha & BTR, 2021–2025",
+      "note": "Four years inside a Kuwaiti logistics and e-commerce group: the merchant dashboard, the delivery cockpit, warehouse tools, and the storefronts they fed.",
+      "works": ["shopraha-dashboard", "cockpit", "btr-web-apps", "shopraha-app", "shopraha-web", "shopraha-landing"]
+    },
+    {
+      "id": "small",
+      "title": "Small rooms",
+      "note": "Sites for a bitumen maker, a café, a driving academy, a consultancy, and one Android experiment that only exists after dark.",
+      "works": ["aod", "aiwin", "soho-cafe", "drift-academy", "heartfeltcode"]
+    }
+  ],
+  "storeroom": [],
+  "promote": [],
+  "hidden": [],
+  "demoUrls": {}
+}

@@ -1,0 +1,194 @@
+{
+  "_note": "Non-frontend ShopRaha / BTR Tech company repos, for crediting in case studies. Counts from local clones on the checked-out branch (git rev-list --count HEAD) on 2026-10-18; GitHub remotes are no longer accessible. authoredByAhmed = commits whose author name/email contains 'salman' (Ahmed Al-Salman's identities: ahmedalsalman / ahmedealsalman@gmail.com / 60542046+ahmedalsalman). authoredByAhmedLooseMatch = the literal 'ahmed' OR 'salman' rule, which also catches other engineers (ifzal.ahmed, Ahmed AlHaffar, MahmoudRizk) and should NOT be credited to Ahmed Al-Salman.",
+  "backends": [
+    {
+      "repo": "ShopRaha-BE",
+      "dir": "D:/Work/ShopRaha-BE",
+      "branch": "staging",
+      "what": "ShopRaha's grocery e-commerce backend: a fork of Saleor extended with Kuwait-specific modules (delivery slots, wallets/cashback, recipes, marketing campaigns, SAP/Odoo/Swisslog SynQ warehouse integrations, Tap payments).",
+      "stack": [
+        "Python",
+        "Django 4.1",
+        "Graphene GraphQL",
+        "Celery",
+        "PostgreSQL",
+        "Docker",
+        "Traefik"
+      ],
+      "commits": 25159,
+      "commitsSinceFork": 7153,
+      "forkedOn": "2021-10-13",
+      "authoredByAhmed": 185,
+      "authoredByAhmedLooseMatch": 1030,
+      "years": "2021–2025 (ShopRaha era; upstream Saleor history from 2013)"
+    },
+    {
+      "repo": "cockpit",
+      "dir": "D:/Work/cockpit",
+      "branch": "master",
+      "what": "Last-mile delivery operations backend for the Cockpit dashboard: drivers, vehicles, work schedules, zones/areas (GIS), delivery time slots, routes and delivery tasks.",
+      "stack": [
+        "Python",
+        "Django 4.1",
+        "Django REST Framework",
+        "drf-spectacular (OpenAPI)",
+        "Celery",
+        "PostGIS",
+        "Docker"
+      ],
+      "commits": 130,
+      "authoredByAhmed": 0,
+      "authoredByAhmedLooseMatch": 57,
+      "years": "2023–2024"
+    },
+    {
+      "repo": "smooth-link",
+      "dir": "D:/Work/smooth-link",
+      "branch": "staging",
+      "what": "B2B fulfilment platform API that opens the ShopRaha warehouse to multiple merchant clients for storage, order fulfilment, last-mile delivery and billing (incl. a Shopify integration and webhooks).",
+      "stack": [
+        "Python",
+        "Django 5.1",
+        "Django REST Framework",
+        "drf-spectacular",
+        "Celery",
+        "AWS (boto3)",
+        "Docker"
+      ],
+      "commits": 1320,
+      "authoredByAhmed": 0,
+      "authoredByAhmedLooseMatch": 324,
+      "years": "2023–2025"
+    },
+    {
+      "repo": "halo-be",
+      "dir": "D:/Work/halo-be",
+      "branch": "staging",
+      "what": "Halo, BTR Tech's warehouse management system (WMS) backend: inventory, bin locations, products/attributes, inbound/outbound operations and orders.",
+      "stack": [
+        "Python",
+        "Django 4.2",
+        "Django REST Framework",
+        "drf-spectacular",
+        "Celery + celery-beat",
+        "PostgreSQL (psycopg 3)",
+        "Cookiecutter Django",
+        "Kamal"
+      ],
+      "commits": 395,
+      "authoredByAhmed": 0,
+      "authoredByAhmedLooseMatch": 0,
+      "years": "2024–2025"
+    },
+    {
+      "repo": "rover-be",
+      "dir": "D:/Work/rover-be",
+      "branch": "staging",
+      "what": "Rover, BTR Tech's last-mile delivery backend (successor to cockpit): drivers, delivery slots, geolocation zones and delivery tasks for the Rover driver app and dashboard.",
+      "stack": [
+        "Python",
+        "Django 5.1",
+        "Django REST Framework",
+        "drf-spectacular",
+        "Celery + celery-beat",
+        "Cookiecutter Django",
+        "Kamal"
+      ],
+      "commits": 405,
+      "authoredByAhmed": 0,
+      "authoredByAhmedLooseMatch": 0,
+      "years": "2024–2025"
+    },
+    {
+      "repo": "ShopRaha-IN",
+      "dir": "D:/Work/ShopRaha-IN",
+      "branch": "main",
+      "what": "Infrastructure-as-code for ShopRaha: Terraform (Terraform Cloud) stacks for AWS (ECS, Aurora, Redis, RabbitMQ, ETL/Glue/Athena, monitoring, smooth-api) plus Cloudflare Access/DNS and GitHub providers.",
+      "stack": [
+        "Terraform",
+        "Terraform Cloud",
+        "AWS (ECS, Aurora, ElastiCache, Lambda, Glue, Athena, IAM, CloudWatch)",
+        "Cloudflare",
+        "GitHub provider"
+      ],
+      "commits": 1118,
+      "authoredByAhmed": 0,
+      "authoredByAhmedLooseMatch": 145,
+      "years": "2022–2025"
+    },
+    {
+      "repo": "ShopRaha-QR",
+      "dir": "D:/Work/ShopRaha-QR",
+      "branch": "main",
+      "what": "Tiny Cloudflare Worker that renders any URL passed in the query string as an SVG QR code.",
+      "stack": [
+        "TypeScript",
+        "Hono 4",
+        "Cloudflare Workers",
+        "qrcode",
+        "Bun"
+      ],
+      "commits": 2,
+      "authoredByAhmed": 0,
+      "authoredByAhmedLooseMatch": 0,
+      "years": "2024"
+    },
+    {
+      "repo": "cloudflare-workers",
+      "dir": "D:/Work/cloudflare-workers",
+      "branch": "master",
+      "what": "Edge cache Worker ('faster-graphql-queries') that hashes ShopRaha GraphQL POST bodies with SHA-256 and caches storefront query responses in Workers KV, bypassing dashboard/cockpit origins.",
+      "stack": [
+        "JavaScript",
+        "Cloudflare Workers",
+        "Workers KV",
+        "Web Crypto"
+      ],
+      "commits": 10,
+      "authoredByAhmed": 0,
+      "authoredByAhmedLooseMatch": 0,
+      "years": "2024"
+    },
+    {
+      "repo": "Shopify-app",
+      "dir": "D:/Work/Shopify-app",
+      "branch": "main",
+      "what": "\"Smooth Logistics\" Shopify app (built from Shopify's Node template) that lets merchant stores hand orders and fulfilment to BTR Tech's Smooth fulfilment platform.",
+      "stack": [
+        "Node.js",
+        "Express",
+        "@shopify/shopify-app-express",
+        "React 18",
+        "Shopify Polaris",
+        "App Bridge",
+        "SQLite session storage",
+        "Docker"
+      ],
+      "commits": 69,
+      "authoredByAhmed": 0,
+      "authoredByAhmedLooseMatch": 0,
+      "years": "2024–2025"
+    },
+    {
+      "repo": "btr-mobile-apps",
+      "dir": "D:/Work/btr-mobile-apps",
+      "branch": "master",
+      "what": "Bun monorepo of BTR Tech's Ionic/Capacitor mobile apps: Rover (last-mile driver app) and Pickr (warehouse picking app), with a shared lib package.",
+      "stack": [
+        "TypeScript",
+        "React 19",
+        "Ionic 8",
+        "Capacitor 7",
+        "Vite",
+        "Tailwind CSS",
+        "Playwright",
+        "Vitest",
+        "Bun workspaces"
+      ],
+      "commits": 468,
+      "authoredByAhmed": 0,
+      "authoredByAhmedLooseMatch": 0,
+      "years": "2023–2025"
+    }
+  ]
+}

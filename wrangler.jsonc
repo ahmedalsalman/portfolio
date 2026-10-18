@@ -1,0 +1,6 @@
+{
+  // Static assets only — `npm run build` then `npx wrangler deploy`. Not deployed yet.
+  "name": "ahmed-alsalman-portfolio",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./out", "not_found_handling": "404-page" }
+}
