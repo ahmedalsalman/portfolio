@@ -107,7 +107,12 @@ export default function Exhibition() {
                         {catalogueNumber(w.slug)} · {w.years}
                       </span>
                       <h3>{w.title}</h3>
-                      <p>{w.polishNote || w.tagline}</p>
+                      <p>{w.tagline}</p>
+                      {process.env.NODE_ENV === 'development' && w.polishNote && (
+                        <p style={{ marginTop: 8, fontStyle: 'italic' }} title="Dev only: builder's condition note">
+                          {w.polishScore}/5 · {w.polishNote}
+                        </p>
+                      )}
                     </div>
                   </Link>
                 );

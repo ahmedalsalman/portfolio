@@ -117,9 +117,9 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
                 </dd>
               </div>
             )}
-            {!work.polished && work.polishNote && (
+            {process.env.NODE_ENV === 'development' && work.polishNote && (
               <div>
-                <dt>Condition report</dt>
+                <dt>Condition report (dev only) · {work.polishScore}/5</dt>
                 <dd>{work.polishNote}</dd>
               </div>
             )}

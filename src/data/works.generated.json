@@ -379,6 +379,295 @@
     ]
   },
   {
+    "slug": "btr-halo",
+    "title": "Halo WMS",
+    "titleNative": null,
+    "tagline": "Warehouse management: stock, receiving, picking and a zone-layout editor",
+    "summary": "Internal warehouse management system for ShopRaha's Kuwait fulfilment centres. It covers products and packaging, stock by status, expected receipts and check-in, putaway, outbound picking, and a Konva-based storage-zone layout editor for aisles and racking.",
+    "role": "Frontend contributor (monorepo shared packages)",
+    "org": "ShopRaha / BTR Tech",
+    "years": "2024–2025",
+    "category": "company",
+    "platforms": [
+      "web"
+    ],
+    "stack": [
+      "React 18",
+      "TypeScript",
+      "Vite 6",
+      "Ant Design 5",
+      "TanStack Router",
+      "TanStack Query",
+      "OpenAPI codegen (openapi-rq)",
+      "Turborepo",
+      "Bun",
+      "Konva"
+    ],
+    "highlights": [
+      "25 routes, dark antd theme",
+      "158 REST operations generated from halo-be's drf-spectacular schema",
+      "Konva canvas editor that places racking elements along zone aisles",
+      "Receiving flow with per-line quantity, barcode, manufacturing and expiry capture",
+      "Multi-warehouse, multi-owner (3PL) data model"
+    ],
+    "locales": [
+      "en"
+    ],
+    "rtl": false,
+    "accent": "#488476",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "A dense, coherent WMS UI with a real canvas layout editor. Ahmed has no commits under apps/halo, so it shows the platform he worked in rather than his own app code.",
+    "demo": {
+      "port": 4262,
+      "path": "/products",
+      "run": "bun install && bun run dev",
+      "dir": "D:/Work/btr-web-apps-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 541,
+      "authored": 0
+    },
+    "confidential": true,
+    "shots": [
+      {
+        "src": "/works/btr-halo/01-products-desktop.webp",
+        "label": "Products",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/btr-halo/02-inventory-desktop.webp",
+        "label": "Inventory by status",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/btr-halo/03-inbound-desktop.webp",
+        "label": "Inbound expected receipts",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/btr-halo/04-expected-receipt-desktop.webp",
+        "label": "Receiving an expected receipt",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/btr-halo/05-outbound-order-desktop.webp",
+        "label": "Outbound order picking",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/btr-halo/06-zone-layout-desktop.webp",
+        "label": "Storage zone layout editor",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      }
+    ]
+  },
+  {
+    "slug": "btr-rover",
+    "title": "Rover",
+    "titleNative": null,
+    "tagline": "Last-mile dispatch: route planning, drivers, schedules, delivery capacity",
+    "summary": "Operations dashboard for ShopRaha's in-house last-mile fleet in Kuwait. Dispatchers plan routes from unassigned orders on a map, manage drivers, vehicles, zones and areas, set delivery slot types, edit weekly work schedules, and tune hourly delivery capacity.",
+    "role": "Frontend engineer",
+    "org": "ShopRaha / BTR Tech",
+    "years": "2024–2025",
+    "category": "company",
+    "platforms": [
+      "web"
+    ],
+    "stack": [
+      "React 18",
+      "TypeScript",
+      "Vite 6",
+      "Ant Design 5",
+      "TanStack Router",
+      "TanStack Query",
+      "OpenAPI codegen (openapi-rq)",
+      "Turborepo",
+      "Bun"
+    ],
+    "highlights": [
+      "21 routes covering orders, route planning, fleet, zones/areas, slots, schedules and live tracking",
+      "96 REST operations generated from rover-be's drf-spectacular schema",
+      "Capacity heatmap: hourly order load against capacity, with editable intervals",
+      "Work-schedule grid with half-hour shift painting per driver",
+      "Map-based route planner and customer tracking view"
+    ],
+    "locales": [
+      "en"
+    ],
+    "rtl": false,
+    "accent": "#5f08cc",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "Real dispatch tooling with distinctive screens (capacity heatmap, schedules, planner). In the demo, map polygons and route lines are not drawn.",
+    "demo": {
+      "port": 4263,
+      "path": "/operations/route-planner",
+      "run": "bun install && bun run dev",
+      "dir": "D:/Work/btr-web-apps-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 343,
+      "authored": 20
+    },
+    "confidential": true,
+    "shots": [
+      {
+        "src": "/works/btr-rover/01-route-planner-desktop.webp",
+        "label": "Route planner",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/btr-rover/02-orders-desktop.webp",
+        "label": "Orders",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/btr-rover/03-order-detail-desktop.webp",
+        "label": "Order detail with map",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/btr-rover/04-work-schedules-desktop.webp",
+        "label": "Driver work schedules",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/btr-rover/05-capacity-planning-desktop.webp",
+        "label": "Capacity planning heatmap",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/btr-rover/06-drivers-desktop.webp",
+        "label": "Drivers",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      }
+    ]
+  },
+  {
+    "slug": "btr-smooth",
+    "title": "Smooth Logistics",
+    "titleNative": null,
+    "tagline": "Merchant fulfilment portal: orders, inventory, inbound, wallet and reports",
+    "summary": "Self-service portal where e-commerce merchants in Kuwait manage their catalogue, outbound deliveries, inbound shipments, customers and prepaid wallet with the Smooth fulfilment service. It is one app in a Turborepo of internal dashboards that share auth, UI and hooks packages, with react-query hooks generated from the Django OpenAPI schema.",
+    "role": "Frontend engineer",
+    "org": "ShopRaha / BTR Tech",
+    "years": "2024–2025",
+    "category": "company",
+    "platforms": [
+      "web"
+    ],
+    "stack": [
+      "React 18",
+      "TypeScript",
+      "Vite 6",
+      "Ant Design 5",
+      "TanStack Router",
+      "TanStack Query",
+      "OpenAPI codegen (openapi-rq)",
+      "Turborepo",
+      "Bun"
+    ],
+    "highlights": [
+      "41 routes in a TanStack file-router app inside a shared Turborepo monorepo",
+      "130 REST operations consumed through react-query hooks generated by openapi-rq from the Django schema",
+      "Order timeline that spans warehouse (pick, pack, stage) and last-mile (driver on the way, delivered) states",
+      "Analytics dashboard plus 9 merchant reports with CSV export",
+      "Prepaid wallet ledger and per-service fee configuration (fulfilment, storage, delivery tiers)"
+    ],
+    "locales": [
+      "en"
+    ],
+    "rtl": false,
+    "accent": "#4c48ff",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "A complete, consistent production dashboard with many real flows. It uses stock antd styling, so it is solid rather than distinctive.",
+    "demo": {
+      "port": 4261,
+      "path": "/dashboard",
+      "run": "bun install && bun run dev",
+      "dir": "D:/Work/btr-web-apps-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 652,
+      "authored": 238
+    },
+    "confidential": true,
+    "shots": [
+      {
+        "src": "/works/btr-smooth/01-dashboard-desktop.webp",
+        "label": "Dashboard",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/btr-smooth/02-orders-desktop.webp",
+        "label": "Outbound orders",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/btr-smooth/03-order-detail-desktop.webp",
+        "label": "Order detail and delivery history",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/btr-smooth/04-products-desktop.webp",
+        "label": "Products and variants",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/btr-smooth/05-sales-report-desktop.webp",
+        "label": "Sales by product report",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/btr-smooth/06-wallet-desktop.webp",
+        "label": "Wallet ledger",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      }
+    ]
+  },
+  {
     "slug": "cockpit",
     "title": "Raha Cockpit",
     "titleNative": "راحة",
@@ -1813,8 +2102,8 @@
     "slug": "shopraha-dashboard",
     "title": "ShopRaha Dashboard",
     "titleNative": "راحة",
-    "tagline": "Back-office for a Jordanian online grocery: orders, recipes, deals, delivery slots",
-    "summary": "ShopRaha's internal admin, a heavily extended fork of the Saleor Dashboard (React 17, Apollo GraphQL, Material-UI), used by ops, content and customer-care staff in Amman. Ahmed built most of the ShopRaha-specific modules on top of upstream Saleor: a recipes CMS, delivery time slots, Buy-X-Get-Y deals and wallet cashback, order returns, inventory and checkout quantity limits. The demo runs the repo's real GraphQL schema in the browser over Jordanian seed data, so no backend is needed.",
+    "tagline": "Back-office for a Kuwaiti online grocery: orders, recipes, deals, delivery slots",
+    "summary": "ShopRaha's internal admin, a heavily extended fork of the Saleor Dashboard (React 17, Apollo GraphQL, Material-UI), used by ops, content and customer-care staff. Ahmed built most of the ShopRaha-specific modules on top of upstream Saleor: a recipes CMS, delivery time slots, Buy-X-Get-Y deals and wallet cashback, order returns, inventory and checkout quantity limits. The demo runs the repo's real GraphQL schema in the browser over Jordanian seed data, so no backend is needed.",
     "role": "Frontend engineer (main contributor to ShopRaha-specific features)",
     "org": "ShopRaha",
     "years": "2021–2024",
