@@ -90,4 +90,5 @@ const backendsPath = join(SHOTS, '_backends.json');
 const backends = existsSync(backendsPath) ? JSON.parse(readFileSync(backendsPath, 'utf8')) : [];
 writeFileSync(join(OUT_DATA, 'backends.generated.json'), JSON.stringify(backends, null, 2));
 
-console.log(`\n${works.length} works, ${Array.isArray(backends) ? backends.length : 0} backend credits`);
+const nb = Array.isArray(backends) ? backends.length : (backends.backends ?? backends.repos ?? []).length;
+console.log(`\n${works.length} works, ${nb} backend credits`);
