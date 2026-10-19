@@ -113,6 +113,99 @@
     ]
   },
   {
+    "slug": "aiwin",
+    "title": "AIWIN",
+    "titleNative": null,
+    "tagline": "Product catalogue and data sheets for a Jordanian bitumen waterproofing maker",
+    "summary": "Corporate site for Arab Italian Waterproofing & Insulation Industries (AIWIN), rebuilt from an old WordPress site into a fully static Next.js export. Five product categories and 35 product pages are generated from one typed content module, each with a photo gallery and a downloadable PDF technical sheet.",
+    "role": "Solo build",
+    "org": "AIWIN (client)",
+    "years": "2026",
+    "category": "client",
+    "platforms": [
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind 4",
+      "Static export",
+      "Cloudflare static assets"
+    ],
+    "highlights": [
+      "48 statically generated routes, including 35 product pages built with generateStaticParams",
+      "All copy, navigation and product structure in a single typed module (src/lib/site-data.ts, ~450 lines) scraped from the client's WordPress site",
+      "42 PDF technical data sheets and a product image gallery with colour/finish swatches",
+      "Node scripts to scrape and download product imagery from the legacy site"
+    ],
+    "locales": [
+      "en"
+    ],
+    "rtl": false,
+    "accent": "#00508f",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "Clean, consistent corporate design with real product content and photography; conventional brochure-site scope.",
+    "demo": {
+      "port": 4200,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/aiwin-demo"
+    },
+    "repo": {
+      "remote": "https://github.com/ahmedalsalman/aiwin",
+      "commits": 20,
+      "authored": 20
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/aiwin/01-home-desktop.webp",
+        "label": "Home (full page)",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 7350
+      },
+      {
+        "src": "/works/aiwin/02-home-mobile.webp",
+        "label": "Home hero",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/aiwin/03-projects-desktop.webp",
+        "label": "Project sites gallery",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/aiwin/04-product-desktop.webp",
+        "label": "Product page: Poly Gold membrane",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 3726
+      },
+      {
+        "src": "/works/aiwin/05-product-mobile.webp",
+        "label": "Product page",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/aiwin/06-contact-mobile.webp",
+        "label": "Contact form sent (simulated)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
     "slug": "aod",
     "title": "AOD Ring",
     "titleNative": null,
@@ -202,6 +295,167 @@
       {
         "src": "/works/aod/06-modes-mobile.webp",
         "label": "Live mode picker",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "augment-clone",
+    "title": "HAX Consulting (augment.org replica)",
+    "titleNative": null,
+    "tagline": "Next.js replication of augment.org's landing page, re-skinned for GCC career coaching",
+    "summary": "A design-replication exercise of a third-party site (augment.org) in Next.js 14 and Tailwind. The home page is re-skinned as 'HAX Consulting', a GCC executive job-search coaching offer. The six inner pages still carry augment.org's MBA course copy, including founder names, pricing and stats.",
+    "role": "Solo build",
+    "org": "personal (replica of augment.org)",
+    "years": "2025",
+    "category": "experiment",
+    "platforms": [
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "Next.js 14",
+      "React 18",
+      "TypeScript",
+      "Tailwind 3",
+      "lucide-react"
+    ],
+    "highlights": [
+      "7 static routes: home, curriculum, faculty, community, free class, teams, about",
+      "FAQ accordion, comparison table, testimonials with 'load more', and client-side form validation",
+      "Responsive header with a mobile hamburger menu"
+    ],
+    "locales": [
+      "en"
+    ],
+    "rtl": false,
+    "accent": "#000000",
+    "polished": false,
+    "polishScore": 2,
+    "polishNote": "A design-replication exercise of a third-party site: not original design, the inner pages reuse augment.org's copy, and the home page has an empty 'Our Community' section. Ahmed should decide whether to show it.",
+    "demo": {
+      "port": 4204,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/augment-clone-demo"
+    },
+    "repo": {
+      "remote": "https://github.com/ahmedalsalman/HAX",
+      "commits": 2,
+      "authored": 2
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/augment-clone/01-home-desktop.webp",
+        "label": "HAX Consulting home (full page)",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 9686
+      },
+      {
+        "src": "/works/augment-clone/02-home-mobile.webp",
+        "label": "Hero",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/augment-clone/03-curriculum-desktop.webp",
+        "label": "Curriculum (augment.org copy)",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/augment-clone/04-free-class-mobile.webp",
+        "label": "Free class (augment.org copy)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "drift-academy",
+    "title": "Raafat Drift Academy",
+    "titleNative": "أكاديمية رافت هارون للدريفت",
+    "tagline": "Arabic landing site for a Jordanian drift champion's driving school",
+    "summary": "Single-page marketing site for Raafat Haroun's drift academy in Jordan, written in Jordanian Arabic with a full RTL layout. A dark neon theme with a video hero presents three course tiers, the coach's profile, student testimonials, sponsors and a booking form.",
+    "role": "Solo build",
+    "org": "Raafat Haroun Drift Academy (client)",
+    "years": "2026",
+    "category": "client",
+    "platforms": [
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "React 19",
+      "Vite 7",
+      "React Router 7",
+      "CSS"
+    ],
+    "highlights": [
+      "RTL Arabic (Jordanian dialect) throughout, Cairo font",
+      "Autoplaying MP4 video hero with gradient overlays and scroll-driven background effects",
+      "Three course tiers, a coach page, testimonials and a sponsor strip (Red Bull, Armor All, Westlake, STP)",
+      "Mobile menu and layout reworked over several commits"
+    ],
+    "locales": [
+      "ar"
+    ],
+    "rtl": true,
+    "accent": "#ff3d71",
+    "polished": false,
+    "polishScore": 3,
+    "polishNote": "Strong mobile look and real content, but the desktop header shows duplicate booking buttons and a stray hamburger, and the forms are alert-only.",
+    "demo": {
+      "port": 4201,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/drift-academy-demo"
+    },
+    "repo": {
+      "remote": "https://github.com/ahmedalsalman/raafat-academy",
+      "commits": 11,
+      "authored": 11
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/drift-academy/01-home-desktop.webp",
+        "label": "Home (full page)",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 6529
+      },
+      {
+        "src": "/works/drift-academy/02-home-mobile.webp",
+        "label": "Video hero",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/drift-academy/03-courses-desktop.webp",
+        "label": "Course tiers",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/drift-academy/04-courses-mobile.webp",
+        "label": "Course card",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/drift-academy/05-coach-mobile.webp",
+        "label": "Coach profile",
         "kind": "mobile",
         "width": 780,
         "height": 1688
@@ -556,6 +810,98 @@
       {
         "src": "/works/hax-oi/05-fit-review-confirmation-mobile.webp",
         "label": "Fit Review submitted (kept in browser memory)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "heartfeltcode",
+    "title": "Heartfelt Code",
+    "titleNative": null,
+    "tagline": "Marketing site for Ahmed's one-person consultancy for non-technical founders",
+    "summary": "Editorial-style marketing site for Heartfelt Code, Ahmed's solo software consultancy for early-stage founders without a technical co-founder. Built with Astro 7 and Tailwind 4 as a static site with no client framework, a light/dark theme, case studies stored in a content collection, and a validated contact form.",
+    "role": "Solo build (design, copy, code)",
+    "org": "Heartfelt Code (own consultancy)",
+    "years": "2026",
+    "category": "company",
+    "platforms": [
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "Astro 7",
+      "Tailwind 4",
+      "TypeScript",
+      "astro-icon",
+      "Cloudflare static assets"
+    ],
+    "highlights": [
+      "Zero-framework static output; the only JS is the theme toggle, mobile menu, scroll reveal and form handler",
+      "4 case studies as an Astro content collection with typed frontmatter (problem / built / outcome)",
+      "Light and dark themes from CSS tokens with documented contrast ratios",
+      "Responsive WebP images generated at build time (44 variants)"
+    ],
+    "locales": [
+      "en"
+    ],
+    "rtl": false,
+    "accent": "#C4552E",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "Restrained, well-typeset editorial design with careful copy; still uses stand-in stock photography and placeholder booking/social links.",
+    "demo": {
+      "port": 4203,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/heartfeltcode-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 1,
+      "authored": 1
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/heartfeltcode/01-home-desktop.webp",
+        "label": "Home (full page)",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 11715
+      },
+      {
+        "src": "/works/heartfeltcode/02-home-mobile.webp",
+        "label": "Hero",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/heartfeltcode/03-work-desktop.webp",
+        "label": "Selected work (dark theme)",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/heartfeltcode/04-case-study-mobile.webp",
+        "label": "Case study: lab inventory",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/heartfeltcode/05-contact-desktop.webp",
+        "label": "Contact form",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/heartfeltcode/06-contact-sent-mobile.webp",
+        "label": "Contact sent (simulated)",
         "kind": "mobile",
         "width": 780,
         "height": 1688
@@ -966,6 +1312,94 @@
       {
         "src": "/works/snap-games/06-home-desktop.webp",
         "label": "Home on desktop",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      }
+    ]
+  },
+  {
+    "slug": "soho-cafe",
+    "title": "SOHO Midtown Menu",
+    "titleNative": null,
+    "tagline": "QR digital menu for a hotel restaurant, café and hookah lounge in Amman",
+    "summary": "Digital menu for SOHO Midtown Hotel in Al-Weibdeh, Amman, fed live from the hotel's Micros POS. An Express API calls an MS-SQL stored procedure and reshapes the flat rows into a level → section → category → dish tree, hiding staff-only items. The React front end has instant search, sticky section tabs and a separate menu per outlet via ?level=. The earlier one-commit prototype in D:/Work/restaurant-website (remote soho-restaurant) is an older copy of this site and is folded in here.",
+    "role": "Solo build (frontend, API, Docker deployment)",
+    "org": "SOHO Midtown Hotel (client)",
+    "years": "2025–2026",
+    "category": "client",
+    "platforms": [
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "React 19",
+      "Vite 7",
+      "TypeScript",
+      "Express",
+      "MS-SQL (mssql)",
+      "Docker Compose",
+      "nginx"
+    ],
+    "highlights": [
+      "Express API maps Micros POS stored-procedure rows into a nested menu hierarchy, filtering 8 classes of staff-only families",
+      "4 outlet menus (restaurant, lobby, room service, minibar) plus a drinks-only outside-café view, about 585 POS items",
+      "Live search across dish names, Arabic names and descriptions, with per-category result counts",
+      "Hero slideshow per section (food, beverage, tobacco) and schema.org Restaurant markup",
+      "Docker Compose deployment: nginx serving the SPA and proxying /api to the Node container"
+    ],
+    "locales": [
+      "en"
+    ],
+    "rtl": false,
+    "accent": "#b3852b",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "An elegant, real production menu with a real POS integration; the search-results header has a contrast glitch over the hero.",
+    "demo": {
+      "port": 4202,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/soho-cafe-restaurant-demo"
+    },
+    "repo": {
+      "remote": "https://github.com/ahmedalsalman/soho-cafe-restaurant",
+      "commits": 46,
+      "authored": 46
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/soho-cafe/01-home-desktop.webp",
+        "label": "Home + Food menu (full page)",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 2719
+      },
+      {
+        "src": "/works/soho-cafe/02-home-mobile.webp",
+        "label": "Hero",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/soho-cafe/03-menu-desktop.webp",
+        "label": "Beverage: Mojito category",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/soho-cafe/04-menu-mobile.webp",
+        "label": "Beverage: Hot drinks",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/soho-cafe/05-search-desktop.webp",
+        "label": "Search results for 'chicken'",
         "kind": "desktop",
         "width": 1800,
         "height": 1125
