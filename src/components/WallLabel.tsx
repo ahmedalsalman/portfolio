@@ -37,7 +37,7 @@ export function WallLabel({ work, detailLink = true }: { work: Work; detailLink?
             <dd>{lang}</dd>
           </>
         )}
-        {work.repo && work.repo.commits > 0 && (
+        {work.repo && work.repo.commits >= 20 && (
           <>
             <dt>Dimensions</dt>
             <dd>
@@ -56,6 +56,11 @@ export function WallLabel({ work, detailLink = true }: { work: Work; detailLink?
         )}
       </dl>
       <p>{work.tagline}</p>
+      {work.confidential && process.env.NODE_ENV === 'development' && (
+        <p className="stamp" style={{ color: '#b4232c' }} title="Only visible in dev. Set curation.hidden or remove before publishing.">
+          Confidential: confirm before publishing
+        </p>
+      )}
       <div className="actions">
         {demo && (
           <a className="btn" href={demo.href} target="_blank" rel="noreferrer">

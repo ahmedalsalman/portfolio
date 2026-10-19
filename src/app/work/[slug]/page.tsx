@@ -100,7 +100,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
                 </dd>
               </div>
             )}
-            {work.repo && work.repo.commits > 0 && (
+            {work.repo && work.repo.commits >= 20 && (
               <div>
                 <dt>Dimensions</dt>
                 <dd>

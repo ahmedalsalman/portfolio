@@ -71,7 +71,7 @@ body {
   font: 400 16px/1.6 var(--f-sans);
   font-feature-settings: 'ss02';
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
   transition: background-color 0.6s var(--ease), color 0.6s var(--ease);
 }
 img {
@@ -398,10 +398,12 @@ main,
   margin: 2px 0 0;
 }
 .label .title .ar {
+  display: block;
   font-style: normal;
-  font-size: 0.86em;
+  font-size: 0.8em;
+  line-height: 1.5;
   color: var(--muted);
-  margin-inline-start: 8px;
+  text-align: left;
 }
 .label dl {
   margin: 12px 0 0;
@@ -1025,7 +1027,7 @@ main,
   transform: none;
 }
 .plates .panel {
-  flex-basis: 230px;
+  flex-basis: 196px;
 }
 .plate figcaption {
   margin-top: 12px;

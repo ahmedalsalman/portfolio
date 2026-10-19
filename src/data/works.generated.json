@@ -1,1 +1,1256 @@
-[]
+[
+  {
+    "slug": "3abee",
+    "title": "3abee",
+    "titleNative": null,
+    "tagline": "White-label digital voucher store for four telcos from one Next.js codebase",
+    "summary": "A white-label storefront for gift cards, game credit and subscriptions, sold under telco brands (Sudani, Syriatel, Chinguitel, STORE 70 in Senegal). One Next.js app compiles a brand at build time: theme, fonts, locales, currency, legal copy and payment gateways. Covers catalog, search, cart, OTP / wallet checkout, voucher reveal, and now direct game top-up to a player ID.",
+    "role": "Lead frontend engineer",
+    "org": "mw3abee (Sudani, Syriatel, Chinguitel, STORE 70 Senegal)",
+    "years": "2026",
+    "category": "client",
+    "platforms": [
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "next-intl",
+      "TanStack Query",
+      "Zustand",
+      "Turborepo + pnpm",
+      "Vitest",
+      "Cloudflare Workers (OpenNext)"
+    ],
+    "highlights": [
+      "Four brands from one app: BRAND env selects config, theme, fonts, messages and legal at build time",
+      "Arabic RTL, English and French; SDG, SYP, MRU and XOF currencies",
+      "Game top-up (WL-169): Card/Top-up switch, pack ledger, player-ID validation and review/sent flow outside the cart",
+      "Offline demo serves 38 / 20 / 19 / 19 captured categories per brand with a strict connect-src 'self' CSP",
+      "131 commits, 130 authored by Ahmed; 107 Vitest tests passing"
+    ],
+    "locales": [
+      "ar",
+      "en",
+      "fr"
+    ],
+    "rtl": true,
+    "accent": "#0000C8",
+    "polished": true,
+    "polishScore": 5,
+    "polishNote": "Production multi-tenant storefront with real catalog, four distinct brand themes and complete purchase flows.",
+    "demo": {
+      "port": 4102,
+      "path": "/ar",
+      "run": "pnpm install && pnpm dev:sudani (or dev:syriatel, dev:chinguitel, dev:senegal)",
+      "dir": "D:/Work/3abee-demo"
+    },
+    "repo": {
+      "remote": "https://github.com/mw3abee/3abee-monorepo",
+      "commits": 131,
+      "authored": 130
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/3abee/01-sudani-home-mobile.webp",
+        "label": "Sudani storefront home",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/3abee/02-sudani-topup-offer-mobile.webp",
+        "label": "PUBG top-up: pack ledger and player ID",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/3abee/03-sudani-topup-checkout-mobile.webp",
+        "label": "Top-up review and pay",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/3abee/04-sudani-topup-sent-mobile.webp",
+        "label": "Top-up sent",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/3abee/05-sudani-home-desktop.webp",
+        "label": "Sudani home on desktop",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/3abee/06-syriatel-home-mobile.webp",
+        "label": "Syriatel storefront home",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/3abee/07-syriatel-topup-offer-mobile.webp",
+        "label": "Syriatel Free Fire top-up",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/3abee/08-syriatel-home-desktop.webp",
+        "label": "Syriatel home on desktop",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      }
+    ]
+  },
+  {
+    "slug": "aod",
+    "title": "AOD Ring",
+    "titleNative": null,
+    "tagline": "An Android always-on display that draws a ring of light around the camera hole",
+    "summary": "A native Android app that raises a black always-on screen over the keyguard and animates a ring of light around the front-camera punch-hole, with 12 light modes, per-app notification colours and battery-aware charging rings. The interesting parts are placement (Android only reports a padded keep-out rect, so a resolver plus a first-class drag-to-calibrate screen locate the lens) and a battery-conscious renderer: three translucent glow passes instead of blur, cached sweep gradients, 30 fps, burn-in drift. The portfolio demo is a Canvas 2D web simulator built on a line-for-line port of the Kotlin renderer.",
+    "role": "Solo build",
+    "org": "personal",
+    "years": "2026",
+    "category": "experiment",
+    "platforms": [
+      "android",
+      "web"
+    ],
+    "stack": [
+      "Kotlin",
+      "Jetpack Compose",
+      "Android Canvas",
+      "Foreground service",
+      "NotificationListenerService",
+      "TypeScript",
+      "Vite 8",
+      "Canvas 2D"
+    ],
+    "highlights": [
+      "12 light modes (Breathe, Heartbeat, Comet, Aurora, Sparkle, Charge, Notify…) drawn with only Canvas/Paint/SweepGradient — no runtime dependencies",
+      "Glow is 4 layered strokes (widths 2.6/1.4/0.65/0 × glow, alphas 9/16/28/100%) instead of BlurMaskFilter, so it stays hardware-accelerated",
+      "CutoutResolver sizes the ring from the cutout rect's width and centres it on the rect, handling padded rects like the OnePlus 11R's 76×139 px keep-out, multiple rects and full-width notches",
+      "Burn-in mitigation: ±1.5 dp Lissajous drift over ~97 s, 30 fps frame cap, battery and proximity (pocket) gates",
+      "Notification-driven tint: each app's accent (or icon's dominant colour) is pushed to a legible HSV value and lent to whatever mode is running"
+    ],
+    "locales": [
+      "en"
+    ],
+    "rtl": false,
+    "accent": "#5EE7FF",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "Thoughtful, well-documented native code and a gorgeous simulator, but the APK has never been run on a device per its own README.",
+    "demo": {
+      "port": 4190,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/aod-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 1,
+      "authored": 1
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/aod/01-aurora-desktop.webp",
+        "label": "Aurora mode with the camera loupe",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/aod/02-calibration-desktop.webp",
+        "label": "Calibrating against the reported cutout",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/aod/03-charge-notification-desktop.webp",
+        "label": "Charge mode while charging",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/aod/04-embed-ripple-desktop.webp",
+        "label": "Embeddable stage — Ripple",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/aod/05-spectrum-mobile.webp",
+        "label": "Spectrum on mobile",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/aod/06-modes-mobile.webp",
+        "label": "Live mode picker",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "first-step",
+    "title": "First Step Staff Portal",
+    "titleNative": "أكاديمية وملاعب الخطوة الأولى",
+    "tagline": "Booking, occupancy and finance portal for a football, padel and tennis academy",
+    "summary": "Arabic RTL staff and owner portal for a sports academy in Amman with 7 bookable fields (5-a-side, 7-a-side, padel, 3 tennis courts). Staff book through a slot wizard with per-field availability grids and a shared tennis occupancy timeline; owners get revenue, utilization, dues, expenses and CSV export. Runs on Cloudflare Workers via OpenNext with D1, with a full in-browser demo layer that mirrors every API.",
+    "role": "Solo build",
+    "org": "أكاديمية وملاعب الخطوة الأولى (Amman)",
+    "years": "2026",
+    "category": "client",
+    "platforms": [
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind 4",
+      "Cloudflare Workers (OpenNext)",
+      "Cloudflare D1",
+      "Recharts",
+      "Framer Motion",
+      "date-fns"
+    ],
+    "highlights": [
+      "27 API route handlers over D1 with 11 SQL migrations (bookings, pricing rules, blocks, packages, customers, audit log, booking requests)",
+      "Role-based access (admin / manage / staff / customer) gating 12 portal screens",
+      "Slot wizard with 30-min steps, weekly recurring series, academy rates, deposits and price overrides",
+      "Shared tennis occupancy timeline colour-coded by how many courts are booked per slot",
+      "Owner suite: revenue, 7-day utilization, peak hours, unpaid dues, expenses by category and monthly CSV export"
+    ],
+    "locales": [
+      "ar"
+    ],
+    "rtl": true,
+    "accent": "#0c81c2",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "Coherent branded RTL design and deep real-world booking logic; a few screens lean on generic card layouts.",
+    "demo": {
+      "port": 4120,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/first-step-demo"
+    },
+    "repo": {
+      "remote": "https://github.com/ahmedalsalman/first-step",
+      "commits": 30,
+      "authored": 30
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/first-step/01-dashboard-desktop.webp",
+        "label": "Dashboard",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/first-step/02-booking-wizard-desktop.webp",
+        "label": "Booking wizard — slot range picked",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/first-step/03-tennis-occupancy-desktop.webp",
+        "label": "Tennis shared occupancy timeline",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/first-step/04-finances-desktop.webp",
+        "label": "Finances",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/first-step/05-owner-desktop.webp",
+        "label": "Owner overview",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/first-step/06-dashboard-mobile.webp",
+        "label": "Dashboard (mobile)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "first-step-customer",
+    "title": "First Step Booking",
+    "titleNative": "الخطوة الأولى",
+    "tagline": "Customer site to check field availability and request a booking via WhatsApp",
+    "summary": "Public Arabic RTL booking site for the First Step academy: customers pick an activity, date and time range on an availability grid, send a booking request that staff accept in the portal, and track their bookings by name and phone. Talks to the staff portal's public CORS API; the demo is a fully static export with an in-browser mock of those endpoints.",
+    "role": "Solo build",
+    "org": "أكاديمية وملاعب الخطوة الأولى (Amman)",
+    "years": "2026",
+    "category": "client",
+    "platforms": [
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind 4",
+      "Framer Motion",
+      "date-fns"
+    ],
+    "highlights": [
+      "3-step request flow (time → details → WhatsApp) with live price estimate",
+      "Availability grid across 4 activities / 7 fields; auto-assigns a free tennis court",
+      "Booking requests land in the staff portal's /requests inbox via public API routes",
+      "\"My bookings\" lookup by name + phone merging confirmed bookings and pending requests",
+      "Static export (no server) deployable as Workers static assets"
+    ],
+    "locales": [
+      "ar"
+    ],
+    "rtl": true,
+    "accent": "#0c81c2",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "Clean, mobile-first branded flow with clear steps; small surface (3 pages).",
+    "demo": {
+      "port": 4121,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/first-step-customer-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 6,
+      "authored": 6
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/first-step-customer/01-home-mobile.webp",
+        "label": "Home",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/first-step-customer/02-availability-mobile.webp",
+        "label": "Availability — range selected",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/first-step-customer/03-request-details-mobile.webp",
+        "label": "Request details",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/first-step-customer/04-my-bookings-mobile.webp",
+        "label": "My bookings",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/first-step-customer/05-home-desktop.webp",
+        "label": "Home (desktop)",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      }
+    ]
+  },
+  {
+    "slug": "first-step-mobile",
+    "title": "First Step Staff App",
+    "titleNative": "الخطوة الأولى",
+    "tagline": "Expo staff app: book fields, see today's schedule and monthly finances on the go",
+    "summary": "React Native (Expo SDK 57) companion to the First Step staff portal. Arabic RTL with the Cairo font: a dashboard of today/week/month revenue, a booking wizard (activity → type → date → field → time → duration), a bookings list with cancel, and a finances screen. Talks to the production Workers API or runs on local demo data; the demo build runs on the web via React Native Web.",
+    "role": "Solo build",
+    "org": "أكاديمية وملاعب الخطوة الأولى (Amman)",
+    "years": "2026",
+    "category": "client",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "stack": [
+      "Expo 57",
+      "React Native 0.86",
+      "React 19",
+      "TypeScript",
+      "React Navigation 7",
+      "AsyncStorage",
+      "date-fns"
+    ],
+    "highlights": [
+      "Booking wizard with live price across 4 activities, 3 booking types and weekly series",
+      "Role-aware bottom-tab navigator (dashboard / book / bookings / finances)",
+      "Cookie session against the Cloudflare portal API, or a local demo mode with role switcher",
+      "Finances: monthly income vs expenses, net, breakdown across 6 expense categories"
+    ],
+    "locales": [
+      "ar"
+    ],
+    "rtl": true,
+    "accent": "#0c81c2",
+    "polished": true,
+    "polishScore": 3,
+    "polishNote": "Consistent RTL UI but a young codebase (2 commits) with a plain icon-less tab bar.",
+    "demo": {
+      "port": 4122,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/first-step-mobile-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 2,
+      "authored": 2
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/first-step-mobile/01-dashboard-mobile.webp",
+        "label": "Dashboard",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/first-step-mobile/02-booking-wizard-mobile.webp",
+        "label": "Booking wizard",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/first-step-mobile/03-bookings-mobile.webp",
+        "label": "Bookings",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/first-step-mobile/04-finances-mobile.webp",
+        "label": "Finances",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "hax-oi",
+    "title": "HAX Opportunity Intelligence",
+    "titleNative": null,
+    "tagline": "Helps GCC executives spot company changes where their experience may matter",
+    "summary": "The pilot web layer for a concierge executive-advisory service: an editorial marketing site, a multi-step Opportunity Fit Review that sorts applicants into fit / review / not-yet, and an internal Opportunity Map where executives rate evidence-based Opportunity Cards. Built on Next.js 16 for Cloudflare Workers (OpenNext + D1), with careful handling of personal data, attribution that matches the CRM, and copy that stays within what the client has approved.",
+    "role": "Solo build (frontend + Cloudflare deployment)",
+    "org": "HAX — Haitham Alsalman Experts Consulting (client)",
+    "years": "2026",
+    "category": "client",
+    "platforms": [
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind 4",
+      "Cloudflare Workers (OpenNext)",
+      "Cloudflare D1",
+      "PostHog",
+      "GoHighLevel webhook"
+    ],
+    "highlights": [
+      "Opportunity Fit Review: rule-based qualification (lib/qualification.ts) with automatic not-yet screen-outs, consent recorded with a timestamp, and a CRM handoff that never loses a submission if one store fails",
+      "Data-driven Opportunity Card with stages, confidence, access-path chain and a Fact / Interpretation / Unknown evidence split, validated against a schema that is surfaced to content editors",
+      "Pilot feedback stored with one atomic D1 upsert per card; every server action is token-gated and fails closed",
+      "Privacy-first analytics: PostHog loaded only when configured, query strings and tokens stripped before events are sent, first-touch UTM attribution named to match GoHighLevel fields",
+      "Demo build runs fully client-side: the Fit Review is assessed in the browser and makes no network request (checked with Playwright)"
+    ],
+    "locales": [
+      "en"
+    ],
+    "rtl": false,
+    "accent": "#cb1414",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "Distinctive editorial design and carefully engineered form, data and privacy handling across 30 commits; a small pilot surface (5 routes) still waiting on client sign-off.",
+    "demo": {
+      "port": 4150,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/hax-oi-demo"
+    },
+    "repo": {
+      "remote": "https://github.com/ahmedalsalman/hax-io",
+      "commits": 30,
+      "authored": 30
+    },
+    "confidential": true,
+    "shots": [
+      {
+        "src": "/works/hax-oi/01-home-hero-desktop.webp",
+        "label": "Homepage hero",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/hax-oi/02-home-mechanism-desktop.webp",
+        "label": "How it works",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/hax-oi/03-opportunity-card-desktop.webp",
+        "label": "Opportunity Card with executive feedback",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/hax-oi/04-home-mobile.webp",
+        "label": "Homepage (mobile)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/hax-oi/05-fit-review-confirmation-mobile.webp",
+        "label": "Fit Review submitted (kept in browser memory)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "ims",
+    "title": "IMS",
+    "titleNative": "نظام المخزون",
+    "tagline": "Lot- and expiry-tracked lab inventory with FEFO dispensing, in English and Arabic",
+    "summary": "A laboratory inventory management system for hospital labs: goods receipt with e-signed approval, first-expiry-first-out dispensing, replenishment parameters computed from real consumption, contract drawdown and an audit trail. Built as a single-tenant product (Django + React); the demo runs the real React frontend against an in-browser mock of the REST API over a seeded six-section laboratory.",
+    "role": "Solo build",
+    "org": "personal",
+    "years": "2026",
+    "category": "product",
+    "platforms": [
+      "web",
+      "pwa"
+    ],
+    "stack": [
+      "React 19",
+      "TypeScript 6",
+      "Vite 8",
+      "Tailwind 4",
+      "TanStack Query",
+      "i18next",
+      "Dexie (offline outbox)",
+      "Django 5.2",
+      "DRF",
+      "PostgreSQL 17",
+      "Celery"
+    ],
+    "highlights": [
+      "FEFO allocator proposes lots by expiry then receipt date, skips quarantined/expired/recalled stock with a stated reason, and records a mandatory reason for any override",
+      "Replenishment min/max/reorder point computed from 12 months of consumption and measured supplier lead time, with the arithmetic shown step by step on screen",
+      "Approval chains per movement type (two signatures for disposal, value-based escalation) with password re-entry as an e-signature",
+      "15 specification-traced reports (R-RP-01…15) and four role dashboards whose tiles show live vs nightly-rollup freshness",
+      "Fully bilingual EN/AR with RTL layout, a handheld bottom-bar layout for storekeepers, camera/HID GS1 barcode scanning and an offline write queue"
+    ],
+    "locales": [
+      "en",
+      "ar"
+    ],
+    "rtl": true,
+    "accent": "#1e4fa8",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "Deliberate, distinctive design system (lot band, ruled rail, tone rules) and deep domain logic across 18 screens; still an internal-tool aesthetic and some server-only features (PDFs) are absent in the demo.",
+    "demo": {
+      "port": 4160,
+      "path": "/dashboard",
+      "run": "npm run dev",
+      "dir": "D:/Work/ims-demo"
+    },
+    "repo": {
+      "remote": "https://github.com/ahmedalsalman/ims.git",
+      "commits": 27,
+      "authored": 27
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/ims/01-dashboard-desktop.webp",
+        "label": "Laboratory dashboard",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/ims/02-item-lots-desktop.webp",
+        "label": "Item stock by lot and expiry",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/ims/03-fefo-dispensing-desktop.webp",
+        "label": "FEFO dispensing proposal",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/ims/04-replenishment-desktop.webp",
+        "label": "Replenishment workings",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/ims/05-contract-drawdown-desktop.webp",
+        "label": "Contract drawdown",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/ims/06-alerts-arabic-rtl-desktop.webp",
+        "label": "Alert centre (Arabic, RTL)",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/ims/07-dashboard-arabic-mobile.webp",
+        "label": "Handheld dashboard (Arabic)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "kinetiq",
+    "title": "Kinetiq — Gym OS",
+    "titleNative": null,
+    "tagline": "One offline-first PWA for Pilates studios, CrossFit boxes, dojos and gyms",
+    "summary": "A multi-tenant gym operating system with five role surfaces: platform owner (tenants, plans, feature flags), gym manager, coaches/front desk, kiosk/TV and a member app. Everything runs in the browser on IndexedDB with a service-worker outbox, vertical modules (reformer spot picker, WOD leaderboards, belt promotions, bodybuilding check-ins) and AI features that fall back to on-device heuristics.",
+    "role": "Solo build",
+    "org": "personal",
+    "years": "2026",
+    "category": "product",
+    "platforms": [
+      "web",
+      "pwa",
+      "mobile-web"
+    ],
+    "stack": [
+      "React 19",
+      "Vite 8",
+      "TypeScript",
+      "Tailwind 4",
+      "Dexie (IndexedDB)",
+      "Zustand",
+      "React Router",
+      "Recharts",
+      "Workbox / vite-plugin-pwa"
+    ],
+    "highlights": [
+      "71 feature flags with global / plan / vertical / tenant / % rollout scopes and kill switches, managed from the platform-owner console",
+      "Seeds 14 tenants (4 fully populated gyms across 4 verticals, ~500 members, 6 months of history) into IndexedDB on first load",
+      "Explainable churn model, AI daily briefing and an 'AI operator' that proposes approvable actions, all working offline without an API key",
+      "Vertical modules: reformer spot layouts, WOD calendar + leaderboards, belt/stripe promotion eligibility, bodybuilding program check-ins",
+      "Installable PWA with injectManifest service worker, background-sync outbox, rotating QR pass, kiosk and TV modes, Arabic RTL"
+    ],
+    "locales": [
+      "en",
+      "ar"
+    ],
+    "rtl": true,
+    "accent": "#c6ff3d",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "Deep, consistent product UI across every role with rich seeded data; still a prototype with no real backend, and only 2 commits of history.",
+    "demo": {
+      "port": 4140,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/kinetiq-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 2,
+      "authored": 2
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/kinetiq/01-role-switcher-desktop.webp",
+        "label": "Role switcher (no sign-in)",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/kinetiq/02-platform-overview-desktop.webp",
+        "label": "Platform owner overview",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/kinetiq/03-feature-flags-desktop.webp",
+        "label": "Feature flags console",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/kinetiq/04-manager-dashboard-desktop.webp",
+        "label": "Gym manager dashboard with AI briefing",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/kinetiq/05-belts-ranks-desktop.webp",
+        "label": "Martial arts belts & promotions",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/kinetiq/06-member-home-mobile.webp",
+        "label": "Member home",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kinetiq/07-reformer-schedule-mobile.webp",
+        "label": "Pilates class schedule",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "lumio",
+    "title": "Lumio",
+    "titleNative": "لوميو",
+    "tagline": "Arabic RTL kids' streaming app: shows, shorts, streaks and unlockable characters",
+    "summary": "Lumio is a freemium streaming app for Arabic-speaking children aged about 3–8 and their parents. It has long-form shows organised by season, a vertical shorts feed, watch streaks that unlock collectible characters, and a parent area behind a PIN. It is built in Expo/React Native from a token-driven design system (tokens.json → Restyle theme → primitives), is RTL-first, and handles carrier (DCB) and store billing states, offline-safe progress sync, FCM push and Google Cast.",
+    "role": "Lead mobile engineer (solo build)",
+    "org": "Media World (mw3abee)",
+    "years": "2026",
+    "category": "company",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "stack": [
+      "Expo 57",
+      "React Native 0.86",
+      "React 19",
+      "TypeScript",
+      "@shopify/restyle",
+      "React Navigation 7",
+      "Reanimated 4",
+      "expo-video",
+      "Firebase Cloud Messaging",
+      "expo-iap",
+      "Google Cast"
+    ],
+    "highlights": [
+      "Design-token pipeline: tokens.json is synced into a Restyle theme, and lint fails the build on any raw hex, raw fontSize or hand-rolled shadow outside src/theme and src/components",
+      "Freemium access model: each video carries a free or premium tag, and the gate sits at playback rather than at navigation, mapping 5 DCB and store billing states to 2 user-facing plans",
+      "Watch progress queued locally, retried after 401 token re-mints and flushed before sign-out, so resume points survive dropped connections",
+      "Character unlock economy: streak milestones plus per-show episode ladders unlock 8 collectible avatars",
+      "Built RTL-first with start/end layout throughout; the demo runs the same app on react-native-web against an in-memory mock of 20+ CMS routes"
+    ],
+    "locales": [
+      "ar"
+    ],
+    "rtl": true,
+    "accent": "#2F80ED",
+    "polished": true,
+    "polishScore": 5,
+    "polishNote": "Production app with a real design system, heavy edge-case handling and illustrated character art; the web demo looks like the native app.",
+    "demo": {
+      "port": 4180,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/lumio-mobile-app-demo"
+    },
+    "repo": {
+      "remote": "https://github.com/mw3abee/lumio-mobile-app",
+      "commits": 117,
+      "authored": 117
+    },
+    "confidential": true,
+    "shots": [
+      {
+        "src": "/works/lumio/01-home-mobile.webp",
+        "label": "Home: hero, continue watching, show rails",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/lumio/02-shows-mobile.webp",
+        "label": "برامجي: show catalogue",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/lumio/03-show-detail-mobile.webp",
+        "label": "Show detail with seasons",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/lumio/04-episodes-mobile.webp",
+        "label": "Season episodes with free/premium tags",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/lumio/05-characters-mobile.webp",
+        "label": "شخصياتي: streak and character unlocks",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/lumio/06-notifications-mobile.webp",
+        "label": "Notifications feed",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "snap-games",
+    "title": "Sindbad",
+    "titleNative": "سندباد",
+    "tagline": "Swipe-to-play HTML5 game portal with levels, streaks and leaderboards",
+    "summary": "A carrier-subscription game portal where players swipe through a TikTok-style feed of HTML5 games, earn points toward nine tiers, keep login streaks and climb a play-time leaderboard. Built mobile-first in Arabic, English and Kurdish, with sandboxed game iframes, fullscreen and landscape handling, and a Next.js BFF that seals DCB sessions.",
+    "role": "Lead frontend engineer",
+    "org": "mw3abee (carrier-billed; Iraq and Nigeria deployments)",
+    "years": "2026",
+    "category": "client",
+    "platforms": [
+      "web",
+      "mobile-web",
+      "pwa"
+    ],
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "SWR",
+      "Tailwind 3",
+      "Cloudflare Workers (OpenNext)"
+    ],
+    "highlights": [
+      "Vertical swipe feed that launches sandboxed same-origin game iframes, with fullscreen and a landscape rotation prompt",
+      "Nine-tier points progression (Rookie to Icon) with milestone strip and locale-stable tier styling",
+      "Three locales (ar, en, ku) resolved from cookie, then Accept-Language, so first paint is already RTL",
+      "Logout confirmation modal and labelled request failures (timeout / network / http_<status>) for analytics",
+      "111 commits, all authored by Ahmed"
+    ],
+    "locales": [
+      "ar",
+      "en",
+      "ku"
+    ],
+    "rtl": true,
+    "accent": "#FF9E3D",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "Distinctive branded UI and solid feed/fullscreen engineering; the demo games are simple stand-in packs rather than the real catalogue titles.",
+    "demo": {
+      "port": 4101,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/snap-games-demo"
+    },
+    "repo": {
+      "remote": "https://github.com/mw3abee/snap-games",
+      "commits": 111,
+      "authored": 111
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/snap-games/01-feed-mobile.webp",
+        "label": "Swipe-to-play feed",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/snap-games/02-home-mobile.webp",
+        "label": "Home: level, milestones, points and streak",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/snap-games/03-leaderboard-mobile.webp",
+        "label": "Play-time leaderboard",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/snap-games/04-game-mobile.webp",
+        "label": "Game frame with landscape rotation prompt",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/snap-games/05-logout-confirm-mobile.webp",
+        "label": "Logout confirmation modal",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/snap-games/06-home-desktop.webp",
+        "label": "Home on desktop",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      }
+    ]
+  },
+  {
+    "slug": "sports-booking",
+    "title": "Sports Booking",
+    "titleNative": null,
+    "tagline": "Arabic-first app for booking football pitches, paddle courts and a hall",
+    "summary": "An Expo / React Native app for a single sports complex: players book one of five facilities (three football fields, a paddle court, a multipurpose hall) through a 4-step picker for facility, date, time and payment, browse a gear store, and track their bookings. It is Arabic-first with an English toggle via i18next, and uses a dark neon gradient design built from a shared token file. The demo runs it on the web through react-native-web with seeded in-memory data.",
+    "role": "Solo build",
+    "org": "personal",
+    "years": "2025",
+    "category": "experiment",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "stack": [
+      "Expo 54",
+      "React Native 0.81",
+      "React 19",
+      "TypeScript",
+      "React Navigation 7",
+      "i18next",
+      "expo-linear-gradient",
+      "react-native-web"
+    ],
+    "highlights": [
+      "4-step booking flow (facility, date, time slot, payment) with 5 facilities and 15 hourly slots",
+      "Arabic/English localisation with i18next and a live language toggle in the profile",
+      "Booking history with confirmed / pending / cancelled status badges and cash vs card payment rules",
+      "Design tokens (colours, spacing, radii, neon shadows) in one theme file shared by 4 screens",
+      "Demo: taken slots, a confirmation sheet and a static web export that works on Cloudflare"
+    ],
+    "locales": [
+      "ar",
+      "en"
+    ],
+    "rtl": true,
+    "accent": "#00F5A0",
+    "polished": false,
+    "polishScore": 2,
+    "polishNote": "Good-looking but small: a single-venue prototype with no backend, hardcoded data, mixed Arabic/English copy and leftover backup screens.",
+    "demo": {
+      "port": 4185,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/sports-booking-app-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 2,
+      "authored": 2
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/sports-booking/01-home-mobile.webp",
+        "label": "Home: announcements and Book Now",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/sports-booking/02-booking-facility-mobile.webp",
+        "label": "Choose a facility",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/sports-booking/03-slot-picker-mobile.webp",
+        "label": "Date, time slot and payment picker",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/sports-booking/04-booking-confirmed-mobile.webp",
+        "label": "Booking confirmed",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/sports-booking/05-my-bookings-mobile.webp",
+        "label": "My bookings",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/sports-booking/06-store-mobile.webp",
+        "label": "Gear store",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "tennis-booking",
+    "title": "Tennis Court Booking",
+    "titleNative": "حجز ملاعب التنس",
+    "tagline": "Multi-court tennis booking portal built around a shared occupancy heatmap",
+    "summary": "A tennis-only product derived from the First Step portal: 4 courts booked from one shared timeline that shows how many courts are taken in every 30-minute slot, then lets staff pick the free court. Keeps the owner suite (finances, peak pricing, blocks, packages, users, audit) and runs on Cloudflare Workers + D1 with its own database.",
+    "role": "Solo build",
+    "org": "personal",
+    "years": "2026",
+    "category": "product",
+    "platforms": [
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind 4",
+      "Cloudflare Workers (OpenNext)",
+      "Cloudflare D1",
+      "Recharts"
+    ],
+    "highlights": [
+      "Shared 4-court occupancy heatmap (0/4 … 4/4) as the default booking UX",
+      "Free-court picker and duration choices computed for the chosen start slot",
+      "Owner KPIs, 30-day revenue and peak-hour charts, 7-day court utilization",
+      "Separate worker + D1 database so it deploys alongside the academy portal"
+    ],
+    "locales": [
+      "ar"
+    ],
+    "rtl": true,
+    "accent": "#16a34a",
+    "polished": true,
+    "polishScore": 3,
+    "polishNote": "Polished UI inherited from First Step; as a product it is a fresh 2-commit adaptation.",
+    "demo": {
+      "port": 4123,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/tennis-booking-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 2,
+      "authored": 2
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/tennis-booking/01-dashboard-desktop.webp",
+        "label": "Dashboard",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/tennis-booking/02-court-heatmap-desktop.webp",
+        "label": "Shared court heatmap",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/tennis-booking/03-owner-desktop.webp",
+        "label": "Owner overview",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/tennis-booking/04-finances-desktop.webp",
+        "label": "Finances",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/tennis-booking/05-court-heatmap-mobile.webp",
+        "label": "Court heatmap (mobile)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "yalla-kora",
+    "title": "WAQT AL-KASS",
+    "titleNative": "وقت الكأس",
+    "tagline": "Carrier-billed World Cup 2026 football portal for Arabic and Kurdish fans",
+    "summary": "A mobile-first football companion sold through telcos via direct carrier billing: live scores, fixtures, standings, match detail (events, stats, lineups, head-to-head), predictions and a timed daily quiz. Arabic/Kurdish RTL by default, with sponsor-branded skins (Zain, Syriatel, MTN, Jawwal) and a Next.js BFF that proxies the CMS and seals carrier sessions in cookies.",
+    "role": "Lead frontend engineer",
+    "org": "mw3abee (carrier partners: Zain, Syriatel, MTN, Jawwal)",
+    "years": "2026",
+    "category": "client",
+    "platforms": [
+      "web",
+      "mobile-web",
+      "pwa"
+    ],
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Framer Motion",
+      "Phosphor Icons",
+      "Cloudflare Workers (OpenNext)"
+    ],
+    "highlights": [
+      "Match detail split into one-question tabs: predictions, events, statistics, lineups, head-to-head",
+      "Timed quiz (10 s per question, 5 per round) with anti-tab-switch rule and +500 clean-round bonus",
+      "Arabic and Central Kurdish (Sorani) RTL UI with light/dark themes and four sponsor skins",
+      "News video handling hardened (YK-377): http(s)-only parsing and canonical X/Twitter status URLs before embedding",
+      "335 commits on staging-v2, all authored by Ahmed"
+    ],
+    "locales": [
+      "ar",
+      "ku"
+    ],
+    "rtl": true,
+    "accent": "#10D8A6",
+    "polished": true,
+    "polishScore": 5,
+    "polishNote": "Production carrier product with dense, consistent match-day UI across mobile and desktop and realistic captured data.",
+    "demo": {
+      "port": 4100,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/yalla-kora-demo"
+    },
+    "repo": {
+      "remote": "https://github.com/mw3abee/yalla-kora",
+      "commits": 335,
+      "authored": 335
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/yalla-kora/01-home-mobile.webp",
+        "label": "Home: live now, today's fixtures with predictions",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/yalla-kora/02-matches-mobile.webp",
+        "label": "Matches: upcoming / ended / live",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/yalla-kora/03-match-detail-mobile.webp",
+        "label": "Match detail with events",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/yalla-kora/04-quiz-mobile.webp",
+        "label": "Daily quiz mid-round",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/yalla-kora/05-news-article-mobile.webp",
+        "label": "News article with video hero",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/yalla-kora/06-home-desktop.webp",
+        "label": "Home on desktop",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      }
+    ]
+  }
+]
