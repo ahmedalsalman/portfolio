@@ -37,14 +37,16 @@ export function WallLabel({ work, detailLink = true }: { work: Work; detailLink?
             <dd>{lang}</dd>
           </>
         )}
-        {work.repo && work.repo.commits >= 20 && (
+        {work.repo && (work.repo.commits >= 20 || work.repo.authored === 0) && work.repo.commits > 0 && (
           <>
             <dt>Dimensions</dt>
             <dd>
               {work.repo.commits.toLocaleString('en')} commits
-              {work.repo.authored > 0 && work.repo.authored !== work.repo.commits
-                ? `, ${work.repo.authored.toLocaleString('en')} by the artist`
-                : ''}
+              {work.repo.authored === 0
+                ? ', team codebase'
+                : work.repo.authored !== work.repo.commits
+                  ? `, ${work.repo.authored.toLocaleString('en')} by the artist`
+                  : ''}
             </dd>
           </>
         )}

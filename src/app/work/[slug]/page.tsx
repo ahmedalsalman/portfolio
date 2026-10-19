@@ -100,12 +100,12 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
                 </dd>
               </div>
             )}
-            {work.repo && work.repo.commits >= 20 && (
+            {work.repo && (work.repo.commits >= 20 || work.repo.authored === 0) && work.repo.commits > 0 && (
               <div>
                 <dt>Dimensions</dt>
                 <dd>
                   {work.repo.commits.toLocaleString('en')} commits
-                  {work.repo.authored > 0 && `, ${work.repo.authored.toLocaleString('en')} by the artist`}
+                  {work.repo.authored > 0 ? `, ${work.repo.authored.toLocaleString('en')} by the artist` : ', team codebase'}
                 </dd>
               </div>
             )}

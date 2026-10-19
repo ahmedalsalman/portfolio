@@ -184,8 +184,8 @@ function BehindTheWalls() {
     <Reveal className="plaque">
       <h3>Behind the walls</h3>
       <p>
-        The services these screens talked to. No demos: they are back-end and infrastructure, credited here for the
-        commits that went into them.
+        The services these screens talked to. No demos: this is back-end and infrastructure, most of it built by
+        teammates. Where the artist&rsquo;s own commits are in there, they&rsquo;re counted.
       </p>
       <table>
         <thead>
@@ -203,7 +203,7 @@ function BehindTheWalls() {
               <td>{b.what}</td>
               <td className="hide-sm">{Array.isArray(b.stack) ? b.stack.join(', ') : b.stack}</td>
               <td className="num">
-                {(b.authoredByAhmed ?? 0).toLocaleString('en')}
+                {b.authoredByAhmed ? b.authoredByAhmed.toLocaleString('en') : '—'}
                 {b.commits ? ` / ${b.commits.toLocaleString('en')}` : ''}
               </td>
             </tr>

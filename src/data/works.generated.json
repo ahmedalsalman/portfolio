@@ -379,6 +379,105 @@
     ]
   },
   {
+    "slug": "cockpit",
+    "title": "Raha Cockpit",
+    "titleNative": "راحة",
+    "tagline": "Back-office for a Kuwait online grocer: orders, catalogue, marketing, last-mile ops",
+    "summary": "Internal operations dashboard for ShopRaha, a Kuwait online grocery: live sales KPIs, deliveries, catalogue and recipes, campaigns and vouchers, customer wallets, plus last-mile tooling (drivers, fleet, delivery zones, time slots, route planner, work schedules). It talks to two backends at once: the ShopRaha GraphQL API (a Saleor fork, typed via GraphQL codegen) and the cockpit Django REST API (OpenAPI-generated client). The demo runs both in-process with Apollo SchemaLink + graphql-tools mocks over the real backend schema.",
+    "role": "Frontend engineer (catalogue, marketing campaigns, customers & wallets, dashboard)",
+    "org": "ShopRaha / BTR Tech",
+    "years": "2023–2024",
+    "category": "company",
+    "platforms": [
+      "web"
+    ],
+    "stack": [
+      "Next.js 13 (app router)",
+      "React 18",
+      "TypeScript",
+      "Apollo Client 3",
+      "GraphQL Code Generator",
+      "Ant Design 5",
+      "React Query 3",
+      "Sass",
+      "Recharts",
+      "Google Maps (google-map-react)",
+      "dnd-kit"
+    ],
+    "highlights": [
+      "183 typed GraphQL operations (codegen hooks) against a ~1,000-type Saleor-based schema, alongside a 7,000-line OpenAPI-generated REST client for the cockpit Django service",
+      "Route planner: unassigned delivery tasks grouped by time slot, drag-and-drop route sequencing (dnd-kit) and per-route polylines on a map",
+      "Delivery zones drawn from GeoJSON MultiPolygons, with a polygon editor for areas and capacity-aware express/standard time slots",
+      "Marketing suite: banners, cashback, in-line ads, featured brands/products and vouchers with bilingual (EN/AR) content",
+      "Ahmed authored 329 of 1,437 commits on dev, incl. 104 on products, 54 on marketing and 30 on customers"
+    ],
+    "locales": [
+      "en",
+      "ar"
+    ],
+    "rtl": false,
+    "accent": "#A84096",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "Broad, production-grade internal tool with consistent Ant Design UI and real map/ops workflows; plain admin styling and a few rough edges keep it off flagship.",
+    "demo": {
+      "port": 4250,
+      "path": "/dashboard",
+      "run": "npm run dev",
+      "dir": "D:/Work/cockpit-dashboard-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 1437,
+      "authored": 329
+    },
+    "confidential": true,
+    "shots": [
+      {
+        "src": "/works/cockpit/01-dashboard-desktop.webp",
+        "label": "Sales dashboard",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/cockpit/02-deliveries-desktop.webp",
+        "label": "Deliveries",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/cockpit/03-order-detail-desktop.webp",
+        "label": "Order detail & tracking",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/cockpit/04-route-planner-desktop.webp",
+        "label": "Route planner",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/cockpit/05-zones-map-desktop.webp",
+        "label": "Delivery zones",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/cockpit/06-work-schedules-desktop.webp",
+        "label": "Driver work schedules",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      }
+    ]
+  },
+  {
     "slug": "drift-academy",
     "title": "Raafat Drift Academy",
     "titleNative": "أكاديمية رافت هارون للدريفت",
@@ -456,6 +555,102 @@
       {
         "src": "/works/drift-academy/05-coach-mobile.webp",
         "label": "Coach profile",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "eliteshop",
+    "title": "EliteShop",
+    "titleNative": null,
+    "tagline": "Animated storefront with flash deals, filters, cart drawer and checkout",
+    "summary": "A storefront starter with a gradient-heavy home page (flash-deal countdown, category grid, featured rail, testimonials), a filterable product catalogue, search, wishlist and an animated cart drawer. Built with Next.js 15, shadcn/Radix UI, framer-motion and persisted Zustand stores. The demo adds a 28-product seeded catalogue, product pages and a simulated checkout.",
+    "role": "Solo build",
+    "org": "personal",
+    "years": "2025",
+    "category": "experiment",
+    "platforms": [
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "Tailwind 3",
+      "Radix UI / shadcn",
+      "framer-motion",
+      "Zustand",
+      "Supabase"
+    ],
+    "highlights": [
+      "10 home-page sections with scroll-triggered framer-motion animation and a live flash-deal countdown",
+      "Catalogue with search, category, price-range and 5 sort modes, plus grid and list views",
+      "Cart drawer and wishlist in persisted Zustand stores (the demo fixes a stale-totals bug in the original getters)",
+      "Dark/light theming through next-themes with CSS-variable design tokens",
+      "Demo adds 28 SSG product pages, checkout (shipping tiers, tax, confirmation) and order history"
+    ],
+    "locales": [
+      "en"
+    ],
+    "rtl": false,
+    "accent": "#9333ea",
+    "polished": true,
+    "polishScore": 3,
+    "polishNote": "The home page and cart look good and are animated, but the original had placeholder initials instead of images, no product, checkout or orders pages (all added for the demo), unused providers, and it failed lint.",
+    "demo": {
+      "port": 4221,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/ecommerce-starter-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 2,
+      "authored": 2
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/eliteshop/01-featured-desktop.webp",
+        "label": "Trending products",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/eliteshop/02-catalogue-desktop.webp",
+        "label": "Catalogue with filters",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/eliteshop/03-product-desktop.webp",
+        "label": "Product page",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/eliteshop/04-cart-drawer-desktop.webp",
+        "label": "Cart drawer",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/eliteshop/05-order-confirmed-desktop.webp",
+        "label": "Order confirmation",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/eliteshop/06-product-mobile.webp",
+        "label": "Product page (mobile)",
         "kind": "mobile",
         "width": 780,
         "height": 1688
@@ -721,6 +916,103 @@
       {
         "src": "/works/first-step-mobile/04-finances-mobile.webp",
         "label": "Finances",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "gym-pwa",
+    "title": "FitTracker",
+    "titleNative": null,
+    "tagline": "Installable gym-member PWA: dashboard, exercise library, set/rep logger, plans",
+    "summary": "A mobile-first progressive web app for gym members: membership status, gym announcements, a searchable exercise library and a session logger for sets, reps and weights. Built on Next.js 15 App Router with Tailwind 4 and a hand-written service worker and manifest; the original was wired to Supabase with custom JWT auth and a Prisma schema.",
+    "role": "Solo build",
+    "org": "personal",
+    "years": "2025",
+    "category": "experiment",
+    "platforms": [
+      "web",
+      "mobile-web",
+      "pwa"
+    ],
+    "stack": [
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "Tailwind 4",
+      "Supabase",
+      "Prisma",
+      "Zustand",
+      "lucide-react"
+    ],
+    "highlights": [
+      "5 member-facing screens (dashboard, exercises, specialized training, subscription, contact) with a responsive sidebar / mobile drawer",
+      "Session logger: start a named workout, add sets × reps @ weight, finish into history with per-exercise stats",
+      "PWA manifest, 192/512 icons and a cache-first service worker for offline use",
+      "Prisma schema with 7 models (User, Subscription, Exercise, ExerciseLog, WorkoutSession, Announcement, GymInfo)",
+      "Supabase + bcrypt/JWT sign-in and register API routes (removed in the demo)"
+    ],
+    "locales": [
+      "en"
+    ],
+    "rtl": false,
+    "accent": "#3b82f6",
+    "polished": false,
+    "polishScore": 2,
+    "polishNote": "It works end to end, but the UI is stock Tailwind gray and blue with alert() feedback, most data was hard-coded in the pages, and only 2 commits exist; it reads as a quick experiment.",
+    "demo": {
+      "port": 4220,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/gym-pwa-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 2,
+      "authored": 2
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/gym-pwa/01-dashboard-mobile.webp",
+        "label": "Member dashboard",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/gym-pwa/02-dashboard-desktop.webp",
+        "label": "Dashboard with announcements and membership",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/gym-pwa/03-exercises-mobile.webp",
+        "label": "Exercise library",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/gym-pwa/04-training-log-mobile.webp",
+        "label": "Training history",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/gym-pwa/05-subscription-mobile.webp",
+        "label": "Membership plans",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/gym-pwa/06-live-session-mobile.webp",
+        "label": "Live workout session",
         "kind": "mobile",
         "width": 780,
         "height": 1688
@@ -1218,6 +1510,495 @@
         "kind": "mobile",
         "width": 780,
         "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "roost",
+    "title": "Roost",
+    "titleNative": null,
+    "tagline": "Offline-first daycare app: two-tap logging, auto parent reports, inspection records",
+    "summary": "A phone-first operations app for licensed home daycare providers. Logging a nap, meal or diaper takes two taps, and a daily report goes to parents automatically. Attendance, incidents, medications, drills and documents become an inspection-ready binder. It is built offline-first: SQLite on the device is the source of truth, synced to Supabase Postgres by a client-id/last-write-wins engine with row-level security, plus a Next.js report page that verifies signed tokens.",
+    "role": "Solo build (product, mobile, backend)",
+    "org": "personal",
+    "years": "2026",
+    "category": "product",
+    "platforms": [
+      "ios",
+      "android",
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "Expo SDK 57",
+      "React Native 0.86",
+      "Expo Router",
+      "Drizzle ORM",
+      "expo-sqlite",
+      "Shopify Restyle",
+      "Zustand",
+      "Zod",
+      "Supabase (Postgres, RLS, Edge Functions)",
+      "Next.js 16",
+      "React 19",
+      "Stripe Connect"
+    ],
+    "highlights": [
+      "Offline-first sync engine: local SQLite with per-row pending/synced state, client-generated idempotency keys, (server_updated_at, id) pull cursors, and last-write-wins push with exponential backoff",
+      "14 Postgres migrations with row-level security, payload validation CHECK constraints, retention/deletion, plan limits and a compliance_binder RPC, covered by 6 pgTAP suites",
+      "9 typed log types (meal, nap, diaper, incident, medication, …), each Zod-validated on device and checked again in SQL",
+      "Parent daily report page on signed 30-day tokens, rendered in the provider's timezone with DST-safe scheduling shared with the digest edge function",
+      "Licensing-ratio checks per age band computed offline, plus a one-tap PDF export of the inspection binder"
+    ],
+    "locales": [
+      "en"
+    ],
+    "rtl": false,
+    "accent": "#3D7454",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "Carefully engineered and designed product with deep sync, RLS and compliance work. It is pre-release per its own readiness doc, and the design tokens are still marked as placeholders.",
+    "demo": {
+      "port": 4171,
+      "path": "/today",
+      "run": "npm run dev:app",
+      "dir": "D:/Work/roost-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 28,
+      "authored": 28
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/roost/01-today-mobile.webp",
+        "label": "Today: roster with attendance at a glance",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/roost/02-child-day-mobile.webp",
+        "label": "A child's day: photos and timeline",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/roost/03-log-entry-mobile.webp",
+        "label": "Two-tap log entry",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/roost/04-records-mobile.webp",
+        "label": "Records: ratios, expiring documents, inspection binder",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/roost/05-billing-mobile.webp",
+        "label": "Tuition invoices",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/roost/06-reports-mobile.webp",
+        "label": "Today's parent reports and open status",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/roost/07-parent-report-mobile.webp",
+        "label": "Parent daily report (web)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/roost/08-parent-report-desktop.webp",
+        "label": "Parent daily report on desktop",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      }
+    ]
+  },
+  {
+    "slug": "saas-starter",
+    "title": "SaaS Starter",
+    "titleNative": null,
+    "tagline": "Next.js and MUI multi-tenant SaaS scaffold with orgs, roles, billing and audit models",
+    "summary": "A starter for multi-tenant SaaS apps: NextAuth OAuth (Google and GitHub) with a Prisma adapter, a Prisma schema for organizations, role-based membership, Stripe subscriptions and audit logs, and a Material UI dashboard shell. The original is mostly scaffolding. The demo adds seeded Team, Billing, Activity and Settings pages so that the shell can be clicked through.",
+    "role": "Solo build",
+    "org": "personal",
+    "years": "2025",
+    "category": "experiment",
+    "platforms": [
+      "web"
+    ],
+    "stack": [
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "Material UI 7",
+      "NextAuth",
+      "Prisma",
+      "PostgreSQL"
+    ],
+    "highlights": [
+      "Prisma schema with 8 models and 2 enums: Organization, OrganizationMember with OWNER/ADMIN/MEMBER roles, Subscription, AuditLog and the NextAuth tables",
+      "NextAuth session callback that attaches the user's organization memberships",
+      "Responsive MUI dashboard shell with a permanent or temporary drawer and an account menu",
+      "Demo-only: 4 added pages render seed data shaped like the Prisma models"
+    ],
+    "locales": [
+      "en"
+    ],
+    "rtl": false,
+    "accent": "#1976d2",
+    "polished": false,
+    "polishScore": 1,
+    "polishNote": "Mostly a scaffold: the original has a landing page, a sign-in page and one dashboard with 4 hard-coded stat cards; its sidebar links led to pages that did not exist and it used the stock MUI theme.",
+    "demo": {
+      "port": 4222,
+      "path": "/dashboard",
+      "run": "npm run dev",
+      "dir": "D:/Work/saas-starter-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 2,
+      "authored": 2
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/saas-starter/01-dashboard-desktop.webp",
+        "label": "Dashboard",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/saas-starter/02-team-desktop.webp",
+        "label": "Team and roles (demo page)",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/saas-starter/03-billing-desktop.webp",
+        "label": "Billing (demo page)",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/saas-starter/04-landing-desktop.webp",
+        "label": "Landing page",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      }
+    ]
+  },
+  {
+    "slug": "shopraha-app",
+    "title": "RAHA",
+    "titleNative": "راحة",
+    "tagline": "Kuwaiti grocery delivery app: aisles, deals, basket and slot-based checkout",
+    "summary": "ShopRaha's Expo / React Native grocery app for iOS, Android and web, built on a Saleor GraphQL + Django REST backend with Typesense search, Arabic RTL and English. The demo runs the real Expo Router web build with GraphQL, REST and search answered in the browser from the backend's own schema files.",
+    "role": "Company project (team codebase; no commits by Ahmed in this repo)",
+    "org": "ShopRaha",
+    "years": "2021–2025",
+    "category": "company",
+    "platforms": [
+      "ios",
+      "android",
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "Expo 51",
+      "React Native 0.74",
+      "Expo Router 3",
+      "Apollo Client 3",
+      "GraphQL Codegen",
+      "Saleor GraphQL",
+      "TanStack Query + OpenAPI codegen",
+      "Typesense",
+      "styled-components",
+      "i18next"
+    ],
+    "highlights": [
+      "~780 source files under src/ and 69 Expo Router route files shared across iOS, Android and web",
+      "150+ GraphQL operations typed via codegen against the Saleor schema, plus an OpenAPI-generated React Query client for the REST side",
+      "Typesense multi-search powers aisles, facets, price sort and search suggestions in Arabic and English",
+      "Slot-based delivery (express vs scheduled), wallet, KNET / card / cash payment and live order tracking",
+      "Demo: one in-browser executor runs the app's real operations against the backend schema with a 55-product seed"
+    ],
+    "locales": [
+      "ar",
+      "en"
+    ],
+    "rtl": true,
+    "accent": "#A84096",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "Production grocery app with a mature design system and full shopping flow; the demo covers browse, basket, checkout and orders, while recipes, coupons and chefs are left empty.",
+    "demo": {
+      "port": 4270,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/ShopRaha-App-demo"
+    },
+    "repo": {
+      "remote": "https://github.com/ShopRAHA/ShopRaha-App.git",
+      "commits": 11509,
+      "authored": 0
+    },
+    "confidential": true,
+    "shots": [
+      {
+        "src": "/works/shopraha-app/01-home-mobile.webp",
+        "label": "Home: banners, weekly essentials, aisles",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/shopraha-app/02-aisle-mobile.webp",
+        "label": "Dairy & Eggs aisle with sub-aisle pills",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/shopraha-app/03-product-mobile.webp",
+        "label": "Product sheet with freshness badge",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/shopraha-app/04-basket-mobile.webp",
+        "label": "Basket with free-delivery progress",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/shopraha-app/05-checkout-mobile.webp",
+        "label": "Checkout: address, delivery slot, payment",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/shopraha-app/06-home-arabic-mobile.webp",
+        "label": "Home in Arabic (RTL)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "shopraha-dashboard",
+    "title": "ShopRaha Dashboard",
+    "titleNative": "راحة",
+    "tagline": "Back-office for a Jordanian online grocery: orders, recipes, deals, delivery slots",
+    "summary": "ShopRaha's internal admin, a heavily extended fork of the Saleor Dashboard (React 17, Apollo GraphQL, Material-UI), used by ops, content and customer-care staff in Amman. Ahmed built most of the ShopRaha-specific modules on top of upstream Saleor: a recipes CMS, delivery time slots, Buy-X-Get-Y deals and wallet cashback, order returns, inventory and checkout quantity limits. The demo runs the repo's real GraphQL schema in the browser over Jordanian seed data, so no backend is needed.",
+    "role": "Frontend engineer (main contributor to ShopRaha-specific features)",
+    "org": "ShopRaha",
+    "years": "2021–2024",
+    "category": "company",
+    "platforms": [
+      "web"
+    ],
+    "stack": [
+      "React 17",
+      "TypeScript",
+      "Apollo Client 2 + 3",
+      "GraphQL",
+      "Material-UI 4",
+      "Saleor Dashboard",
+      "webpack 4",
+      "react-intl"
+    ],
+    "highlights": [
+      "750 of the repo's 2,843 commits (May 2021 – May 2024), with 55 RH-* feature branches layered on upstream Saleor",
+      "Built the recipes CMS: recipes, chefs, recipe collections, ingredients mapped to sellable product variants (with measurement-to-weight conversion), step-by-step instructions, and Arabic translations",
+      "Delivery operations: delivery time-slot configuration, slot assignment on shipping methods, order returns with pickup slots, rejected-line editing, and bulk-pushing orders to the SynQ warehouse and CIGO last-mile systems",
+      "Promotions: Buy-X-Get-Y, bundle and bulk deals, wallet cashback campaigns, customer wallet transactions, and checkout quantity limits per order or per day",
+      "Catalog extensions for groceries: units of measure, price per kg, country of import, search keywords, brands, home-page banners, and automated collections"
+    ],
+    "locales": [
+      "en",
+      "ar"
+    ],
+    "rtl": false,
+    "accent": "#21125E",
+    "polished": true,
+    "polishScore": 3,
+    "polishNote": "A real, feature-dense production admin with a lot of domain logic. The visuals are stock Saleor/Material-UI, and some tables overflow at desktop widths.",
+    "demo": {
+      "port": 4240,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/ShopRaha-Dashboard-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 2843,
+      "authored": 750
+    },
+    "confidential": true,
+    "shots": [
+      {
+        "src": "/works/shopraha-dashboard/01-home-dashboard-desktop.webp",
+        "label": "Home dashboard: sales, orders to fulfil, top products",
+        "kind": "desktop",
+        "width": 1600,
+        "height": 1000
+      },
+      {
+        "src": "/works/shopraha-dashboard/02-orders-desktop.webp",
+        "label": "Orders with delivery slot, area and payment gateway",
+        "kind": "desktop",
+        "width": 1600,
+        "height": 1000
+      },
+      {
+        "src": "/works/shopraha-dashboard/03-order-details-desktop.webp",
+        "label": "Order details: fulfilment, payment and SynQ/CIGO history",
+        "kind": "desktop",
+        "width": 1600,
+        "height": 2812
+      },
+      {
+        "src": "/works/shopraha-dashboard/04-recipe-details-desktop.webp",
+        "label": "Recipe editor (Mansaf): ingredients linked to products, instructions, Arabic translation",
+        "kind": "desktop",
+        "width": 1600,
+        "height": 3263
+      },
+      {
+        "src": "/works/shopraha-dashboard/05-deals-desktop.webp",
+        "label": "Deals: Buy X Get Y, bundles, bulk",
+        "kind": "desktop",
+        "width": 1600,
+        "height": 1000
+      },
+      {
+        "src": "/works/shopraha-dashboard/06-delivery-timeslots-desktop.webp",
+        "label": "Delivery time slots and slot configuration",
+        "kind": "desktop",
+        "width": 1600,
+        "height": 1000
+      }
+    ]
+  },
+  {
+    "slug": "shopraha-web",
+    "title": "RAHA Web",
+    "titleNative": "راحة",
+    "tagline": "Next.js web shop and app-launch landing page for a Kuwaiti grocery startup",
+    "summary": "The 2021–22 ShopRaha web storefront (Next.js 11, Apollo, Saleor GraphQL, Tailwind, AR/EN with react-intl) plus the Next.js landing page used to launch the RAHA app. The demo runs both on Node 26 with no dependency upgrades; the storefront's GraphQL is executed locally against the Saleor schema, including inside getStaticProps.",
+    "role": "Company project (team codebase; no commits by Ahmed in these repos)",
+    "org": "ShopRaha",
+    "years": "2021–2023",
+    "category": "company",
+    "platforms": [
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "Next.js 11",
+      "React 17",
+      "Apollo Client 3",
+      "Saleor GraphQL",
+      "Tailwind CSS 2",
+      "react-intl",
+      "Formik + Yup",
+      "Sass modules"
+    ],
+    "highlights": [
+      "Statically generated home, product and recipe pages with ISR (revalidate 30s), Arabic default locale plus English",
+      "Mega-menu, aisle pages with per-sub-aisle carousels, product pages and a slide-in basket wired to Saleor checkout mutations",
+      "Checkout with saved addresses, Google Maps address picker and delivery-slot selection",
+      "Landing page exported fully static: bilingual hero, FAQ, terms, privacy and returns policies",
+      "Demo: a custom Apollo link executes the client's queries locally; 40 of its 46 GraphQL documents validate unchanged against the 2025 backend schema"
+    ],
+    "locales": [
+      "ar",
+      "en"
+    ],
+    "rtl": true,
+    "accent": "#A84096",
+    "polished": true,
+    "polishScore": 3,
+    "polishNote": "Clean, working shop UI from an early stage of the company, but recipe pages and order placement were never finished and Arabic product names depended on the API.",
+    "demo": {
+      "port": 4272,
+      "path": "/en",
+      "run": "npm run dev",
+      "dir": "D:/Work/shopraha-web-demo"
+    },
+    "repo": {
+      "remote": "https://github.com/ShopRAHA/shopraha-fe.git",
+      "commits": 948,
+      "authored": 0
+    },
+    "confidential": true,
+    "shots": [
+      {
+        "src": "/works/shopraha-web/01-home-desktop.webp",
+        "label": "Storefront home: banner, aisles, recipes",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/shopraha-web/02-aisle-desktop.webp",
+        "label": "Aisle page with sub-aisle carousels",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/shopraha-web/03-basket-desktop.webp",
+        "label": "Slide-in basket",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/shopraha-web/04-checkout-desktop.webp",
+        "label": "Checkout: address, delivery time, totals",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/shopraha-web/05-home-mobile.webp",
+        "label": "Storefront on mobile",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/shopraha-web/06-landing-desktop.webp",
+        "label": "RAHA app launch landing page",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
       }
     ]
   },
