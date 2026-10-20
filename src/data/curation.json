@@ -22,13 +22,13 @@
     {
       "id": "shopraha",
       "title": "ShopRaha & BTR, 2021–2025",
-      "note": "Four years inside a Kuwaiti logistics and e-commerce group: the merchant dashboard, the delivery cockpit, warehouse tools, and the storefronts they fed.",
+      "note": "Four years with a Kuwaiti grocery and logistics company, working alongside a bigger team on the dashboards, warehouse tools and shops below. Some of these were built mostly by my teammates; each card says what my part was.",
       "works": ["shopraha-dashboard", "cockpit", "btr-smooth", "btr-rover", "btr-halo", "shopraha-app", "shopraha-web"]
     },
     {
       "id": "small",
-      "title": "Small rooms",
-      "note": "Sites for a bitumen maker, a café, a driving academy, a consultancy, and one Android experiment that only exists after dark.",
+      "title": "Smaller sites",
+      "note": "Websites for a waterproofing manufacturer, a hotel café, a driving school and my own small consultancy, plus one Android experiment.",
       "works": ["aod", "aiwin", "soho-cafe", "drift-academy", "heartfeltcode"]
     }
   ],

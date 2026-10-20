@@ -1,6 +1,7 @@
 import generated from '@/data/works.generated.json';
 import backendsGenerated from '@/data/backends.generated.json';
 import curation from '@/data/curation.json';
+import voice from '@/data/voice.json';
 
 export type Shot = { src: string; label: string; kind: 'mobile' | 'desktop'; width?: number; height?: number };
 
@@ -47,7 +48,13 @@ const forcedStore = new Set(curation.storeroom as string[]);
 const promoted = new Set(curation.promote as string[]);
 const demoUrls = curation.demoUrls as Record<string, string>;
 
-export const allWorks: Work[] = (generated as Work[]).filter((w) => !hidden.has(w.slug));
+type Voice = Partial<Pick<Work, 'role' | 'tagline' | 'summary' | 'highlights'>>;
+const voiceBySlug = voice as unknown as Record<string, Voice>;
+
+/** Synced facts, with the hand-written copy from voice.json laid over the top. */
+export const allWorks: Work[] = (generated as Work[])
+  .filter((w) => !hidden.has(w.slug))
+  .map((w) => ({ ...w, ...voiceBySlug[w.slug] }));
 const bySlug = new Map(allWorks.map((w) => [w.slug, w]));
 
 const hangsInGallery = (w: Work) => !forcedStore.has(w.slug) && (w.polished || promoted.has(w.slug));

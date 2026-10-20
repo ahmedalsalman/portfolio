@@ -11,10 +11,16 @@ export function languages(w: Work) {
   return names.join(', ') + (w.rtl ? ' · right-to-left' : '');
 }
 
-/** The museum card that hangs beside every work. */
+export function madeFor(w: Work) {
+  if (!w.org) return '';
+  return /^(personal|own|self)/i.test(w.org) ? 'Personal project' : `For ${w.org}`;
+}
+
+/** The small label that sits beside every project, like a gallery card. */
 export function WallLabel({ work, detailLink = true }: { work: Work; detailLink?: boolean }) {
   const demo = demoHref(work);
   const lang = languages(work);
+  const forWhom = madeFor(work);
   return (
     <div className="label">
       <div className="catno">{catalogueNumber(work.slug)}</div>
@@ -29,31 +35,24 @@ export function WallLabel({ work, detailLink = true }: { work: Work; detailLink?
       <dl>
         <dt>Year</dt>
         <dd>{work.years}</dd>
-        <dt>Medium</dt>
+        {forWhom && (
+          <>
+            <dt>Made for</dt>
+            <dd>{forWhom}</dd>
+          </>
+        )}
+        {work.role && (
+          <>
+            <dt>My part</dt>
+            <dd>{work.role}</dd>
+          </>
+        )}
+        <dt>Built with</dt>
         <dd className="medium">{work.stack.slice(0, 5).join(', ')}</dd>
         {lang && (
           <>
             <dt>Languages</dt>
             <dd>{lang}</dd>
-          </>
-        )}
-        {work.repo && (work.repo.commits >= 20 || work.repo.authored === 0) && work.repo.commits > 0 && (
-          <>
-            <dt>Dimensions</dt>
-            <dd>
-              {work.repo.commits.toLocaleString('en')} commits
-              {work.repo.authored === 0
-                ? ', team codebase'
-                : work.repo.authored !== work.repo.commits
-                  ? `, ${work.repo.authored.toLocaleString('en')} by the artist`
-                  : ''}
-            </dd>
-          </>
-        )}
-        {work.org && (
-          <>
-            <dt>Collection</dt>
-            <dd>{/^personal|own|self/i.test(work.org) ? 'Collection of the artist' : `Made for ${work.org}`}</dd>
           </>
         )}
       </dl>
@@ -66,16 +65,16 @@ export function WallLabel({ work, detailLink = true }: { work: Work; detailLink?
       <div className="actions">
         {demo && (
           <a className="btn" href={demo.href} target="_blank" rel="noreferrer">
-            Enter the work <span aria-hidden="true">↗</span>
+            Open the demo <span aria-hidden="true">↗</span>
           </a>
         )}
         {detailLink && (
           <Link className="link" href={`/work/${work.slug}/`}>
-            Read the notes
+            More about it
           </Link>
         )}
       </div>
-      {demo?.local && <div className="tag-local" style={{ marginTop: 10 }}>Demo runs locally on :{work.demo?.port}</div>}
+      {demo?.local && <div className="tag-local" style={{ marginTop: 10 }}>Runs locally on port {work.demo?.port}</div>}
     </div>
   );
 }

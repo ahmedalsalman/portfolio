@@ -20,7 +20,8 @@ npm run build   # static site in out/
 |---|---|
 | Rooms, order, what's hidden or stored, live demo URLs | `src/data/curation.json` |
 | Bio, chronology, skills, contact | `src/data/artist.ts` |
-| Per-project copy, stack, highlights, polish score | `D:/Work/portfolio-shots/<slug>/project.json` (then `npm run sync`) |
+| Per-project wording (role, tagline, summary, highlights), in my own voice | `src/data/voice.json` (wins over the synced text) |
+| Per-project facts: stack, screenshots, ports, polish score | `D:/Work/portfolio-shots/<slug>/project.json` (then `npm run sync`) |
 | Synced data (don't edit by hand) | `src/data/*.generated.json`, `public/works/` |
 
 ## Curating

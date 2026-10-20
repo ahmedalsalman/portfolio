@@ -1,0 +1,289 @@
+{
+  "_readme": "Hand-written copy for each project, in Ahmed's own voice. Overrides role / tagline / summary / highlights from the synced project.json files, so re-running `npm run sync` never undoes it. Leave a field out to fall back to the synced text.",
+  "yalla-kora": {
+    "role": "Frontend developer, with the mw3abee team",
+    "tagline": "A World Cup 2026 app for Arabic and Kurdish football fans",
+    "summary": "A phone-first football app that mobile operators offer to their subscribers: live scores, fixtures, match details, predictions and a short daily quiz. Most fans open it from a text message on a mobile connection, so I worked hard on keeping it fast and easy to read in Arabic and Kurdish.",
+    "highlights": [
+      "Match pages split into simple tabs, so fans find events, stats and line-ups without scrolling forever",
+      "A daily quiz with a timer per question, built to be quick and fair to play on a phone",
+      "Arabic and Kurdish (Sorani) right-to-left layouts, light and dark themes, and a different look for each operator",
+      "A small Next.js server layer that keeps subscriber sessions private"
+    ]
+  },
+  "snap-games": {
+    "role": "Frontend developer, with the mw3abee team",
+    "tagline": "Swipe through quick HTML5 games, earn points, keep a streak",
+    "summary": "A game app offered through mobile operators in Iraq and Nigeria. Players swipe through a feed of small games, play in one tap, and earn points toward levels. I worked on the feed, the game player and the progress screens, in Arabic, English and Kurdish.",
+    "highlights": [
+      "A vertical feed that opens each game in a safe, sandboxed frame, with full screen and a prompt to rotate the phone",
+      "Levels and daily streaks that give players a reason to come back",
+      "The right language and reading direction from the very first screen"
+    ]
+  },
+  "3abee": {
+    "role": "Frontend developer, with the mw3abee team",
+    "tagline": "One storefront for gift cards and game credit, branded for four operators",
+    "summary": "A store where subscribers buy gift cards, game credit and subscriptions and pay through their phone provider. The same app is branded for Sudani, Syriatel, Chinguitel and STORE 70 in Senegal, each with its own colours, languages and currency.",
+    "highlights": [
+      "Four brands from one codebase, chosen when the app is built",
+      "Arabic, English and French, with Sudanese, Syrian, Mauritanian and West African currencies",
+      "Topping up a game account directly with a player ID, as well as buying cards",
+      "A test suite that keeps the four brands from breaking each other"
+    ]
+  },
+  "lumio": {
+    "role": "Mobile developer, with the Media World team",
+    "tagline": "A kids' streaming app in Arabic: shows, short clips and characters to collect",
+    "summary": "A streaming app for Arabic-speaking children aged about three to eight, with a separate area for parents behind a PIN. I built it in React Native from the team's design system, right-to-left from the start, and made sure progress isn't lost on a weak connection.",
+    "highlights": [
+      "Shows organised by season, plus a short-clip feed sized for small hands",
+      "Watching every day unlocks characters children can collect",
+      "Playback position is saved on the device and synced later, so nothing is lost offline",
+      "All colours and sizes come from the design system's tokens, so screens stay consistent"
+    ]
+  },
+  "first-step": {
+    "role": "Design and development",
+    "tagline": "The staff portal for a football, padel and tennis academy in Amman",
+    "summary": "The tool the staff at First Step Academy use every day to book fields, see what's free and keep track of payments and expenses. It's all in Arabic, and I tried to make the booking flow quick enough to use while someone is waiting at the desk.",
+    "highlights": [
+      "A step-by-step booking flow with availability for each field and half-hour slots",
+      "A shared timeline for the tennis courts showing how busy each slot is",
+      "Simple reports for the owner: income, busy hours, unpaid bookings and expenses",
+      "Runs on Cloudflare with a small database, so it's cheap for the academy to keep online"
+    ]
+  },
+  "first-step-customer": {
+    "role": "Design and development",
+    "tagline": "Lets players check a free field and send a booking request",
+    "summary": "The public side of the First Step academy. Players choose a sport, a date and a time, see what's available, and send a request the staff can accept from their portal. They can also look up their bookings with their name and phone number.",
+    "highlights": [
+      "Three short steps from choosing a time to sending the request on WhatsApp",
+      "Shows availability across football, padel and tennis in one place",
+      "Requests go straight to the staff portal's inbox"
+    ]
+  },
+  "first-step-mobile": {
+    "role": "Design and development",
+    "tagline": "A phone app so the academy staff can book and check the day on the go",
+    "summary": "A React Native companion to the First Step staff portal, for staff who are out on the fields rather than at the desk. It covers today's schedule, a booking flow, the bookings list and a monthly finances view, all in Arabic.",
+    "highlights": [
+      "The same booking steps as the web portal, adapted for one hand",
+      "Today's and this month's income at a glance",
+      "Works against the live portal, or with sample data for training new staff"
+    ]
+  },
+  "tennis-booking": {
+    "role": "Design and development",
+    "tagline": "A booking portal for a tennis club, built around one shared court timeline",
+    "summary": "An adaptation of the First Step portal for a club with four tennis courts. Staff see in one view how many courts are taken in every half hour, then pick a free court for the player.",
+    "highlights": [
+      "One timeline for all four courts instead of four separate calendars",
+      "Shows which courts and durations are still free for the chosen time",
+      "Its own deployment and database, so it runs separately from the academy"
+    ]
+  },
+  "kinetiq": {
+    "role": "Design and development (personal project)",
+    "tagline": "An offline-first app for Pilates studios, CrossFit boxes, dojos and gyms",
+    "summary": "A side project exploring what one app could look like for very different kinds of gyms. It has screens for the gym owner, coaches, the front desk and members, and keeps working when the gym's internet doesn't.",
+    "highlights": [
+      "Separate screens for owners, coaches, front desk, a TV display and members",
+      "Small touches for each kind of gym: reformer spots for Pilates, workout boards for CrossFit, belt progress for martial arts",
+      "Everything is stored in the browser and synced later, so classes can still be checked in offline",
+      "Feature switches so a gym only sees what it needs"
+    ]
+  },
+  "ims": {
+    "role": "Design and development",
+    "tagline": "Inventory for hospital labs that tracks every lot and expiry date",
+    "summary": "An inventory system for laboratory staff, who need to know what's on the shelf, what expires soon and what to order next. It suggests which lot to use first, explains its reorder suggestions, and works in both English and Arabic.",
+    "highlights": [
+      "Suggests the lot that expires first, and asks for a reason when someone chooses another",
+      "Reorder levels based on what the lab actually used, with the working shown on screen",
+      "Approvals for sensitive actions such as disposing of stock",
+      "A simpler layout for storekeepers on handheld scanners, in English and Arabic"
+    ]
+  },
+  "roost": {
+    "role": "Design and development",
+    "tagline": "A phone app that helps home daycare providers log the day and update parents",
+    "summary": "Home daycare providers have their hands full, so logging a nap or a meal takes two taps, and parents get a daily report automatically. The app keeps working without internet and syncs when it can.",
+    "highlights": [
+      "Quick logging for meals, naps, nappies, incidents and medication",
+      "A daily report page for parents, sent automatically",
+      "Attendance, drills and documents gathered into one record ready for inspections",
+      "Works offline first, with careful syncing so no entry is lost"
+    ]
+  },
+  "hax-oi": {
+    "role": "Web development, with the HAX team",
+    "tagline": "A pilot site that helps experienced executives find where their skills fit",
+    "summary": "A website for a small advisory service in the Gulf. Visitors read about the service and fill in a short review of their experience, and the team uses it to prepare tailored opportunity notes. We were careful with personal data and kept the wording within what the client had approved.",
+    "highlights": [
+      "A short multi-step review that tells people honestly whether the service fits them",
+      "Opportunity notes that keep facts, interpretation and unknowns clearly apart",
+      "Privacy-minded analytics that strip personal details before anything is sent"
+    ]
+  },
+  "shopraha-dashboard": {
+    "role": "Frontend developer in the ShopRaha team",
+    "tagline": "The back-office for an online grocery in Kuwait",
+    "summary": "The admin tool ShopRaha's operations, content and customer care staff used every day, built on top of the open-source Saleor dashboard. With the team, I worked on the parts specific to a grocery business: recipes, delivery slots, deals and customer wallets.",
+    "highlights": [
+      "A recipes section where each ingredient links to a product customers can add to their basket",
+      "Delivery time slots and return pickups for the operations team",
+      "Deals such as buy-one-get-one, bundles and wallet cashback for the marketing team",
+      "Grocery details like price per kilo and units of measure"
+    ]
+  },
+  "cockpit": {
+    "role": "Frontend developer in the team",
+    "tagline": "An operations dashboard for orders, catalogue, marketing and deliveries",
+    "summary": "An internal dashboard for ShopRaha's operations team, connected to both the shop's GraphQL API and the delivery service. I mostly worked on the catalogue, marketing campaigns, customers and the main dashboard, alongside teammates who built the delivery tools.",
+    "highlights": [
+      "A route planner where dispatchers drag deliveries into routes on a map",
+      "Delivery zones drawn on the map, with capacity for each time slot",
+      "Banners, cashback, vouchers and featured products, in English and Arabic"
+    ]
+  },
+  "btr-smooth": {
+    "role": "Frontend developer in the team",
+    "tagline": "A portal where online shops manage their orders, stock and deliveries",
+    "summary": "Smooth let other online shops in Kuwait store their products in the BTR warehouse and have them delivered. Merchants use this portal to follow orders, send in stock, see reports and top up their account. It lives in a shared monorepo with the other internal tools.",
+    "highlights": [
+      "One timeline per order, from the warehouse shelf to the customer's door",
+      "Reports merchants can download for their own records",
+      "API hooks generated from the backend's schema, so the frontend stays in step with it"
+    ]
+  },
+  "btr-rover": {
+    "role": "Frontend contributor",
+    "tagline": "A dispatch dashboard for planning routes and driver schedules",
+    "summary": "The tool dispatchers use to plan delivery routes, manage drivers and vehicles, and set how many deliveries each hour can take. I contributed to parts of it alongside the team that built it.",
+    "highlights": [
+      "Route planning from unassigned orders on a map",
+      "A weekly schedule grid for drivers' shifts",
+      "An hourly view of delivery load against capacity"
+    ]
+  },
+  "btr-halo": {
+    "role": "Built by my teammates; I worked on shared packages in the same monorepo",
+    "tagline": "Warehouse management: receiving, stock and picking",
+    "summary": "The warehouse system used in ShopRaha's fulfilment centres for receiving stock, putting it away and picking orders. My teammates built this app; it's shown here because it shares the monorepo and packages I worked on.",
+    "highlights": [
+      "Receiving with barcode, quantity and expiry for each line",
+      "A visual editor for laying out aisles and racks",
+      "Support for several warehouses and several merchants"
+    ]
+  },
+  "shopraha-app": {
+    "role": "Built by my teammates at ShopRaha",
+    "tagline": "ShopRaha's grocery app for iPhone, Android and web",
+    "summary": "The customer app for ShopRaha, an online grocery in Kuwait. My teammates built this app; it's shown here because it ran on the backend, dashboards and services I worked on with them.",
+    "highlights": [
+      "Browse aisles, search in Arabic or English and fill a basket",
+      "Choose a delivery slot and pay by KNET, card or cash",
+      "Follow the order until it arrives"
+    ]
+  },
+  "shopraha-web": {
+    "role": "Built by my teammates at ShopRaha",
+    "tagline": "ShopRaha's web shop and the page that launched its app",
+    "summary": "The ShopRaha web store from 2021–22 and the landing page for the app launch, built by the team before and around my time there. It's included to show the whole product the dashboards served.",
+    "highlights": [
+      "Aisle pages, product pages and a slide-in basket",
+      "Checkout with saved addresses and delivery slots",
+      "Arabic by default, with English"
+    ]
+  },
+  "aod": {
+    "role": "Personal project",
+    "tagline": "An Android experiment: a ring of light around the camera while the phone sleeps",
+    "summary": "A small Android app I made for fun. While the screen is off, it draws a soft ring of light around the front camera, with different light patterns and colours for notifications. Since the app itself can't run in a browser, the demo is a web simulator that uses the same drawing code.",
+    "highlights": [
+      "Twelve light patterns, from a slow breath to a charging ring",
+      "Each app's notification can tint the ring with its own colour",
+      "A calibration screen, because phones don't always report where the camera really is",
+      "Kept gentle on the battery: a capped frame rate and a slight drift to protect the screen"
+    ]
+  },
+  "aiwin": {
+    "role": "Design and development",
+    "tagline": "Website and product catalogue for a Jordanian waterproofing manufacturer",
+    "summary": "A new website for AIWIN, a Jordanian maker of bitumen waterproofing and insulation products, moved from an old WordPress site to a fast static site. Engineers and contractors can find each product and download its technical data sheet.",
+    "highlights": [
+      "A page for every product, with photos and a downloadable data sheet",
+      "All the content in one place, so it's easy for the client to update",
+      "Static, so it loads quickly and costs little to host"
+    ]
+  },
+  "soho-cafe": {
+    "role": "Design and development",
+    "tagline": "A QR menu for a hotel restaurant, café and lounge in Amman",
+    "summary": "A digital menu for SOHO Midtown Hotel in Amman. Guests scan a QR code at their table and see the current menu, which comes straight from the hotel's point-of-sale system, so the staff don't have to update it twice.",
+    "highlights": [
+      "Separate menus for the restaurant, lobby, room service and minibar",
+      "Search in English and Arabic",
+      "Reads the hotel's POS system, hiding staff-only items"
+    ]
+  },
+  "heartfeltcode": {
+    "role": "Design, writing and development",
+    "tagline": "A simple site for my small consultancy for non-technical founders",
+    "summary": "The website for Heartfelt Code, where I help early-stage founders without a technical co-founder turn an idea into a working product. I kept it light: a static site with almost no JavaScript, a few case studies, and a contact form.",
+    "highlights": [
+      "Fast and simple, with almost no JavaScript",
+      "Case studies written as problem, what we built, and what happened",
+      "Light and dark themes with readable contrast"
+    ]
+  },
+  "drift-academy": {
+    "role": "Design and development",
+    "tagline": "An Arabic landing page for a drift driving school in Jordan",
+    "summary": "A one-page site for Raafat Haroun's drift academy, written in Jordanian Arabic, presenting the courses, the coach and a booking form."
+  },
+  "augment-clone": {
+    "role": "Practice project",
+    "tagline": "Practice: rebuilding an existing landing page to learn its layout",
+    "summary": "A practice exercise where I rebuilt the layout of augment.org's landing page in Next.js and Tailwind to learn from its design. The design and most of the text belong to the original site."
+  },
+  "eliteshop": {
+    "role": "Practice project",
+    "tagline": "A practice storefront with a catalogue, filters, cart and checkout",
+    "summary": "A storefront I built to practise animation and state management: a home page with deals, a filterable catalogue, a wishlist and a cart drawer. The demo adds sample products and a pretend checkout so it can be clicked through.",
+    "highlights": [
+      "Catalogue search with category, price and sort filters",
+      "Cart and wishlist that survive a page reload",
+      "Light and dark themes"
+    ]
+  },
+  "gym-pwa": {
+    "role": "Practice project",
+    "tagline": "An early experiment: a gym member app that installs on the phone",
+    "summary": "An early experiment with progressive web apps: gym members can check their membership, browse exercises and log their sets, and install it on their phone like an app.",
+    "highlights": [
+      "A simple workout logger for sets, reps and weights",
+      "Installs on the phone and opens offline"
+    ]
+  },
+  "saas-starter": {
+    "role": "Practice project",
+    "tagline": "A starting point for multi-team SaaS apps: sign-in, teams and billing",
+    "summary": "A starting point I set up for software-as-a-service apps, with sign-in, organisations, roles and billing models. It is mostly scaffolding; the demo adds a few sample pages so the layout can be explored.",
+    "highlights": [
+      "Organisations with owner, admin and member roles",
+      "A dashboard layout that works on phones and desktops"
+    ]
+  },
+  "sports-booking": {
+    "role": "Practice project",
+    "tagline": "An early prototype for booking football pitches and padel courts",
+    "summary": "An early React Native prototype for booking a football pitch, a padel court or a hall at one sports centre, in Arabic and English.",
+    "highlights": [
+      "A four-step booking flow: place, date, time and payment",
+      "Arabic and English with a language switch"
+    ]
+  }
+}

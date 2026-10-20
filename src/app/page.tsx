@@ -2,18 +2,17 @@ import Link from 'next/link';
 import { Reveal } from '@/components/Reveal';
 import { WallLabel } from '@/components/WallLabel';
 import { WorkArt } from '@/components/WorkArt';
-import { backends, catalogueNumber, rooms, storeroom, totals } from '@/lib/works';
+import { backends, catalogueNumber, rooms, storeroom } from '@/lib/works';
 import { chronology, contact, skills } from '@/data/artist';
 
-export default function Exhibition() {
-  const t = totals();
+export default function Home() {
   const hung = rooms.reduce((n, r) => n + r.works.length, 0);
 
   return (
     <>
       <section className="hero wrap" aria-labelledby="hero-title">
         <div className="hero-grid">
-          <div className="canvas" role="img" aria-label="A blue monochrome canvas with the name Ahmed Al-Salman in Arabic and English">
+          <div className="canvas" role="img" aria-label="Ahmed Al-Salman, written in Arabic and English">
             <div className="name" aria-hidden="true">
               <span className="name-ar" lang="ar">أحمد السلمان</span>
               <span className="name-en">
@@ -22,34 +21,29 @@ export default function Exhibition() {
               </span>
             </div>
             <span className="seam" aria-hidden="true" />
-            <span className="canvas-caption" aria-hidden="true">reads both ways</span>
+            <span className="canvas-caption" aria-hidden="true">
+              <span lang="ar">مرحبا</span> · hello
+            </span>
           </div>
 
           <div className="label hero-label">
             <div className="artist">Ahmed Al-Salman</div>
-            <div className="mono" style={{ color: 'var(--muted)' }}>Jordanian, works in Amman</div>
+            <div className="mono" style={{ color: 'var(--muted)' }}>Frontend developer · Amman, Jordan</div>
             <h1 id="hero-title" className="title" style={{ marginTop: 14 }}>
-              Interfaces that read both ways
+              Hi, I&rsquo;m Ahmed. I build web and mobile apps, mostly in Arabic.
             </h1>
-            <dl>
-              <dt>Year</dt>
-              <dd>2020–2026</dd>
-              <dt>Medium</dt>
-              <dd className="medium">TypeScript, React and Next.js, mostly on phones, mostly right-to-left</dd>
-              <dt>Collection</dt>
-              <dd>Collection of the artist</dd>
-            </dl>
             <p>
-              Frontend engineer. Six years of Arabic-first products for mobile operators, sports academies, labs and
-              logistics companies. Every work here opens as a running demo.
+              For the past six years I&rsquo;ve worked with small teams on apps for mobile operators, sports clubs,
+              labs and delivery companies. Below are the projects I&rsquo;ve been part of. Each one has a demo you
+              can open and try.
             </p>
           </div>
         </div>
 
         <div className="now-showing">
           <span className="eyebrow">
-            Now showing · {hung} works in {rooms.length} rooms
-            {storeroom.length ? ` · ${storeroom.length} in storage` : ''}
+            {hung} projects
+            {storeroom.length ? ` · ${storeroom.length} smaller experiments at the end` : ''}
           </span>
           {rooms.map((r) => (
             <a key={r.id} href={`#room-${r.id}`}>
@@ -65,23 +59,20 @@ export default function Exhibition() {
             <div className="wrap">
               <Reveal className="room-head">
                 <span className="room-no" aria-hidden="true">{room.numeral}</span>
-                <h2 id={`h-${room.id}`}>
-                  <span className="sr-only">Room {room.numeral}: </span>
-                  {room.title}
-                </h2>
+                <h2 id={`h-${room.id}`}>{room.title}</h2>
                 <p>{room.note}</p>
               </Reveal>
 
               {room.works.map((w, i) => (
                 <Reveal as="article" key={w.slug} className={`work${i % 2 ? ' flip' : ''}`} aria-label={w.title}>
-                  <Link href={`/work/${w.slug}/`} className="work-art" aria-label={`${w.title}: read the notes`}>
+                  <Link href={`/work/${w.slug}/`} className="work-art" aria-label={`More about ${w.title}`}>
                     <WorkArt work={w} />
                   </Link>
                   <WallLabel work={w} />
                 </Reveal>
               ))}
 
-              {room.id === 'shopraha' && backends.length > 0 && <BehindTheWalls />}
+              {room.id === 'shopraha' && backends.length > 0 && <TheServicesBehind />}
             </div>
           </section>
         ))}
@@ -90,11 +81,11 @@ export default function Exhibition() {
       {storeroom.length > 0 && (
         <section id="storeroom" className="storeroom" aria-labelledby="h-store">
           <div className="wrap">
-            <span className="eyebrow">Reserve collection · not on display</span>
-            <h2 id="h-store">The Storeroom</h2>
+            <span className="eyebrow">Smaller projects</span>
+            <h2 id="h-store">Experiments and early work</h2>
             <p className="lede">
-              Sketches, studies and starters: real code that runs, kept off the main walls because it isn&rsquo;t
-              finished to the same standard. Each one still opens as a demo.
+              Starters, practice projects and things I haven&rsquo;t finished. They&rsquo;re rougher than the work
+              above, but each one still runs.
             </p>
             <div className="crates">
               {storeroom.map((w) => {
@@ -122,19 +113,19 @@ export default function Exhibition() {
         </section>
       )}
 
-      <section id="chronology" className="chron" aria-labelledby="h-chron">
+      <section id="about" className="chron" aria-labelledby="h-about">
         <div className="wrap chron-grid">
           <Reveal>
-            <span className="eyebrow">Artist&rsquo;s statement</span>
-            <h2 id="h-chron">Chronology</h2>
+            <span className="eyebrow">About</span>
+            <h2 id="h-about">A little about me</h2>
             <div className="statement">
               <p>
-                Most of what I build is read from right to left, on a phone, by someone who arrived from an SMS link
-                and will leave if the page takes four seconds. That constraint shaped everything here.
+                Most of the people who use what I work on read Arabic, are on a phone, and don&rsquo;t have time for
+                a slow or confusing page. I try to keep things simple and quick for them.
               </p>
               <p>
-                I trained as a civil engineer, so I still think in loads and tolerances: what the interface has to
-                carry, and how far it can bend before it breaks.
+                I studied civil engineering before moving into software, and I&rsquo;ve learned a lot from the
+                teams I&rsquo;ve worked with along the way.
               </p>
             </div>
             <div className="skills">
@@ -163,10 +154,14 @@ export default function Exhibition() {
         </div>
       </section>
 
-      <section id="enquiries" className="enquiries" aria-labelledby="h-enq">
+      <section id="contact" className="enquiries" aria-labelledby="h-contact">
         <div className="wrap">
-          <span className="eyebrow">Enquiries</span>
-          <h2 id="h-enq">Commissions are open.</h2>
+          <span className="eyebrow">Contact</span>
+          <h2 id="h-contact">Say hello.</h2>
+          <p className="contact-note">
+            Whether it&rsquo;s a project, a question about something here, or just a chat about building in Arabic,
+            I&rsquo;d be glad to hear from you.
+          </p>
           <div className="contact">
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
             <a href={contact.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
@@ -177,20 +172,20 @@ export default function Exhibition() {
       <footer className="site-footer">
         <div className="wrap">
           <span>© {new Date().getFullYear()} Ahmed Al-Salman · Amman</span>
-          <span>{t.authored.toLocaleString('en')} commits by the artist across {t.works} works</span>
+          <span>Thanks for stopping by.</span>
         </div>
       </footer>
     </>
   );
 }
 
-function BehindTheWalls() {
+function TheServicesBehind() {
   return (
     <Reveal className="plaque">
-      <h3>Behind the walls</h3>
+      <h3>The services behind these apps</h3>
       <p>
-        The services these screens talked to. No demos: this is back-end and infrastructure, most of it built by
-        teammates. Where the artist&rsquo;s own commits are in there, they&rsquo;re counted.
+        Back-end and infrastructure the apps above rely on, built mostly by my teammates at ShopRaha and BTR. I list
+        them here to credit their work; where I contributed too, my commits are counted.
       </p>
       <table>
         <thead>
@@ -198,7 +193,7 @@ function BehindTheWalls() {
             <th>Repository</th>
             <th>What it does</th>
             <th className="hide-sm">Stack</th>
-            <th>Commits by the artist</th>
+            <th>My commits</th>
           </tr>
         </thead>
         <tbody>

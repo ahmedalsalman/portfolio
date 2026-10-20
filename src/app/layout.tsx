@@ -11,9 +11,9 @@ const sansAr = IBM_Plex_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500'
 const mono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--f-mono', display: 'swap' });
 
 export const metadata: Metadata = {
-  title: { default: 'Ahmed Al-Salman — Interfaces that read both ways', template: '%s — Ahmed Al-Salman' },
+  title: { default: 'Ahmed Al-Salman — Frontend developer in Amman', template: '%s — Ahmed Al-Salman' },
   description:
-    'Frontend engineer in Amman. Arabic-first, right-to-left products for telcos, sports academies, labs and logistics — hung as an exhibition, every work with a runnable demo.',
+    'Frontend developer in Amman. Web and mobile apps I have worked on, mostly in Arabic, each with a demo you can try.',
 };
 
 export const viewport: Viewport = {
@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
-        <a className="skip" href="#main">Skip to the exhibition</a>
+        <a className="skip" href="#main">Skip to content</a>
         <Spotlight />
         <SiteHeader />
         <main id="main">{children}</main>

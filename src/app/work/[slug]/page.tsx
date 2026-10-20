@@ -32,10 +32,10 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
     <article>
       <header className="detail-head wrap">
         <div className="crumbs">
-          <Link href="/#rooms" className="link">← Exhibition</Link>
+          <Link href="/#rooms" className="link">← All projects</Link>
           <span className="eyebrow">
             {catalogueNumber(work.slug)} · {work.years}
-            {!work.polished && ' · from the storeroom'}
+            {!work.polished && ' · experiment'}
           </span>
         </div>
         <h1 className="detail-title">{work.title}</h1>
@@ -48,9 +48,9 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
         {demo && (
           <div style={{ marginTop: 28, display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
             <a className="btn" href={demo.href} target="_blank" rel="noreferrer">
-              Enter the work <span aria-hidden="true">↗</span>
+              Open the demo <span aria-hidden="true">↗</span>
             </a>
-            {demo.local && <span className="tag-local">Runs locally on :{work.demo?.port} — start it first</span>}
+            {demo.local && <span className="tag-local">Runs locally on port {work.demo?.port}, so start it first</span>}
           </div>
         )}
       </header>
@@ -61,7 +61,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
             <p className="summary">{work.summary}</p>
             {work.highlights.length > 0 && (
               <>
-                <span className="eyebrow">Notes on the work</span>
+                <span className="eyebrow">What it does</span>
                 <ol className="notes" style={{ marginTop: 10 }}>
                   {work.highlights.map((h) => (
                     <li key={h}>{h}</li>
@@ -73,7 +73,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
           <dl className="factsheet">
             {work.role && (
               <div>
-                <dt>Role</dt>
+                <dt>My part</dt>
                 <dd>{work.role}</dd>
               </div>
             )}
@@ -84,7 +84,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
               </div>
             )}
             <div>
-              <dt>Medium</dt>
+              <dt>Built with</dt>
               <dd className="chips">
                 {work.stack.map((s) => (
                   <span key={s}>{s}</span>
@@ -93,19 +93,20 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
             </div>
             {(lang || work.platforms.length > 0) && (
               <div>
-                <dt>Format</dt>
+                <dt>Platforms</dt>
                 <dd>
                   {work.platforms.join(', ')}
                   {lang && <><br />{lang}</>}
                 </dd>
               </div>
             )}
-            {work.repo && (work.repo.commits >= 20 || work.repo.authored === 0) && work.repo.commits > 0 && (
+            {work.repo && work.repo.commits > 0 && work.repo.authored < work.repo.commits && (
               <div>
-                <dt>Dimensions</dt>
+                <dt>Team project</dt>
                 <dd>
-                  {work.repo.commits.toLocaleString('en')} commits
-                  {work.repo.authored > 0 ? `, ${work.repo.authored.toLocaleString('en')} by the artist` : ', team codebase'}
+                  {work.repo.authored > 0
+                    ? `Built with a team; ${work.repo.authored.toLocaleString('en')} of its ${work.repo.commits.toLocaleString('en')} commits are mine.`
+                    : 'Built by my teammates; I worked on the services and tools around it.'}
                 </dd>
               </div>
             )}
@@ -150,10 +151,10 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
         ))}
       </section>
 
-      <nav className="pager wrap" aria-label="More works">
+      <nav className="pager wrap" aria-label="More projects">
         {prev ? (
           <Link href={`/work/${prev.slug}/`}>
-            <span className="eyebrow">Previous work</span>
+            <span className="eyebrow">Previous project</span>
             <b>{prev.title}</b>
           </Link>
         ) : (
@@ -161,7 +162,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
         )}
         {next ? (
           <Link href={`/work/${next.slug}/`}>
-            <span className="eyebrow">Next work</span>
+            <span className="eyebrow">Next project</span>
             <b>{next.title}</b>
           </Link>
         ) : (
@@ -171,7 +172,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
       <footer className="site-footer">
         <div className="wrap">
           <span>© {new Date().getFullYear()} Ahmed Al-Salman · Amman</span>
-          <Link href="/#enquiries">Enquiries</Link>
+          <Link href="/#contact">Contact</Link>
         </div>
       </footer>
     </article>

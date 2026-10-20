@@ -1102,3 +1102,15 @@ main,
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+
+.canvas-caption [lang='ar'] {
+  letter-spacing: 0;
+  font-size: 13px;
+  text-transform: none;
+}
+.enquiries .contact-note {
+  max-width: 52ch;
+  margin: -8px 0 28px;
+  font-size: clamp(16px, 1.4vw, 19px);
+  color: color-mix(in srgb, var(--ikb-ink) 82%, transparent);
+}

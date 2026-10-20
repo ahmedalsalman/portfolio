@@ -11,27 +11,27 @@ export const chronology = [
     what: 'Frontend engineer',
     where: 'MediaWorld (mw3abee) · telco portals',
     detail:
-      'Arabic-first subscription portals for mobile operators: a World Cup fan portal, a vertical game feed and a four-brand digital storefront.',
+      'Working with the team on Arabic-first apps that mobile operators offer their subscribers: a World Cup fan app, a game feed and a digital voucher store.',
   },
   {
     when: '2022 — 2025',
     what: 'Frontend Lead & Full-Stack Developer',
     where: 'Btr.tech, Kuwait · remote',
     detail:
-      'Led the rebuild of the operations dashboard in Next.js and TypeScript; task time down from ~20 to ~13 minutes. Two internal platforms used daily by 50+ operations staff; order capacity up from ~1,000 to 1,200 a day.',
+      'Worked with the operations and logistics teams on the internal dashboards they use every day, including a rebuild of the operations dashboard in Next.js and TypeScript, and later helped guide the frontend work.',
   },
   {
     when: '2021 — 2022',
     what: 'Full-Stack Developer',
     where: 'CODED Factory, Kuwait · remote',
     detail:
-      'Three production web apps. Customised Saleor for peak loads (+40% throughput); GraphQL integrations that cut over-fetching.',
+      'Worked on client web apps and on the Saleor-based e-commerce platform behind ShopRaha, learning a lot from the senior developers there.',
   },
   {
     when: '2020 — 2021',
     what: 'Junior Developer',
     where: 'Markabte, Jordan',
-    detail: 'React and Material UI on the front, Django REST on the back, first AWS deployments.',
+    detail: 'My first developer job: React and Material UI, a little Django REST, and my first AWS deployments.',
   },
   { when: '2020', what: 'Full Stack Web Development', where: 'CODED bootcamp, Kuwait' },
   { when: '2019', what: 'B.Sc. Civil Engineering', where: 'Jordan University of Science and Technology' },
@@ -40,6 +40,6 @@ export const chronology = [
 export const skills = [
   { group: 'Front', items: 'React, Next.js, TypeScript, React Native / Expo, Tailwind, Framer Motion, RTL & i18n, PWA' },
   { group: 'Back', items: 'Node, Django & DRF, GraphQL, PostgreSQL, Supabase, Cloudflare D1' },
-  { group: 'Ship', items: 'Cloudflare Workers, AWS & CDK, Docker, GitHub Actions, Playwright' },
+  { group: 'Deploy', items: 'Cloudflare Workers, AWS & CDK, Docker, GitHub Actions, Playwright' },
   { group: 'Speaks', items: 'Arabic (native), English' },
 ];
