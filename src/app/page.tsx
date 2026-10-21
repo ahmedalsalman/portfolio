@@ -30,12 +30,11 @@ export default function Home() {
             <div className="artist">Ahmed Al-Salman</div>
             <div className="mono" style={{ color: 'var(--muted)' }}>Frontend developer · Amman, Jordan</div>
             <h1 id="hero-title" className="title" style={{ marginTop: 14 }}>
-              Hi, I&rsquo;m Ahmed. I build web and mobile apps, mostly in Arabic.
+              I build fast, Arabic-first web and mobile apps.
             </h1>
             <p>
-              For the past six years I&rsquo;ve worked with small teams on apps for mobile operators, sports clubs,
-              labs and delivery companies. Below are the projects I&rsquo;ve been part of. Each one has a demo you
-              can open and try.
+              Six years shipping products for mobile operators, sports clubs, labs and logistics companies, from the
+              first sketch to production. Every project below runs as a live demo, so you can try it yourself.
             </p>
           </div>
         </div>
@@ -43,7 +42,7 @@ export default function Home() {
         <div className="now-showing">
           <span className="eyebrow">
             {hung} projects
-            {storeroom.length ? ` · ${storeroom.length} smaller experiments at the end` : ''}
+            {storeroom.length ? ` · ${storeroom.length} experiments` : ''}
           </span>
           {rooms.map((r) => (
             <a key={r.id} href={`#room-${r.id}`}>
@@ -81,11 +80,11 @@ export default function Home() {
       {storeroom.length > 0 && (
         <section id="storeroom" className="storeroom" aria-labelledby="h-store">
           <div className="wrap">
-            <span className="eyebrow">Smaller projects</span>
+            <span className="eyebrow">Experiments</span>
             <h2 id="h-store">Experiments and early work</h2>
             <p className="lede">
-              Starters, practice projects and things I haven&rsquo;t finished. They&rsquo;re rougher than the work
-              above, but each one still runs.
+              Prototypes and starters where I tried out new tools and ideas before using them on client work. Each
+              one runs as a demo.
             </p>
             <div className="crates">
               {storeroom.map((w) => {
@@ -117,15 +116,17 @@ export default function Home() {
         <div className="wrap chron-grid">
           <Reveal>
             <span className="eyebrow">About</span>
-            <h2 id="h-about">A little about me</h2>
+            <h2 id="h-about">How I work</h2>
             <div className="statement">
               <p>
-                Most of the people who use what I work on read Arabic, are on a phone, and don&rsquo;t have time for
-                a slow or confusing page. I try to keep things simple and quick for them.
+                I build for people who read right to left, on a phone, with no patience for a slow page. That shapes
+                every decision: lean pages, clear flows, and Arabic designed in from the start rather than translated
+                at the end.
               </p>
               <p>
-                I studied civil engineering before moving into software, and I&rsquo;ve learned a lot from the
-                teams I&rsquo;ve worked with along the way.
+                I came to software from civil engineering, and I still work like an engineer: understand the
+                constraints, then build something that holds up. I do my best work in small teams, owning a product
+                end to end.
               </p>
             </div>
             <div className="skills">
@@ -157,10 +158,10 @@ export default function Home() {
       <section id="contact" className="enquiries" aria-labelledby="h-contact">
         <div className="wrap">
           <span className="eyebrow">Contact</span>
-          <h2 id="h-contact">Say hello.</h2>
+          <h2 id="h-contact">Let&rsquo;s build something.</h2>
           <p className="contact-note">
-            Whether it&rsquo;s a project, a question about something here, or just a chat about building in Arabic,
-            I&rsquo;d be glad to hear from you.
+            Have a product in mind, or a team that needs a frontend developer who works just as well in Arabic as in
+            English? Get in touch.
           </p>
           <div className="contact">
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
@@ -172,7 +173,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="wrap">
           <span>© {new Date().getFullYear()} Ahmed Al-Salman · Amman</span>
-          <span>Thanks for stopping by.</span>
+          <span>Built in Amman, in Arabic and English.</span>
         </div>
       </footer>
     </>
@@ -184,8 +185,8 @@ function TheServicesBehind() {
     <Reveal className="plaque">
       <h3>The services behind these apps</h3>
       <p>
-        Back-end and infrastructure the apps above rely on, built mostly by my teammates at ShopRaha and BTR. I list
-        them here to credit their work; where I contributed too, my commits are counted.
+        The back-end and infrastructure behind these apps, built with my teammates at ShopRaha and BTR. Where I
+        contributed, my commits are counted.
       </p>
       <table>
         <thead>

@@ -50,7 +50,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
             <a className="btn" href={demo.href} target="_blank" rel="noreferrer">
               Open the demo <span aria-hidden="true">↗</span>
             </a>
-            {demo.local && <span className="tag-local">Runs locally on port {work.demo?.port}, so start it first</span>}
+            {demo.local && <span className="tag-local">Runs locally on port {work.demo?.port}</span>}
           </div>
         )}
       </header>
@@ -105,8 +105,8 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
                 <dt>Team project</dt>
                 <dd>
                   {work.repo.authored > 0
-                    ? `Built with a team; ${work.repo.authored.toLocaleString('en')} of its ${work.repo.commits.toLocaleString('en')} commits are mine.`
-                    : 'Built by my teammates; I worked on the services and tools around it.'}
+                    ? `I wrote ${work.repo.authored.toLocaleString('en')} of its ${work.repo.commits.toLocaleString('en')} commits.`
+                    : 'Built by my teammates, on the backend and dashboards I worked on.'}
                 </dd>
               </div>
             )}

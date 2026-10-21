@@ -70,7 +70,7 @@ export function WallLabel({ work, detailLink = true }: { work: Work; detailLink?
         )}
         {detailLink && (
           <Link className="link" href={`/work/${work.slug}/`}>
-            More about it
+            Details
           </Link>
         )}
       </div>

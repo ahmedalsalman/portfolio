@@ -11,27 +11,27 @@ export const chronology = [
     what: 'Frontend engineer',
     where: 'MediaWorld (mw3abee) · telco portals',
     detail:
-      'Working with the team on Arabic-first apps that mobile operators offer their subscribers: a World Cup fan app, a game feed and a digital voucher store.',
+      'Building the Arabic-first apps mobile operators sell to their subscribers: a World Cup fan app, a game feed, and a voucher store running under four operator brands.',
   },
   {
     when: '2022 — 2025',
     what: 'Frontend Lead & Full-Stack Developer',
     where: 'Btr.tech, Kuwait · remote',
     detail:
-      'Worked with the operations and logistics teams on the internal dashboards they use every day, including a rebuild of the operations dashboard in Next.js and TypeScript, and later helped guide the frontend work.',
+      'Built the internal dashboards 50+ operations and logistics staff use every day. Led the rebuild of the operations dashboard in Next.js and TypeScript, cutting a typical task from about 20 minutes to 13.',
   },
   {
     when: '2021 — 2022',
     what: 'Full-Stack Developer',
     where: 'CODED Factory, Kuwait · remote',
     detail:
-      'Worked on client web apps and on the Saleor-based e-commerce platform behind ShopRaha, learning a lot from the senior developers there.',
+      'Shipped three production web apps and customised the Saleor e-commerce platform behind ShopRaha to handle peak traffic.',
   },
   {
     when: '2020 — 2021',
     what: 'Junior Developer',
     where: 'Markabte, Jordan',
-    detail: 'My first developer job: React and Material UI, a little Django REST, and my first AWS deployments.',
+    detail: 'Built React and Material UI interfaces, supported the Django REST backend, and handled AWS deployments.',
   },
   { when: '2020', what: 'Full Stack Web Development', where: 'CODED bootcamp, Kuwait' },
   { when: '2019', what: 'B.Sc. Civil Engineering', where: 'Jordan University of Science and Technology' },

@@ -13,7 +13,7 @@ const mono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400', '500'], variabl
 export const metadata: Metadata = {
   title: { default: 'Ahmed Al-Salman — Frontend developer in Amman', template: '%s — Ahmed Al-Salman' },
   description:
-    'Frontend developer in Amman. Web and mobile apps I have worked on, mostly in Arabic, each with a demo you can try.',
+    'Frontend developer in Amman building fast, Arabic-first web and mobile apps. Every project runs as a live demo.',
 };
 
 export const viewport: Viewport = {
