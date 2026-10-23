@@ -17,7 +17,7 @@
       "id": "operations",
       "title": "Software that runs a business",
       "note": "Products for people who use them every day: gym owners, lab technicians, nursery staff. Offline-first where the wifi is bad, bilingual where the staff are.",
-      "works": ["kinetiq", "ims", "roost", "hax-oi", "lumio"]
+      "works": ["kinetiq", "ims", "roost", "hax-oi", "lumio", "lumio-website"]
     },
     {
       "id": "shopraha",

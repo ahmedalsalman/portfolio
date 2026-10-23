@@ -1803,6 +1803,114 @@
     ]
   },
   {
+    "slug": "lumio-website",
+    "title": "Lumio website",
+    "titleNative": "لوميو",
+    "tagline": "Arabic marketing site for the Lumio kids' app, with store links, QR download and account deletion",
+    "summary": "The public site for Lumio, the Arabic kids' entertainment and education app: shows, characters, a parents' safety section, the privacy policy and the account-deletion page Google Play requires. Arabic right-to-left, Next.js 16 on Cloudflare Workers, plain CSS modules.",
+    "role": "Frontend developer at Media World",
+    "org": "Media World (mw3abee)",
+    "years": "2026",
+    "category": "client",
+    "platforms": [
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "CSS Modules",
+      "Server Actions",
+      "Cloudflare Workers (OpenNext)"
+    ],
+    "highlights": [
+      "One /download link sends iPhones to the App Store and Android to Google Play, for QR codes, SMS and ads",
+      "Desktop visitors get a QR code generated on the page, so they can hand off to their phone",
+      "Account-deletion form built as a server action, with phone validation, a honeypot, per-client rate limiting and a readable request ID",
+      "Store badges switch to a 'coming soon' tag automatically when a store ID is missing",
+      "Privacy policy, sitemap, Open Graph image, web manifest and llms.txt generated from one site config"
+    ],
+    "locales": [
+      "ar"
+    ],
+    "rtl": true,
+    "accent": "#1E2A5A",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "Production-ready marketing site with real copy and artwork; smaller in scope than the app itself.",
+    "demo": {
+      "port": 4291,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/lumio-website-demo"
+    },
+    "repo": {
+      "remote": "https://github.com/mw3abee/lumio-website.git",
+      "commits": 30,
+      "authored": 30
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/lumio-website/01-home-mobile.webp",
+        "label": "Home",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/lumio-website/02-shows-mobile.webp",
+        "label": "Shows",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/lumio-website/03-characters-mobile.webp",
+        "label": "Characters",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/lumio-website/04-parents-mobile.webp",
+        "label": "For parents",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/lumio-website/08-deletion-request-mobile.webp",
+        "label": "Account deletion request",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/lumio-website/05-home-desktop.webp",
+        "label": "Home, desktop",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/lumio-website/06-shows-desktop.webp",
+        "label": "Shows, desktop",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/lumio-website/07-download-desktop.webp",
+        "label": "Download with QR code",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      }
+    ]
+  },
+  {
     "slug": "roost",
     "title": "Roost",
     "titleNative": null,

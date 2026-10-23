@@ -1,6 +1,5 @@
 {
   "_readme": "Hand-written copy for each project, in Ahmed's own voice: confident and direct, crediting teams and clients. Overrides role / tagline / summary / highlights from the synced project.json files, so re-running `npm run sync` never undoes it. Leave a field out to fall back to the synced text.",
-
   "yalla-kora": {
     "role": "Frontend developer at mw3abee",
     "tagline": "The World Cup 2026 app for Arabic and Kurdish football fans",
@@ -42,6 +41,17 @@
       "Daily watching unlocks characters children collect",
       "Playback progress saved on the device and synced later, so nothing is lost offline",
       "Every colour and size comes from design tokens, enforced in the build"
+    ]
+  },
+  "lumio-website": {
+    "role": "Frontend developer at Media World",
+    "tagline": "The public website for the Lumio kids’ app, in Arabic",
+    "summary": "The site parents land on before they install Lumio: the shows, the characters, how the app keeps children safe, and the pages the app stores require. I built it in Next.js, right-to-left, with one config file driving the store links, legal pages and social previews.",
+    "highlights": [
+      "One download link that sends iPhones to the App Store and Android phones to Google Play, used on QR codes, SMS and ads",
+      "A QR code on desktop so parents can move straight to their phone",
+      "An account-deletion form with validation, spam protection, rate limiting and a request ID that can be read out over the phone",
+      "Store badges that switch to “coming soon” on their own when a listing isn’t live yet"
     ]
   },
   "first-step": {
