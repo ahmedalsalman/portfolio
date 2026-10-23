@@ -1753,49 +1753,49 @@
     },
     "repo": {
       "remote": "https://github.com/mw3abee/lumio-mobile-app",
-      "commits": 117,
-      "authored": 117
+      "commits": 138,
+      "authored": 138
     },
     "confidential": true,
     "shots": [
       {
         "src": "/works/lumio/01-home-mobile.webp",
-        "label": "Home: hero, continue watching, show rails",
+        "label": "Home: hero banners, continue watching, show rails",
         "kind": "mobile",
         "width": 780,
         "height": 1688
       },
       {
         "src": "/works/lumio/02-shows-mobile.webp",
-        "label": "برامجي: show catalogue",
+        "label": "برامجي: the show catalogue by age",
         "kind": "mobile",
         "width": 780,
         "height": 1688
       },
       {
         "src": "/works/lumio/03-show-detail-mobile.webp",
-        "label": "Show detail with seasons",
+        "label": "Show detail: free and premium episodes",
         "kind": "mobile",
         "width": 780,
         "height": 1688
       },
       {
-        "src": "/works/lumio/04-episodes-mobile.webp",
-        "label": "Season episodes with free/premium tags",
+        "src": "/works/lumio/04-player-mobile.webp",
+        "label": "Player with reactions and up next",
         "kind": "mobile",
         "width": 780,
         "height": 1688
       },
       {
-        "src": "/works/lumio/05-characters-mobile.webp",
-        "label": "شخصياتي: streak and character unlocks",
+        "src": "/works/lumio/05-shorts-mobile.webp",
+        "label": "Shorts: vertical clip feed",
         "kind": "mobile",
         "width": 780,
         "height": 1688
       },
       {
-        "src": "/works/lumio/06-notifications-mobile.webp",
-        "label": "Notifications feed",
+        "src": "/works/lumio/06-characters-mobile.webp",
+        "label": "شخصياتي: weekly streak and per-show unlock progress",
         "kind": "mobile",
         "width": 780,
         "height": 1688
