@@ -115,6 +115,11 @@ export default function Home() {
       <section id="about" className="chron" aria-labelledby="h-about">
         <div className="wrap chron-grid">
           <Reveal>
+            <figure className="portrait">
+              <div className="frame">
+                <img src="/about/ahmed.webp" alt="Ahmed Al-Salman, smiling, standing by a bicycle on a tree-lined path in evening sunlight" width={520} height={650} loading="lazy" />
+              </div>
+            </figure>
             <span className="eyebrow">About</span>
             <h2 id="h-about">How I work</h2>
             <div className="statement">

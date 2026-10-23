@@ -1114,3 +1114,17 @@ main,
   font-size: clamp(16px, 1.4vw, 19px);
   color: color-mix(in srgb, var(--ikb-ink) 82%, transparent);
 }
+
+/* Portrait in the About section: hung like the works, in the same mat */
+.portrait {
+  margin: 0 0 clamp(28px, 4vw, 44px);
+  width: min(300px, 72%);
+}
+.portrait .frame {
+  padding: clamp(8px, 1.2vw, 14px);
+}
+.portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
