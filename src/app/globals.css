@@ -1,18 +1,22 @@
 /* ─────────────────────────────────────────────────────────────
-   Tokens. The page is a gallery wall; the one loud thing is
-   International Klein Blue, used only where something is "on show".
+   Tokens. The page is a gallery wall; the one loud thing is Slack's
+   brand primary, Aubergine, used only where something is "on show".
+   Per Slack's guidelines: Aubergine Active for hover, Aubergine Null
+   for the dark-theme field, and no logo colours on text or fields.
    ───────────────────────────────────────────────────────────── */
 :root {
-  --wall: #eceef1;
-  --wall-2: #e2e5ea;
-  --plinth: #f6f7f9;
-  --ink: #121419;
-  --muted: #5d6472;
-  --rule: #c9ced6;
-  --ikb: #002fa7;
-  --ikb-ink: #f2f4ff;
-  --shadow: 0 1px 0 rgb(0 0 0 / 0.04), 0 18px 40px -18px rgb(18 20 25 / 0.35), 0 40px 80px -40px rgb(18 20 25 / 0.25);
-  --spot: rgb(255 255 255 / 0.55);
+  --wall: #f2eff0;
+  --wall-2: #e7e2e4;
+  --plinth: #fbfafa;
+  --ink: #1d1c1d;
+  --muted: #5f5a5e;
+  --rule: #d9d3d6;
+  --accent: #4a154b; /* Aubergine */
+  --accent-hover: #7c3085; /* Aubergine Active */
+  --accent-ink: #ffffff;
+  --accent-text: #4a154b;
+  --shadow: 0 1px 0 rgb(0 0 0 / 0.04), 0 18px 40px -18px rgb(29 28 29 / 0.35), 0 40px 80px -40px rgb(29 28 29 / 0.25);
+  --spot: rgb(124 48 133 / 0.09);
 
   --f-display: 'Bodoni Moda', serif;
   --f-sans: 'IBM Plex Sans', system-ui, sans-serif;
@@ -27,30 +31,34 @@
 /* Gallery after hours */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --wall: #0d0f14;
-    --wall-2: #151922;
-    --plinth: #11141b;
-    --ink: #e7e9ee;
-    --muted: #8e95a3;
-    --rule: #262b36;
-    --ikb: #1b45d6;
-    --ikb-ink: #f2f4ff;
+    --wall: #1a1d21;
+    --wall-2: #222529;
+    --plinth: #1d2024;
+    --ink: #e6e6e7;
+    --muted: #9c9da0;
+    --rule: #33363a;
+    --accent: #611f69; /* Aubergine Null */
+    --accent-hover: #7c3085;
+    --accent-ink: #ffffff;
+    --accent-text: #d3a6db; /* aubergine can't be read on a dark wall */
     --shadow: 0 1px 0 rgb(255 255 255 / 0.03), 0 24px 60px -24px rgb(0 0 0 / 0.9);
-    --spot: rgb(120 140 255 / 0.09);
+    --spot: rgb(124 48 133 / 0.12);
     color-scheme: dark;
   }
 }
 :root[data-theme='dark'] {
-  --wall: #0d0f14;
-  --wall-2: #151922;
-  --plinth: #11141b;
-  --ink: #e7e9ee;
-  --muted: #8e95a3;
-  --rule: #262b36;
-  --ikb: #1b45d6;
-  --ikb-ink: #f2f4ff;
+  --wall: #1a1d21;
+  --wall-2: #222529;
+  --plinth: #1d2024;
+  --ink: #e6e6e7;
+  --muted: #9c9da0;
+  --rule: #33363a;
+  --accent: #611f69;
+  --accent-hover: #7c3085;
+  --accent-ink: #ffffff;
+  --accent-text: #d3a6db;
   --shadow: 0 1px 0 rgb(255 255 255 / 0.03), 0 24px 60px -24px rgb(0 0 0 / 0.9);
-  --spot: rgb(120 140 255 / 0.09);
+  --spot: rgb(124 48 133 / 0.12);
   color-scheme: dark;
 }
 
@@ -83,13 +91,13 @@ a {
   color: inherit;
 }
 :focus-visible {
-  outline: 2px solid var(--ikb);
+  outline: 2px solid var(--accent-text);
   outline-offset: 3px;
   border-radius: 2px;
 }
 ::selection {
-  background: var(--ikb);
-  color: var(--ikb-ink);
+  background: var(--accent);
+  color: var(--accent-ink);
 }
 [lang='ar'],
 .ar {
@@ -100,8 +108,8 @@ a {
   left: -9999px;
   top: 8px;
   z-index: 100;
-  background: var(--ikb);
-  color: var(--ikb-ink);
+  background: var(--accent);
+  color: var(--accent-ink);
   padding: 8px 14px;
 }
 .skip:focus {
@@ -245,8 +253,8 @@ main,
 .canvas {
   position: relative;
   aspect-ratio: 16 / 10;
-  background: var(--ikb);
-  color: var(--ikb-ink);
+  background: var(--accent);
+  color: var(--accent-ink);
   box-shadow: var(--shadow);
   overflow: hidden;
   isolation: isolate;
@@ -372,7 +380,7 @@ main,
   font-size: 10px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  background: var(--ikb);
+  background: var(--accent);
   padding: 6px 10px;
   white-space: nowrap;
   opacity: 0;
@@ -474,7 +482,7 @@ main,
 }
 .room-no {
   font: italic 400 clamp(72px, 12vw, 180px) / 0.8 var(--f-display);
-  color: var(--ikb);
+  color: var(--accent-text);
   letter-spacing: -0.03em;
 }
 .room-head h2 {
@@ -617,12 +625,12 @@ main,
   letter-spacing: 0.04em;
   text-decoration: none;
   padding: 9px 14px;
-  background: var(--ikb);
-  color: var(--ikb-ink);
+  background: var(--accent);
+  color: var(--accent-ink);
   transition: transform 0.2s var(--ease), filter 0.2s;
 }
 .btn:hover {
-  filter: brightness(1.15);
+  background: var(--accent-hover);
 }
 .btn:active {
   transform: translateY(1px);
@@ -858,8 +866,8 @@ main,
 
 /* ───────────── Enquiries / footer ───────────── */
 .enquiries {
-  background: var(--ikb);
-  color: var(--ikb-ink);
+  background: var(--accent);
+  color: var(--accent-ink);
   padding-block: clamp(64px, 10vw, 140px);
   position: relative;
   overflow: hidden;
@@ -876,7 +884,7 @@ main,
   position: relative;
 }
 .enquiries .eyebrow {
-  color: color-mix(in srgb, var(--ikb-ink) 70%, transparent);
+  color: color-mix(in srgb, var(--accent-ink) 70%, transparent);
 }
 .enquiries h2 {
   margin: 14px 0 28px;
@@ -892,10 +900,10 @@ main,
 .enquiries .contact a {
   font: 400 clamp(16px, 1.6vw, 20px) / 1.4 var(--f-mono);
   text-decoration: none;
-  border-bottom: 1px solid color-mix(in srgb, var(--ikb-ink) 40%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-ink) 40%, transparent);
 }
 .enquiries .contact a:hover {
-  border-color: var(--ikb-ink);
+  border-color: var(--accent-ink);
 }
 .site-footer {
   padding-block: 22px;
@@ -930,7 +938,7 @@ main,
   display: block;
   margin-top: 10px;
   font: 600 clamp(28px, 4.5vw, 64px) / 1.2 var(--f-kufi), sans-serif;
-  color: var(--ikb);
+  color: var(--accent-text);
 }
 .detail-tagline {
   margin: 22px 0 0;
@@ -973,7 +981,7 @@ main,
   left: 0;
   top: 15px;
   font: italic 400 18px/1 var(--f-display);
-  color: var(--ikb);
+  color: var(--accent-text);
 }
 .factsheet {
   display: grid;
@@ -1056,7 +1064,7 @@ main,
   font: italic 400 clamp(22px, 3vw, 40px) / 1.05 var(--f-display);
 }
 .pager a:hover b {
-  color: var(--ikb);
+  color: var(--accent-text);
 }
 
 /* ───────────── Reveal on scroll ───────────── */
@@ -1112,7 +1120,7 @@ main,
   max-width: 52ch;
   margin: -8px 0 28px;
   font-size: clamp(16px, 1.4vw, 19px);
-  color: color-mix(in srgb, var(--ikb-ink) 82%, transparent);
+  color: color-mix(in srgb, var(--accent-ink) 82%, transparent);
 }
 
 /* Portrait in the About section: hung like the works, in the same mat */
