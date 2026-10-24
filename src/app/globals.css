@@ -334,6 +334,8 @@ main,
   font: 700 12.5cqi / 1.1 var(--f-kufi), sans-serif;
   letter-spacing: 0;
   animation: from-right 1.2s 0.5s var(--ease) both;
+  margin-block: -20px;
+  padding-block: 20px;
 }
 .name-en {
   justify-self: start;

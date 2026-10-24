@@ -11,7 +11,7 @@ export const chronology = [
     what: 'Frontend engineer',
     where: 'MediaWorld (mw3abee) · telco portals',
     detail:
-      'Building the Arabic-first apps mobile operators sell to their subscribers: a World Cup fan app, a game feed, and a voucher store running under four operator brands.',
+      'Building the consumer apps that mobile operators across the Middle East and Africa sell to their subscribers: a World Cup fan app, a game feed, and a voucher store running under four operator brands.',
   },
   {
     when: '2022 — 2025',
@@ -38,8 +38,8 @@ export const chronology = [
 ];
 
 export const skills = [
-  { group: 'Front', items: 'React, Next.js, TypeScript, React Native / Expo, Tailwind, Framer Motion, RTL & i18n, PWA' },
+  { group: 'Front', items: 'React, Next.js, TypeScript, React Native / Expo, Tailwind, Framer Motion, internationalisation (i18n, RTL), PWA' },
   { group: 'Back', items: 'Node, Django & DRF, GraphQL, PostgreSQL, Supabase, Cloudflare D1' },
   { group: 'Deploy', items: 'Cloudflare Workers, AWS & CDK, Docker, GitHub Actions, Playwright' },
-  { group: 'Speaks', items: 'Arabic (native), English' },
+  { group: 'Speaks', items: 'English (professional), Arabic (native)' },
 ];

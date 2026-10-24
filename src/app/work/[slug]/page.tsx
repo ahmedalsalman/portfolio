@@ -171,7 +171,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
       </nav>
       <footer className="site-footer">
         <div className="wrap">
-          <span>© {new Date().getFullYear()} Ahmed Al-Salman · Amman</span>
+          <span>© {new Date().getFullYear()} Ahmed Al-Salman</span>
           <Link href="/#contact">Contact</Link>
         </div>
       </footer>

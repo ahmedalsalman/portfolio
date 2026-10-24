@@ -4,13 +4,13 @@
     {
       "id": "carrier",
       "title": "Made for the carrier",
-      "note": "Arabic-first portals sold through mobile operators across the Middle East and Africa. Visitors arrive on a phone, often on a slow connection, and are billed through their SIM. Every screen is built right-to-left first.",
+      "note": "Consumer apps that mobile operators sell to their subscribers, from Iraq to Senegal. People arrive from a text message, on a phone and often on a slow connection, and pay through their phone bill, so every screen has to load fast and make sense at a glance. Between them they ship in four languages and both reading directions.",
       "works": ["yalla-kora", "snap-games", "3abee"]
     },
     {
       "id": "courts",
       "title": "Keeping the courts booked",
-      "note": "One sports academy in Amman, four surfaces: a staff portal, a booking site for customers, a staff phone app, and a tennis variant built for another club.",
+      "note": "One sports academy, four surfaces: a staff portal, a booking site for customers, a staff phone app, and a tennis variant built for another club.",
       "works": ["first-step", "first-step-customer", "first-step-mobile", "tennis-booking"]
     },
     {

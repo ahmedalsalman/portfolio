@@ -2,7 +2,7 @@
   "_readme": "Hand-written copy for each project, in Ahmed's own voice: confident and direct, crediting teams and clients. Overrides role / tagline / summary / highlights from the synced project.json files, so re-running `npm run sync` never undoes it. Leave a field out to fall back to the synced text.",
   "yalla-kora": {
     "role": "Frontend developer at mw3abee",
-    "tagline": "The World Cup 2026 app for Arabic and Kurdish football fans",
+    "tagline": "A World Cup 2026 app for football fans, sold through mobile operators",
     "summary": "A phone-first football app that mobile operators sell to their subscribers: live scores, fixtures, match centres, predictions and a daily quiz. Fans arrive from a text message on a mobile connection, so I built it to load fast and read naturally in Arabic and Kurdish, under four operator brands.",
     "highlights": [
       "Match centres organised into focused tabs: events, stats, line-ups and head-to-head",
@@ -34,7 +34,7 @@
   },
   "lumio": {
     "role": "Mobile developer at Media World",
-    "tagline": "A kids' streaming app in Arabic: shows, short clips and characters to collect",
+    "tagline": "A kids' streaming app: shows, short clips and characters to collect",
     "summary": "A streaming app for Arabic-speaking children aged three to eight, with a PIN-protected area for parents. I built it in React Native from the team's design system, right-to-left from day one, with progress that survives a weak connection.",
     "highlights": [
       "Shows organised by season, plus a short-clip feed made for small hands",
@@ -45,7 +45,7 @@
   },
   "lumio-website": {
     "role": "Frontend developer at Media World",
-    "tagline": "The public website for the Lumio kids’ app, in Arabic",
+    "tagline": "The public website for the Lumio kids’ app",
     "summary": "The site parents land on before they install Lumio: the shows, the characters, how the app keeps children safe, and the pages the app stores require. I built it in Next.js, right-to-left, with one config file driving the store links, legal pages and social previews.",
     "highlights": [
       "One download link that sends iPhones to the App Store and Android phones to Google Play, used on QR codes, SMS and ads",
@@ -56,7 +56,7 @@
   },
   "first-step": {
     "role": "Designed and built it",
-    "tagline": "The staff portal that runs a football, padel and tennis academy in Amman",
+    "tagline": "The staff portal that runs a football, padel and tennis academy",
     "summary": "First Step Academy's staff run their day from this portal: booking fields, checking availability, and tracking payments and expenses, all in Arabic. I designed the booking flow to be fast enough to use while a customer waits at the desk.",
     "highlights": [
       "A step-by-step booking flow with live availability per field in half-hour slots",
@@ -108,7 +108,7 @@
   },
   "ims": {
     "role": "Designed and built it",
-    "tagline": "Lab inventory that tracks every lot and expiry date, in English and Arabic",
+    "tagline": "Lab inventory that tracks every lot and expiry date",
     "summary": "An inventory system for hospital laboratories, where staff need to know what's on the shelf, what expires soon and what to order next. It recommends which lot to use first, explains its reorder suggestions, and works fully in English and Arabic.",
     "highlights": [
       "Recommends the lot that expires first, and records a reason for any override",
@@ -252,7 +252,7 @@
   },
   "drift-academy": {
     "role": "Designed and built it",
-    "tagline": "An Arabic landing page for a drift driving school in Jordan",
+    "tagline": "A landing page for a drift driving school",
     "summary": "A one-page site for Raafat Haroun's drift academy, written in Jordanian Arabic, presenting the courses, the coach and a booking form."
   },
   "augment-clone": {

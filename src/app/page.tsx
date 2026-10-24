@@ -28,13 +28,14 @@ export default function Home() {
 
           <div className="label hero-label">
             <div className="artist">Ahmed Al-Salman</div>
-            <div className="mono" style={{ color: 'var(--muted)' }}>Frontend developer · Amman, Jordan</div>
+            <div className="mono" style={{ color: 'var(--muted)' }}>Frontend developer · based in Amman, working remotely</div>
             <h1 id="hero-title" className="title" style={{ marginTop: 14 }}>
-              I build fast, Arabic-first web and mobile apps.
+              I build fast web and mobile apps, from consumer products to the tools that run a business.
             </h1>
             <p>
               Six years shipping products for mobile operators, sports clubs, labs and logistics companies, from the
-              first sketch to production. Every project below runs as a live demo, so you can try it yourself.
+              first sketch to production, most of it remotely with teams in other countries. Every project below runs
+              as a live demo, so you can try it yourself.
             </p>
           </div>
         </div>
@@ -124,9 +125,10 @@ export default function Home() {
             <h2 id="h-about">How I work</h2>
             <div className="statement">
               <p>
-                I build for people who read right to left, on a phone, with no patience for a slow page. That shapes
-                every decision: lean pages, clear flows, and Arabic designed in from the start rather than translated
-                at the end.
+                I build for real conditions: a phone on a weak connection, a user in a hurry, an interface that has
+                to work in more than one language. That shapes every decision: lean pages, clear flows, and
+                internationalisation designed in from the start. I&rsquo;ve shipped products in English, Arabic,
+                French and Kurdish, in both reading directions.
               </p>
               <p>
                 I came to software from civil engineering, and I still work like an engineer: understand the
@@ -165,8 +167,8 @@ export default function Home() {
           <span className="eyebrow">Contact</span>
           <h2 id="h-contact">Let&rsquo;s build something.</h2>
           <p className="contact-note">
-            Have a product in mind, or a team that needs a frontend developer who works just as well in Arabic as in
-            English? Get in touch.
+            Have a product in mind, or a team that needs a frontend developer who can own a feature from design to
+            production? Get in touch. I work remotely with teams anywhere.
           </p>
           <div className="contact">
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
@@ -177,8 +179,8 @@ export default function Home() {
       </section>
       <footer className="site-footer">
         <div className="wrap">
-          <span>© {new Date().getFullYear()} Ahmed Al-Salman · Amman</span>
-          <span>Built in Amman, in Arabic and English.</span>
+          <span>© {new Date().getFullYear()} Ahmed Al-Salman</span>
+          <span>Based in Amman · open to remote work worldwide</span>
         </div>
       </footer>
     </>

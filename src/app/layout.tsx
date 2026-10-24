@@ -11,9 +11,9 @@ const sansAr = IBM_Plex_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500'
 const mono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--f-mono', display: 'swap' });
 
 export const metadata: Metadata = {
-  title: { default: 'Ahmed Al-Salman — Frontend developer in Amman', template: '%s — Ahmed Al-Salman' },
+  title: { default: 'Ahmed Al-Salman — Frontend developer', template: '%s — Ahmed Al-Salman' },
   description:
-    'Frontend developer in Amman building fast, Arabic-first web and mobile apps. Every project runs as a live demo.',
+    'Frontend developer building fast web and mobile apps, from consumer products to internal tools. Based in Amman, working remotely. Every project runs as a live demo.',
 };
 
 export const viewport: Viewport = {
