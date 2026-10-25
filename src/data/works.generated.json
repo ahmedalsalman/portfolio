@@ -2454,42 +2454,42 @@
     "shots": [
       {
         "src": "/works/snap-games/01-feed-mobile.webp",
-        "label": "Swipe-to-play feed",
+        "label": "Swipe-to-play feed: Car Coin Hunt",
         "kind": "mobile",
         "width": 780,
         "height": 1688
       },
       {
         "src": "/works/snap-games/02-home-mobile.webp",
-        "label": "Home: level, milestones, points and streak",
+        "label": "Home catalogue rails by category",
         "kind": "mobile",
         "width": 780,
         "height": 1688
       },
       {
-        "src": "/works/snap-games/03-leaderboard-mobile.webp",
-        "label": "Play-time leaderboard",
+        "src": "/works/snap-games/03-category-mobile.webp",
+        "label": "Category page: puzzles",
         "kind": "mobile",
         "width": 780,
         "height": 1688
       },
       {
         "src": "/works/snap-games/04-game-mobile.webp",
-        "label": "Game frame with landscape rotation prompt",
+        "label": "In-app game frame: Tower Builder",
         "kind": "mobile",
         "width": 780,
         "height": 1688
       },
       {
-        "src": "/works/snap-games/05-logout-confirm-mobile.webp",
-        "label": "Logout confirmation modal",
+        "src": "/works/snap-games/05-leaderboard-mobile.webp",
+        "label": "Play-time leaderboard",
         "kind": "mobile",
         "width": 780,
         "height": 1688
       },
       {
         "src": "/works/snap-games/06-home-desktop.webp",
-        "label": "Home on desktop",
+        "label": "Home on desktop: level, milestones, points and streak",
         "kind": "desktop",
         "width": 1800,
         "height": 1125
