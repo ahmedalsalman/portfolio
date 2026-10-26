@@ -192,8 +192,7 @@ function TheServicesBehind() {
     <Reveal className="plaque">
       <h3>The services behind these apps</h3>
       <p>
-        The back-end and infrastructure behind these apps, built with my teammates at ShopRaha and BTR. Where I
-        contributed, my commits are counted.
+        The back-end and infrastructure behind these apps, built with my teammates at ShopRaha and BTR.
       </p>
       <table>
         <thead>
@@ -201,7 +200,6 @@ function TheServicesBehind() {
             <th>Repository</th>
             <th>What it does</th>
             <th className="hide-sm">Stack</th>
-            <th>My commits</th>
           </tr>
         </thead>
         <tbody>
@@ -210,10 +208,6 @@ function TheServicesBehind() {
               <td className="repo">{b.repo}</td>
               <td>{b.what}</td>
               <td className="hide-sm">{Array.isArray(b.stack) ? b.stack.join(', ') : b.stack}</td>
-              <td className="num">
-                {b.authoredByAhmed ? b.authoredByAhmed.toLocaleString('en') : '—'}
-                {b.commits ? ` / ${b.commits.toLocaleString('en')}` : ''}
-              </td>
             </tr>
           ))}
         </tbody>
