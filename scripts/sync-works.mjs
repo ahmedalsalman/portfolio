@@ -49,13 +49,15 @@ for (const dir of readdirSync(SHOTS)) {
         .toFile(dest);
     }
     const { width, height } = await sharp(dest).metadata();
-    shots.push({ src: `/works/${slug}/${name}`, label: s.label ?? '', kind, width, height });
+    shots.push({ src: `/works/${slug}/${name}`, label: s.label ?? '', kind, width, height, ...(s.group ? { group: s.group } : {}) });
   }
 
   works.push({
     slug,
     title: meta.title ?? slug,
     titleNative: meta.titleNative ?? null,
+    // Optional: one heading per group of screenshots (e.g. each brand of a white-label app).
+    ...(Array.isArray(meta.groups) && meta.groups.length ? { groups: meta.groups } : {}),
     tagline: meta.tagline ?? '',
     summary: meta.summary ?? '',
     role: meta.role ?? '',

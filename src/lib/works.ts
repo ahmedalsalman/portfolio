@@ -3,7 +3,18 @@ import backendsGenerated from '@/data/backends.generated.json';
 import curation from '@/data/curation.json';
 import voice from '@/data/voice.json';
 
-export type Shot = { src: string; label: string; kind: 'mobile' | 'desktop'; width?: number; height?: number };
+export type Shot = {
+  src: string;
+  label: string;
+  kind: 'mobile' | 'desktop';
+  width?: number;
+  height?: number;
+  /** Id of the ShotGroup this screen belongs to, when the work has groups. */
+  group?: string;
+};
+
+/** A heading over a set of screens, e.g. one brand of a white-label product. */
+export type ShotGroup = { id: string; title: string; note: string; accent?: string };
 
 export type Work = {
   slug: string;
@@ -28,6 +39,7 @@ export type Work = {
   repo: { remote: string | null; commits: number; authored: number } | null;
   confidential: boolean;
   shots: Shot[];
+  groups?: ShotGroup[];
 };
 
 export type Room = { id: string; numeral: string; title: string; note: string; works: Work[] };

@@ -3,8 +3,40 @@
     "slug": "3abee",
     "title": "3abee",
     "titleNative": null,
-    "tagline": "White-label digital voucher store for four telcos from one Next.js codebase",
-    "summary": "A white-label storefront for gift cards, game credit and subscriptions, sold under telco brands (Sudani, Syriatel, Chinguitel, STORE 70 in Senegal). One Next.js app compiles a brand at build time: theme, fonts, locales, currency, legal copy and payment gateways. Covers catalog, search, cart, OTP / wallet checkout, voucher reveal, and now direct game top-up to a player ID.",
+    "groups": [
+      {
+        "id": "sudani",
+        "title": "Sudani 3abee",
+        "accent": "#0000C8",
+        "note": "Sudan. Arabic and English, priced in Sudanese pounds, paid with the Cashi wallet or the phone bill."
+      },
+      {
+        "id": "syriatel",
+        "title": "Syriatel 3abee",
+        "accent": "#5DA130",
+        "note": "Syria. Arabic and English, priced in Syrian pounds, paid with the phone bill or Syriatel’s mobile wallet."
+      },
+      {
+        "id": "chinguitel",
+        "title": "Chinguitel Store",
+        "accent": "#1E88D2",
+        "note": "Mauritania. Arabic, French and English, priced in ouguiya, paid with the phone bill."
+      },
+      {
+        "id": "senegal",
+        "title": "STORE 70",
+        "accent": "#EDD35A",
+        "note": "Senegal. French and English, priced in CFA francs, paid with Wave or the phone bill."
+      },
+      {
+        "id": "prototype",
+        "title": "Prototype",
+        "accent": "#E91E63",
+        "note": "The neutral store shown to operators before they get their own brand. English, Arabic and French, priced in US dollars, paid by wallet or Visa."
+      }
+    ],
+    "tagline": "One voucher store, five storefronts: four operator brands and the demo store used to sell it",
+    "summary": "A white-label storefront for gift cards, game credit and subscriptions, sold under telco brands (Sudani, Syriatel, Chinguitel, STORE 70 in Senegal) plus a neutral Prototype store priced in US dollars. One Next.js app compiles a brand at build time: theme, fonts, locales, currency, legal copy and payment gateways. Covers catalog, search, cart, OTP / wallet checkout, voucher reveal, and now direct game top-up to a player ID.",
     "role": "Lead frontend engineer",
     "org": "mw3abee (Sudani, Syriatel, Chinguitel, STORE 70 Senegal)",
     "years": "2026",
@@ -25,8 +57,8 @@
       "Cloudflare Workers (OpenNext)"
     ],
     "highlights": [
-      "Four brands from one app: BRAND env selects config, theme, fonts, messages and legal at build time",
-      "Arabic RTL, English and French; SDG, SYP, MRU and XOF currencies",
+      "Five storefronts from one app: BRAND env selects config, theme, fonts, messages and legal at build time",
+      "Arabic RTL, English and French; SDG, SYP, MRU, XOF and USD",
       "Game top-up (WL-169): Card/Top-up switch, pack ledger, player-ID validation and review/sent flow outside the cart",
       "Offline demo serves 38 / 20 / 19 / 19 captured categories per brand with a strict connect-src 'self' CSP",
       "131 commits, 130 authored by Ahmed; 107 Vitest tests passing"
@@ -44,7 +76,7 @@
     "demo": {
       "port": 4102,
       "path": "/ar",
-      "run": "pnpm install && pnpm dev:sudani (or dev:syriatel, dev:chinguitel, dev:senegal)",
+      "run": "pnpm install && pnpm dev:sudani (or dev:syriatel, dev:chinguitel, dev:senegal, dev:prototype)",
       "dir": "D:/Work/3abee-demo"
     },
     "repo": {
@@ -56,59 +88,203 @@
     "shots": [
       {
         "src": "/works/3abee/01-sudani-home-mobile.webp",
-        "label": "Sudani storefront home",
+        "label": "Home, Arabic",
         "kind": "mobile",
         "width": 780,
-        "height": 1688
+        "height": 1688,
+        "group": "sudani"
+      },
+      {
+        "src": "/works/3abee/10-senegal-home-mobile.webp",
+        "label": "Home, French",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688,
+        "group": "senegal"
+      },
+      {
+        "src": "/works/3abee/30-prototype-home-mobile.webp",
+        "label": "Home, English",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688,
+        "group": "prototype"
       },
       {
         "src": "/works/3abee/02-sudani-topup-offer-mobile.webp",
-        "label": "PUBG top-up: pack ledger and player ID",
+        "label": "Game top-up: pack and player ID",
         "kind": "mobile",
         "width": 780,
-        "height": 1688
+        "height": 1688,
+        "group": "sudani"
       },
       {
         "src": "/works/3abee/03-sudani-topup-checkout-mobile.webp",
-        "label": "Top-up review and pay",
+        "label": "Review and pay",
         "kind": "mobile",
         "width": 780,
-        "height": 1688
+        "height": 1688,
+        "group": "sudani"
       },
       {
         "src": "/works/3abee/04-sudani-topup-sent-mobile.webp",
-        "label": "Top-up sent",
+        "label": "Credit sent",
         "kind": "mobile",
         "width": 780,
-        "height": 1688
+        "height": 1688,
+        "group": "sudani"
       },
       {
         "src": "/works/3abee/05-sudani-home-desktop.webp",
-        "label": "Sudani home on desktop",
+        "label": "Sudani 3abee on desktop",
         "kind": "desktop",
         "width": 1800,
-        "height": 1125
+        "height": 1125,
+        "group": "sudani"
       },
       {
-        "src": "/works/3abee/06-syriatel-home-mobile.webp",
-        "label": "Syriatel storefront home",
+        "src": "/works/3abee/40-syriatel-home-mobile.webp",
+        "label": "Home, Arabic",
         "kind": "mobile",
         "width": 780,
-        "height": 1688
+        "height": 1688,
+        "group": "syriatel"
       },
       {
-        "src": "/works/3abee/07-syriatel-topup-offer-mobile.webp",
-        "label": "Syriatel Free Fire top-up",
+        "src": "/works/3abee/41-syriatel-topup-mobile.webp",
+        "label": "Game top-up",
         "kind": "mobile",
         "width": 780,
-        "height": 1688
+        "height": 1688,
+        "group": "syriatel"
       },
       {
-        "src": "/works/3abee/08-syriatel-home-desktop.webp",
-        "label": "Syriatel home on desktop",
+        "src": "/works/3abee/42-syriatel-payment-mobile.webp",
+        "label": "Checkout with the mobile wallet",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688,
+        "group": "syriatel"
+      },
+      {
+        "src": "/works/3abee/43-syriatel-home-en-mobile.webp",
+        "label": "Home, English",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688,
+        "group": "syriatel"
+      },
+      {
+        "src": "/works/3abee/44-syriatel-home-desktop.webp",
+        "label": "Syriatel 3abee on desktop",
         "kind": "desktop",
         "width": 1800,
-        "height": 1125
+        "height": 1125,
+        "group": "syriatel"
+      },
+      {
+        "src": "/works/3abee/20-chinguitel-home-mobile.webp",
+        "label": "Home, Arabic",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688,
+        "group": "chinguitel"
+      },
+      {
+        "src": "/works/3abee/21-chinguitel-topup-mobile.webp",
+        "label": "Game top-up",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688,
+        "group": "chinguitel"
+      },
+      {
+        "src": "/works/3abee/22-chinguitel-payment-mobile.webp",
+        "label": "Checkout with phone-bill payment",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688,
+        "group": "chinguitel"
+      },
+      {
+        "src": "/works/3abee/23-chinguitel-home-fr-mobile.webp",
+        "label": "Home, French",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688,
+        "group": "chinguitel"
+      },
+      {
+        "src": "/works/3abee/24-chinguitel-home-desktop.webp",
+        "label": "Chinguitel Store on desktop",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125,
+        "group": "chinguitel"
+      },
+      {
+        "src": "/works/3abee/11-senegal-topup-mobile.webp",
+        "label": "Game top-up",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688,
+        "group": "senegal"
+      },
+      {
+        "src": "/works/3abee/12-senegal-payment-mobile.webp",
+        "label": "Checkout with Wave",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688,
+        "group": "senegal"
+      },
+      {
+        "src": "/works/3abee/13-senegal-home-en-mobile.webp",
+        "label": "Home, English",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688,
+        "group": "senegal"
+      },
+      {
+        "src": "/works/3abee/14-senegal-home-desktop.webp",
+        "label": "STORE 70 on desktop",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125,
+        "group": "senegal"
+      },
+      {
+        "src": "/works/3abee/31-prototype-topup-mobile.webp",
+        "label": "Game top-up",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688,
+        "group": "prototype"
+      },
+      {
+        "src": "/works/3abee/32-prototype-payment-mobile.webp",
+        "label": "Checkout with wallet or Visa",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688,
+        "group": "prototype"
+      },
+      {
+        "src": "/works/3abee/33-prototype-home-ar-mobile.webp",
+        "label": "Home, Arabic",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688,
+        "group": "prototype"
+      },
+      {
+        "src": "/works/3abee/34-prototype-home-desktop.webp",
+        "label": "Prototype on desktop",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125,
+        "group": "prototype"
       }
     ]
   },

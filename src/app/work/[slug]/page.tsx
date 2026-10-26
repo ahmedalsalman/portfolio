@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Reveal } from '@/components/Reveal';
 import { languages } from '@/components/WallLabel';
-import { allWorks, catalogueNumber, demoHref, getWork, neighbours } from '@/lib/works';
+import { allWorks, catalogueNumber, demoHref, getWork, neighbours, type Shot } from '@/lib/works';
 
 export const dynamicParams = false;
 
@@ -128,28 +128,28 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
         </div>
       </div>
 
-      <section className="plates wrap" aria-label="Screens">
-        {mobile.length > 0 && (
-          <Reveal as="figure" className="plate" style={{ margin: 0 }}>
-            <div className="polyptych">
-              {mobile.map((s) => (
-                <div className="panel" key={s.src}>
-                  <img src={s.src} alt={`${work.title} — ${s.label}`} loading="lazy" width={s.width} height={s.height} />
-                </div>
-              ))}
-            </div>
-            <figcaption>{mobile.map((s) => s.label).filter(Boolean).join(' · ')}</figcaption>
-          </Reveal>
-        )}
-        {desktop.map((s) => (
-          <Reveal as="figure" className="plate" key={s.src} style={{ margin: 0 }}>
-            <div className="frame">
-              <img src={s.src} alt={`${work.title} — ${s.label}`} loading="lazy" width={s.width} height={s.height} />
-            </div>
-            <figcaption>{s.label}</figcaption>
-          </Reveal>
-        ))}
-      </section>
+      {work.groups?.length ? (
+        <section className="plates wrap" aria-label="Screens">
+          {work.groups.map((g) => {
+            const shots = work.shots.filter((s) => s.group === g.id);
+            if (!shots.length) return null;
+            return (
+              <section key={g.id} className="shot-group" aria-labelledby={`g-${g.id}`}>
+                <Reveal className="shot-group-head">
+                  <span className="shot-group-swatch" style={{ background: g.accent ?? work.accent }} aria-hidden="true" />
+                  <h2 id={`g-${g.id}`}>{g.title}</h2>
+                  <p>{g.note}</p>
+                </Reveal>
+                <Plates title={`${work.title}, ${g.title}`} shots={shots} />
+              </section>
+            );
+          })}
+        </section>
+      ) : (
+        <section className="plates wrap" aria-label="Screens">
+          <Plates title={work.title} shots={[...mobile, ...desktop]} />
+        </section>
+      )}
 
       <nav className="pager wrap" aria-label="More projects">
         {prev ? (
@@ -176,5 +176,35 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
         </div>
       </footer>
     </article>
+  );
+}
+
+/** Phone screens as one row, then each desktop screen in its own frame. */
+function Plates({ title, shots }: { title: string; shots: Shot[] }) {
+  const mobile = shots.filter((s) => s.kind === 'mobile');
+  const desktop = shots.filter((s) => s.kind === 'desktop');
+  return (
+    <>
+      {mobile.length > 0 && (
+        <Reveal as="figure" className="plate" style={{ margin: 0 }}>
+          <div className="polyptych">
+            {mobile.map((s) => (
+              <div className="panel" key={s.src}>
+                <img src={s.src} alt={`${title} — ${s.label}`} loading="lazy" width={s.width} height={s.height} />
+              </div>
+            ))}
+          </div>
+          <figcaption>{mobile.map((s) => s.label).filter(Boolean).join(' · ')}</figcaption>
+        </Reveal>
+      )}
+      {desktop.map((s) => (
+        <Reveal as="figure" className="plate" key={s.src} style={{ margin: 0 }}>
+          <div className="frame">
+            <img src={s.src} alt={`${title} — ${s.label}`} loading="lazy" width={s.width} height={s.height} />
+          </div>
+          <figcaption>{s.label}</figcaption>
+        </Reveal>
+      ))}
+    </>
   );
 }

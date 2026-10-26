@@ -1138,3 +1138,35 @@ main,
   aspect-ratio: 4 / 5;
   object-fit: cover;
 }
+
+/* ───────────── Grouped screens (one heading per brand) ───────────── */
+.shot-group {
+  display: grid;
+  gap: clamp(28px, 4vw, 56px);
+  padding-top: clamp(28px, 4vw, 48px);
+  border-top: 1px solid var(--rule);
+}
+.shot-group-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 14px;
+  align-items: baseline;
+}
+.shot-group-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  align-self: center;
+  box-shadow: 0 0 0 1px var(--rule);
+}
+.shot-group-head h2 {
+  margin: 0;
+  font: italic 400 clamp(26px, 3.2vw, 40px) / 1.1 var(--f-display);
+  letter-spacing: -0.01em;
+}
+.shot-group-head p {
+  grid-column: 2;
+  margin: 6px 0 0;
+  max-width: 62ch;
+  color: var(--muted);
+}

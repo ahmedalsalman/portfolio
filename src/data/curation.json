@@ -5,35 +5,66 @@
       "id": "carrier",
       "title": "Made for the carrier",
       "note": "Consumer apps that mobile operators sell to their subscribers, from Iraq to Senegal. People arrive from a text message, on a phone and often on a slow connection, and pay through their phone bill, so every screen has to load fast and make sense at a glance. Between them they ship in four languages and both reading directions.",
-      "works": ["yalla-kora", "snap-games", "3abee"]
+      "works": [
+        "yalla-kora",
+        "snap-games",
+        "3abee"
+      ]
     },
     {
       "id": "courts",
       "title": "Keeping the courts booked",
-      "note": "One sports academy, four surfaces: a staff portal, a booking site for customers, a staff phone app, and a tennis variant built for another club.",
-      "works": ["first-step", "first-step-customer", "first-step-mobile", "tennis-booking"]
+      "note": "One sports academy, three surfaces: a staff portal (with a phone app for staff out on the fields), a booking site for customers, and a tennis variant built for another club.",
+      "works": [
+        "first-step",
+        "first-step-customer",
+        "tennis-booking"
+      ]
     },
     {
       "id": "operations",
       "title": "Software that runs a business",
       "note": "Products for people who use them every day: gym owners, lab technicians, nursery staff. Offline-first where the wifi is bad, bilingual where the staff are.",
-      "works": ["kinetiq", "ims", "roost", "hax-oi", "lumio", "lumio-website"]
+      "works": [
+        "kinetiq",
+        "ims",
+        "roost",
+        "hax-oi",
+        "lumio",
+        "lumio-website"
+      ]
     },
     {
       "id": "shopraha",
       "title": "ShopRaha & BTR, 2021–2025",
       "note": "Four years at a Kuwaiti grocery and logistics company, building the dashboards, warehouse tools and storefronts that ran the business as part of a larger team. Each project states my part.",
-      "works": ["shopraha-dashboard", "cockpit", "btr-smooth", "btr-rover", "btr-halo", "shopraha-app", "shopraha-web"]
+      "works": [
+        "shopraha-dashboard",
+        "cockpit",
+        "btr-smooth",
+        "btr-rover",
+        "btr-halo",
+        "shopraha-app",
+        "shopraha-web"
+      ]
     },
     {
       "id": "small",
       "title": "Smaller sites",
       "note": "Websites for a waterproofing manufacturer, a hotel café, a driving school and my own small consultancy, plus one Android experiment.",
-      "works": ["aod", "aiwin", "soho-cafe", "drift-academy", "heartfeltcode"]
+      "works": [
+        "aod",
+        "aiwin",
+        "soho-cafe",
+        "drift-academy",
+        "heartfeltcode"
+      ]
     }
   ],
   "storeroom": [],
   "promote": [],
-  "hidden": [],
+  "hidden": [
+    "first-step-mobile"
+  ],
   "demoUrls": {}
 }

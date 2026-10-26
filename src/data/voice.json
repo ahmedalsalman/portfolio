@@ -23,11 +23,12 @@
   },
   "3abee": {
     "role": "Frontend developer at mw3abee",
-    "tagline": "One voucher store, four operator brands, four currencies",
-    "summary": "A store where subscribers buy gift cards, game credit and subscriptions and pay through their phone bill. I built it as one Next.js app that ships as four branded stores, for Sudani, Syriatel, Chinguitel and STORE 70 in Senegal, each with its own look, languages and currency.",
+    "tagline": "One voucher store, five storefronts, five currencies",
+    "summary": "A store where subscribers buy gift cards, game credit and subscriptions and pay through their phone bill or a mobile wallet. I built it as one Next.js app that ships as a separate branded store for each operator: Sudani, Syriatel, Chinguitel and STORE 70 in Senegal, each with its own look, languages, currency and payment methods. A fifth, neutral Prototype store is what new operators see before they get their own.",
     "highlights": [
-      "Four brands from one codebase, selected at build time",
-      "Arabic, English and French, with Sudanese, Syrian, Mauritanian and West African currencies",
+      "Five storefronts from one codebase, each chosen at build time",
+      "Arabic, English and French, priced in Sudanese, Syrian, Mauritanian and West African currencies and US dollars",
+      "Each operator’s own payment methods: phone bill, Cashi, Wave, mobile wallet and Visa",
       "Direct game top-up by player ID, alongside voucher cards",
       "A test suite that keeps every brand working as the others change"
     ]
@@ -62,6 +63,7 @@
       "A step-by-step booking flow with live availability per field in half-hour slots",
       "A shared tennis timeline that shows at a glance how busy each slot is",
       "Owner reports: income, peak hours, unpaid bookings and expenses",
+      "A React Native companion app for staff out on the fields: today’s schedule, booking and monthly finances",
       "Runs on Cloudflare Workers with a D1 database, so it costs the academy very little to host"
     ]
   },
