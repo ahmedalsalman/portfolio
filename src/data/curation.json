@@ -16,8 +16,8 @@
       "title": "Keeping the courts booked",
       "note": "One sports academy, three surfaces: a staff portal (with a phone app for staff out on the fields), a booking site for customers, and a tennis variant built for another club.",
       "works": [
-        "first-step",
-        "first-step-customer",
+        "kickoff-staff",
+        "kickoff-booking",
         "tennis-booking"
       ]
     },
@@ -64,7 +64,7 @@
   "storeroom": [],
   "promote": [],
   "hidden": [
-    "first-step-mobile"
+    "kickoff-staff-app"
   ],
   "demoUrls": {},
   "_liveLinksReadme": "Client work shown through the real, public product instead of a demo copy. A work listed here gets these buttons and never a local demo link or run command.",

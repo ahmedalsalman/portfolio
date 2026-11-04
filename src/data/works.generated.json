@@ -1123,271 +1123,6 @@
     ]
   },
   {
-    "slug": "first-step",
-    "title": "First Step Staff Portal",
-    "titleNative": "أكاديمية وملاعب الخطوة الأولى",
-    "tagline": "Booking, occupancy and finance portal for a football, padel and tennis academy",
-    "summary": "Arabic RTL staff and owner portal for a sports academy in Amman with 7 bookable fields (5-a-side, 7-a-side, padel, 3 tennis courts). Staff book through a slot wizard with per-field availability grids and a shared tennis occupancy timeline; owners get revenue, utilization, dues, expenses and CSV export. Runs on Cloudflare Workers via OpenNext with D1, with a full in-browser demo layer that mirrors every API.",
-    "role": "Solo build",
-    "org": "أكاديمية وملاعب الخطوة الأولى (Amman)",
-    "years": "2026",
-    "category": "client",
-    "platforms": [
-      "web",
-      "mobile-web"
-    ],
-    "stack": [
-      "Next.js 16",
-      "React 19",
-      "TypeScript",
-      "Tailwind 4",
-      "Cloudflare Workers (OpenNext)",
-      "Cloudflare D1",
-      "Recharts",
-      "Framer Motion",
-      "date-fns"
-    ],
-    "highlights": [
-      "27 API route handlers over D1 with 11 SQL migrations (bookings, pricing rules, blocks, packages, customers, audit log, booking requests)",
-      "Role-based access (admin / manage / staff / customer) gating 12 portal screens",
-      "Slot wizard with 30-min steps, weekly recurring series, academy rates, deposits and price overrides",
-      "Shared tennis occupancy timeline colour-coded by how many courts are booked per slot",
-      "Owner suite: revenue, 7-day utilization, peak hours, unpaid dues, expenses by category and monthly CSV export"
-    ],
-    "locales": [
-      "ar"
-    ],
-    "rtl": true,
-    "accent": "#0c81c2",
-    "polished": true,
-    "polishScore": 4,
-    "polishNote": "Coherent branded RTL design and deep real-world booking logic; a few screens lean on generic card layouts.",
-    "demo": {
-      "port": 4120,
-      "path": "/",
-      "run": "npm run dev",
-      "dir": "D:/Work/first-step-demo"
-    },
-    "repo": {
-      "remote": "https://github.com/ahmedalsalman/first-step",
-      "commits": 30,
-      "authored": 30
-    },
-    "confidential": false,
-    "shots": [
-      {
-        "src": "/works/first-step/01-dashboard-desktop.webp",
-        "label": "Dashboard",
-        "kind": "desktop",
-        "width": 1800,
-        "height": 1125
-      },
-      {
-        "src": "/works/first-step/02-booking-wizard-desktop.webp",
-        "label": "Booking wizard — slot range picked",
-        "kind": "desktop",
-        "width": 1800,
-        "height": 1125
-      },
-      {
-        "src": "/works/first-step/03-tennis-occupancy-desktop.webp",
-        "label": "Tennis shared occupancy timeline",
-        "kind": "desktop",
-        "width": 1800,
-        "height": 1125
-      },
-      {
-        "src": "/works/first-step/04-finances-desktop.webp",
-        "label": "Finances",
-        "kind": "desktop",
-        "width": 1800,
-        "height": 1125
-      },
-      {
-        "src": "/works/first-step/05-owner-desktop.webp",
-        "label": "Owner overview",
-        "kind": "desktop",
-        "width": 1800,
-        "height": 1125
-      },
-      {
-        "src": "/works/first-step/06-dashboard-mobile.webp",
-        "label": "Dashboard (mobile)",
-        "kind": "mobile",
-        "width": 780,
-        "height": 1688
-      }
-    ]
-  },
-  {
-    "slug": "first-step-customer",
-    "title": "First Step Booking",
-    "titleNative": "الخطوة الأولى",
-    "tagline": "Customer site to check field availability and request a booking via WhatsApp",
-    "summary": "Public Arabic RTL booking site for the First Step academy: customers pick an activity, date and time range on an availability grid, send a booking request that staff accept in the portal, and track their bookings by name and phone. Talks to the staff portal's public CORS API; the demo is a fully static export with an in-browser mock of those endpoints.",
-    "role": "Solo build",
-    "org": "أكاديمية وملاعب الخطوة الأولى (Amman)",
-    "years": "2026",
-    "category": "client",
-    "platforms": [
-      "web",
-      "mobile-web"
-    ],
-    "stack": [
-      "Next.js 16",
-      "React 19",
-      "TypeScript",
-      "Tailwind 4",
-      "Framer Motion",
-      "date-fns"
-    ],
-    "highlights": [
-      "3-step request flow (time → details → WhatsApp) with live price estimate",
-      "Availability grid across 4 activities / 7 fields; auto-assigns a free tennis court",
-      "Booking requests land in the staff portal's /requests inbox via public API routes",
-      "\"My bookings\" lookup by name + phone merging confirmed bookings and pending requests",
-      "Static export (no server) deployable as Workers static assets"
-    ],
-    "locales": [
-      "ar"
-    ],
-    "rtl": true,
-    "accent": "#0c81c2",
-    "polished": true,
-    "polishScore": 4,
-    "polishNote": "Clean, mobile-first branded flow with clear steps; small surface (3 pages).",
-    "demo": {
-      "port": 4121,
-      "path": "/",
-      "run": "npm run dev",
-      "dir": "D:/Work/first-step-customer-demo"
-    },
-    "repo": {
-      "remote": null,
-      "commits": 6,
-      "authored": 6
-    },
-    "confidential": false,
-    "shots": [
-      {
-        "src": "/works/first-step-customer/01-home-mobile.webp",
-        "label": "Home",
-        "kind": "mobile",
-        "width": 780,
-        "height": 1688
-      },
-      {
-        "src": "/works/first-step-customer/02-availability-mobile.webp",
-        "label": "Availability — range selected",
-        "kind": "mobile",
-        "width": 780,
-        "height": 1688
-      },
-      {
-        "src": "/works/first-step-customer/03-request-details-mobile.webp",
-        "label": "Request details",
-        "kind": "mobile",
-        "width": 780,
-        "height": 1688
-      },
-      {
-        "src": "/works/first-step-customer/04-my-bookings-mobile.webp",
-        "label": "My bookings",
-        "kind": "mobile",
-        "width": 780,
-        "height": 1688
-      },
-      {
-        "src": "/works/first-step-customer/05-home-desktop.webp",
-        "label": "Home (desktop)",
-        "kind": "desktop",
-        "width": 1800,
-        "height": 1125
-      }
-    ]
-  },
-  {
-    "slug": "first-step-mobile",
-    "title": "First Step Staff App",
-    "titleNative": "الخطوة الأولى",
-    "tagline": "Expo staff app: book fields, see today's schedule and monthly finances on the go",
-    "summary": "React Native (Expo SDK 57) companion to the First Step staff portal. Arabic RTL with the Cairo font: a dashboard of today/week/month revenue, a booking wizard (activity → type → date → field → time → duration), a bookings list with cancel, and a finances screen. Talks to the production Workers API or runs on local demo data; the demo build runs on the web via React Native Web.",
-    "role": "Solo build",
-    "org": "أكاديمية وملاعب الخطوة الأولى (Amman)",
-    "years": "2026",
-    "category": "client",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "stack": [
-      "Expo 57",
-      "React Native 0.86",
-      "React 19",
-      "TypeScript",
-      "React Navigation 7",
-      "AsyncStorage",
-      "date-fns"
-    ],
-    "highlights": [
-      "Booking wizard with live price across 4 activities, 3 booking types and weekly series",
-      "Role-aware bottom-tab navigator (dashboard / book / bookings / finances)",
-      "Cookie session against the Cloudflare portal API, or a local demo mode with role switcher",
-      "Finances: monthly income vs expenses, net, breakdown across 6 expense categories"
-    ],
-    "locales": [
-      "ar"
-    ],
-    "rtl": true,
-    "accent": "#0c81c2",
-    "polished": true,
-    "polishScore": 3,
-    "polishNote": "Consistent RTL UI but a young codebase (2 commits) with a plain icon-less tab bar.",
-    "demo": {
-      "port": 4122,
-      "path": "/",
-      "run": "npm run dev",
-      "dir": "D:/Work/first-step-mobile-demo"
-    },
-    "repo": {
-      "remote": null,
-      "commits": 2,
-      "authored": 2
-    },
-    "confidential": false,
-    "shots": [
-      {
-        "src": "/works/first-step-mobile/01-dashboard-mobile.webp",
-        "label": "Dashboard",
-        "kind": "mobile",
-        "width": 780,
-        "height": 1688
-      },
-      {
-        "src": "/works/first-step-mobile/02-booking-wizard-mobile.webp",
-        "label": "Booking wizard",
-        "kind": "mobile",
-        "width": 780,
-        "height": 1688
-      },
-      {
-        "src": "/works/first-step-mobile/03-bookings-mobile.webp",
-        "label": "Bookings",
-        "kind": "mobile",
-        "width": 780,
-        "height": 1688
-      },
-      {
-        "src": "/works/first-step-mobile/04-finances-mobile.webp",
-        "label": "Finances",
-        "kind": "mobile",
-        "width": 780,
-        "height": 1688
-      }
-    ]
-  },
-  {
     "slug": "gym-pwa",
     "title": "FitTracker",
     "titleNative": null,
@@ -1766,6 +1501,271 @@
       {
         "src": "/works/ims/07-dashboard-arabic-mobile.webp",
         "label": "Handheld dashboard (Arabic)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "kickoff-booking",
+    "title": "Kickoff Booking",
+    "titleNative": "ضربة البداية",
+    "tagline": "Customer site to check field availability and request a booking via WhatsApp",
+    "summary": "Public Arabic RTL booking site for a sports academy: customers pick an activity, date and time range on an availability grid, send a booking request that staff accept in the portal, and track their bookings by name and phone. Talks to the staff portal's public CORS API; the demo is a fully static export with an in-browser mock of those endpoints.",
+    "role": "Solo build",
+    "org": "a sports academy in Amman (shown under a placeholder brand)",
+    "years": "2026",
+    "category": "client",
+    "platforms": [
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind 4",
+      "Framer Motion",
+      "date-fns"
+    ],
+    "highlights": [
+      "3-step request flow (time → details → WhatsApp) with live price estimate",
+      "Availability grid across 4 activities / 7 fields; auto-assigns a free tennis court",
+      "Booking requests land in the staff portal's /requests inbox via public API routes",
+      "\"My bookings\" lookup by name + phone merging confirmed bookings and pending requests",
+      "Static export (no server) deployable as Workers static assets"
+    ],
+    "locales": [
+      "ar"
+    ],
+    "rtl": true,
+    "accent": "#0c81c2",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "Clean, mobile-first branded flow with clear steps; small surface (3 pages).",
+    "demo": {
+      "port": 4121,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/kickoff-booking-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 6,
+      "authored": 6
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/kickoff-booking/01-home-mobile.webp",
+        "label": "Home",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-booking/02-availability-mobile.webp",
+        "label": "Availability — range selected",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-booking/03-request-details-mobile.webp",
+        "label": "Request details",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-booking/04-my-bookings-mobile.webp",
+        "label": "My bookings",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-booking/05-home-desktop.webp",
+        "label": "Home (desktop)",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      }
+    ]
+  },
+  {
+    "slug": "kickoff-staff",
+    "title": "Kickoff Staff Portal",
+    "titleNative": "أكاديمية وملاعب ضربة البداية",
+    "tagline": "Booking, occupancy and finance portal for a football, padel and tennis academy",
+    "summary": "Arabic RTL staff and owner portal for a sports academy in Amman with 7 bookable fields (5-a-side, 7-a-side, padel, 3 tennis courts). Staff book through a slot wizard with per-field availability grids and a shared tennis occupancy timeline; owners get revenue, utilization, dues, expenses and CSV export. Runs on Cloudflare Workers via OpenNext with D1, with a full in-browser demo layer that mirrors every API.",
+    "role": "Solo build",
+    "org": "a sports academy in Amman (shown under a placeholder brand)",
+    "years": "2026",
+    "category": "client",
+    "platforms": [
+      "web",
+      "mobile-web"
+    ],
+    "stack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind 4",
+      "Cloudflare Workers (OpenNext)",
+      "Cloudflare D1",
+      "Recharts",
+      "Framer Motion",
+      "date-fns"
+    ],
+    "highlights": [
+      "27 API route handlers over D1 with 11 SQL migrations (bookings, pricing rules, blocks, packages, customers, audit log, booking requests)",
+      "Role-based access (admin / manage / staff / customer) gating 12 portal screens",
+      "Slot wizard with 30-min steps, weekly recurring series, academy rates, deposits and price overrides",
+      "Shared tennis occupancy timeline colour-coded by how many courts are booked per slot",
+      "Owner suite: revenue, 7-day utilization, peak hours, unpaid dues, expenses by category and monthly CSV export"
+    ],
+    "locales": [
+      "ar"
+    ],
+    "rtl": true,
+    "accent": "#0c81c2",
+    "polished": true,
+    "polishScore": 4,
+    "polishNote": "Coherent branded RTL design and deep real-world booking logic; a few screens lean on generic card layouts.",
+    "demo": {
+      "port": 4120,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/kickoff-staff-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 30,
+      "authored": 30
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/kickoff-staff/01-dashboard-desktop.webp",
+        "label": "Dashboard",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/kickoff-staff/02-booking-wizard-desktop.webp",
+        "label": "Booking wizard — slot range picked",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/kickoff-staff/03-tennis-occupancy-desktop.webp",
+        "label": "Tennis shared occupancy timeline",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/kickoff-staff/04-finances-desktop.webp",
+        "label": "Finances",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/kickoff-staff/05-owner-desktop.webp",
+        "label": "Owner overview",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/kickoff-staff/06-dashboard-mobile.webp",
+        "label": "Dashboard (mobile)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      }
+    ]
+  },
+  {
+    "slug": "kickoff-staff-app",
+    "title": "Kickoff Staff App",
+    "titleNative": "ضربة البداية",
+    "tagline": "Expo staff app: book fields, see today's schedule and monthly finances on the go",
+    "summary": "React Native (Expo SDK 57) companion to the academy’s staff portal. Arabic RTL with the Cairo font: a dashboard of today/week/month revenue, a booking wizard (activity → type → date → field → time → duration), a bookings list with cancel, and a finances screen. Talks to the production Workers API or runs on local demo data; the demo build runs on the web via React Native Web.",
+    "role": "Solo build",
+    "org": "a sports academy in Amman (shown under a placeholder brand)",
+    "years": "2026",
+    "category": "client",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "stack": [
+      "Expo 57",
+      "React Native 0.86",
+      "React 19",
+      "TypeScript",
+      "React Navigation 7",
+      "AsyncStorage",
+      "date-fns"
+    ],
+    "highlights": [
+      "Booking wizard with live price across 4 activities, 3 booking types and weekly series",
+      "Role-aware bottom-tab navigator (dashboard / book / bookings / finances)",
+      "Cookie session against the Cloudflare portal API, or a local demo mode with role switcher",
+      "Finances: monthly income vs expenses, net, breakdown across 6 expense categories"
+    ],
+    "locales": [
+      "ar"
+    ],
+    "rtl": true,
+    "accent": "#0c81c2",
+    "polished": true,
+    "polishScore": 3,
+    "polishNote": "Consistent RTL UI but a young codebase (2 commits) with a plain icon-less tab bar.",
+    "demo": {
+      "port": 4122,
+      "path": "/",
+      "run": "npm run dev",
+      "dir": "D:/Work/kickoff-staff-app-demo"
+    },
+    "repo": {
+      "remote": null,
+      "commits": 2,
+      "authored": 2
+    },
+    "confidential": false,
+    "shots": [
+      {
+        "src": "/works/kickoff-staff-app/01-dashboard-mobile.webp",
+        "label": "Dashboard",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-staff-app/02-booking-wizard-mobile.webp",
+        "label": "Booking wizard",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-staff-app/03-bookings-mobile.webp",
+        "label": "Bookings",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-staff-app/04-finances-mobile.webp",
+        "label": "Finances",
         "kind": "mobile",
         "width": 780,
         "height": 1688
@@ -2863,7 +2863,7 @@
     "title": "Tennis Court Booking",
     "titleNative": "حجز ملاعب التنس",
     "tagline": "Multi-court tennis booking portal built around a shared occupancy heatmap",
-    "summary": "A tennis-only product derived from the First Step portal: 4 courts booked from one shared timeline that shows how many courts are taken in every 30-minute slot, then lets staff pick the free court. Keeps the owner suite (finances, peak pricing, blocks, packages, users, audit) and runs on Cloudflare Workers + D1 with its own database.",
+    "summary": "A tennis-only product derived from the sports academy staff portal (shown here as Kickoff): 4 courts booked from one shared timeline that shows how many courts are taken in every 30-minute slot, then lets staff pick the free court. Keeps the owner suite (finances, peak pricing, blocks, packages, users, audit) and runs on Cloudflare Workers + D1 with its own database.",
     "role": "Solo build",
     "org": "personal",
     "years": "2026",
@@ -2894,7 +2894,7 @@
     "accent": "#16a34a",
     "polished": true,
     "polishScore": 3,
-    "polishNote": "Polished UI inherited from First Step; as a product it is a fresh 2-commit adaptation.",
+    "polishNote": "Polished UI inherited from the academy portal; as a product it is a fresh 2-commit adaptation.",
     "demo": {
       "port": 4123,
       "path": "/",

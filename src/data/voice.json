@@ -55,10 +55,10 @@
       "Store badges that switch to “coming soon” on their own when a listing isn’t live yet"
     ]
   },
-  "first-step": {
+  "kickoff-staff": {
     "role": "Designed and built it",
     "tagline": "The staff portal that runs a football, padel and tennis academy",
-    "summary": "First Step Academy's staff run their day from this portal: booking fields, checking availability, and tracking payments and expenses, all in Arabic. I designed the booking flow to be fast enough to use while a customer waits at the desk.",
+    "summary": "A sports academy’s staff run their day from this portal: booking fields, checking availability, and tracking payments and expenses, all in Arabic. I designed the booking flow to be fast enough to use while a customer waits at the desk. Shown here under a placeholder brand, Kickoff.",
     "highlights": [
       "A step-by-step booking flow with live availability per field in half-hour slots",
       "A shared tennis timeline that shows at a glance how busy each slot is",
@@ -67,20 +67,20 @@
       "Runs on Cloudflare Workers with a D1 database, so it costs the academy very little to host"
     ]
   },
-  "first-step-customer": {
+  "kickoff-booking": {
     "role": "Designed and built it",
     "tagline": "Players find a free field and request a booking in three steps",
-    "summary": "The public side of First Step Academy. Players choose a sport, a date and a time, see what's free, and send a booking request that lands straight in the staff portal. They can look up their bookings with just a name and phone number.",
+    "summary": "The public side of the academy. Players choose a sport, a date and a time, see what’s free, and send a booking request that lands straight in the staff portal. They can look up their bookings with just a name and phone number. Shown here under a placeholder brand, Kickoff.",
     "highlights": [
       "Three steps from picking a time to confirming on WhatsApp",
       "Availability across football, padel and tennis in one grid",
       "Requests go directly into the staff portal's inbox"
     ]
   },
-  "first-step-mobile": {
+  "kickoff-staff-app": {
     "role": "Designed and built it",
     "tagline": "The academy's staff app for booking and checking the day on the go",
-    "summary": "A React Native companion to the First Step portal for staff who are out on the fields, not at the desk. It covers today's schedule, booking, the bookings list and monthly finances, all in Arabic.",
+    "summary": "A React Native companion to the staff portal for staff who are out on the fields, not at the desk. It covers today’s schedule, booking, the bookings list and monthly finances, all in Arabic.",
     "highlights": [
       "The portal's booking flow, rebuilt for one-handed use",
       "Today's and this month's income at a glance",
@@ -90,7 +90,7 @@
   "tennis-booking": {
     "role": "Designed and built it",
     "tagline": "A tennis club booking portal built around one shared court timeline",
-    "summary": "I adapted the First Step portal for a club with four tennis courts. Staff see how many courts are taken in every half hour in a single view, then assign the player a free court.",
+    "summary": "I adapted the academy staff portal for a club with four tennis courts. Staff see how many courts are taken in every half hour in a single view, then assign the player a free court.",
     "highlights": [
       "One timeline for all four courts instead of four calendars",
       "Shows which courts and durations are still open for the chosen time",
