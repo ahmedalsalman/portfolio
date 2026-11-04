@@ -2146,21 +2146,21 @@
     "shots": [
       {
         "src": "/works/roost/01-today-mobile.webp",
-        "label": "Today: roster with attendance at a glance",
+        "label": "Today: who's here, and each child's day so far",
         "kind": "mobile",
         "width": 780,
         "height": 1688
       },
       {
         "src": "/works/roost/02-child-day-mobile.webp",
-        "label": "A child's day: photos and timeline",
+        "label": "A child's day: allergies, totals, ribbon and timeline",
         "kind": "mobile",
         "width": 780,
         "height": 1688
       },
       {
         "src": "/works/roost/03-log-entry-mobile.webp",
-        "label": "Two-tap log entry",
+        "label": "Adding an entry",
         "kind": "mobile",
         "width": 780,
         "height": 1688

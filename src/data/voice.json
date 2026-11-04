@@ -125,6 +125,7 @@
     "summary": "Home daycare providers have their hands full, so logging a nap or a meal takes two taps, and parents get a daily report automatically. It works without internet and syncs when a connection returns.",
     "highlights": [
       "Two-tap logging for meals, naps, nappies, incidents and medication",
+      "A day ribbon on every child's tile, so a child nobody has logged for hours stands out across the room",
       "An automatic daily report page for parents",
       "Attendance, drills and documents compiled into an inspection-ready record",
       "An offline-first sync engine designed so no entry is ever lost"
