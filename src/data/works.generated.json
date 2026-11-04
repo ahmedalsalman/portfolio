@@ -38,7 +38,7 @@
     "tagline": "One voucher store, five storefronts: four operator brands and the demo store used to sell it",
     "summary": "A white-label storefront for gift cards, game credit and subscriptions, sold under telco brands (Sudani, Syriatel, Chinguitel, STORE 70 in Senegal) plus a neutral Prototype store priced in US dollars. One Next.js app compiles a brand at build time: theme, fonts, locales, currency, legal copy and payment gateways. Covers catalog, search, cart, OTP / wallet checkout, voucher reveal, and now direct game top-up to a player ID.",
     "role": "Lead frontend engineer",
-    "org": "mw3abee (Sudani, Syriatel, Chinguitel, STORE 70 Senegal)",
+    "org": "Media World Software, for Sudani, Syriatel, Chinguitel and STORE 70",
     "years": "2026",
     "category": "client",
     "platforms": [
@@ -1885,7 +1885,7 @@
     "tagline": "Arabic RTL kids' streaming app: shows, shorts, streaks and unlockable characters",
     "summary": "Lumio is a freemium streaming app for Arabic-speaking children aged about 3–8 and their parents. It has long-form shows organised by season, a vertical shorts feed, watch streaks that unlock collectible characters, and a parent area behind a PIN. It is built in Expo/React Native from a token-driven design system (tokens.json → Restyle theme → primitives), is RTL-first, and handles carrier (DCB) and store billing states, offline-safe progress sync, FCM push and Google Cast.",
     "role": "Lead mobile engineer (solo build)",
-    "org": "Media World (mw3abee)",
+    "org": "Media World Software",
     "years": "2026",
     "category": "company",
     "platforms": [
@@ -1932,7 +1932,7 @@
       "commits": 138,
       "authored": 138
     },
-    "confidential": true,
+    "confidential": false,
     "shots": [
       {
         "src": "/works/lumio/01-home-mobile.webp",
@@ -1985,7 +1985,7 @@
     "tagline": "Arabic marketing site for the Lumio kids' app, with store links, QR download and account deletion",
     "summary": "The public site for Lumio, the Arabic kids' entertainment and education app: shows, characters, a parents' safety section, the privacy policy and the account-deletion page Google Play requires. Arabic right-to-left, Next.js 16 on Cloudflare Workers, plain CSS modules.",
     "role": "Frontend developer at Media World",
-    "org": "Media World (mw3abee)",
+    "org": "Media World Software",
     "years": "2026",
     "category": "client",
     "platforms": [
@@ -2582,7 +2582,7 @@
     "tagline": "Swipe-to-play HTML5 game portal with levels, streaks and leaderboards",
     "summary": "A carrier-subscription game portal where players swipe through a TikTok-style feed of HTML5 games, earn points toward nine tiers, keep login streaks and climb a play-time leaderboard. Built mobile-first in Arabic, English and Kurdish, with sandboxed game iframes, fullscreen and landscape handling, and a Next.js BFF that seals DCB sessions.",
     "role": "Lead frontend engineer",
-    "org": "mw3abee (carrier-billed; Iraq and Nigeria deployments)",
+    "org": "Media World Software",
     "years": "2026",
     "category": "client",
     "platforms": [
@@ -2630,42 +2630,42 @@
     "shots": [
       {
         "src": "/works/snap-games/01-feed-mobile.webp",
-        "label": "Swipe-to-play feed: Car Coin Hunt",
+        "label": "Swipe-to-play feed: Angry Heroes",
         "kind": "mobile",
         "width": 780,
-        "height": 1688
+        "height": 1689
       },
       {
         "src": "/works/snap-games/02-home-mobile.webp",
-        "label": "Home catalogue rails by category",
+        "label": "Home: level, milestones, points and category rails",
         "kind": "mobile",
         "width": 780,
-        "height": 1688
+        "height": 1689
       },
       {
         "src": "/works/snap-games/03-category-mobile.webp",
-        "label": "Category page: puzzles",
+        "label": "Category page: racing and driving",
         "kind": "mobile",
         "width": 780,
-        "height": 1688
+        "height": 1689
       },
       {
         "src": "/works/snap-games/04-game-mobile.webp",
-        "label": "In-app game frame: Tower Builder",
+        "label": "In-app game frame: Blocky Racers",
         "kind": "mobile",
         "width": 780,
-        "height": 1688
+        "height": 1689
       },
       {
         "src": "/works/snap-games/05-leaderboard-mobile.webp",
-        "label": "Play-time leaderboard",
+        "label": "Play-time leaderboard (other players blurred)",
         "kind": "mobile",
         "width": 780,
-        "height": 1688
+        "height": 1689
       },
       {
         "src": "/works/snap-games/06-home-desktop.webp",
-        "label": "Home on desktop: level, milestones, points and streak",
+        "label": "Home on desktop: level, milestones, points and category rails",
         "kind": "desktop",
         "width": 1800,
         "height": 1125
@@ -2949,10 +2949,24 @@
     "slug": "yalla-kora",
     "title": "WAQT AL-KASS",
     "titleNative": "وقت الكأس",
+    "groups": [
+      {
+        "id": "light",
+        "title": "Light theme",
+        "accent": "#119671",
+        "note": "The default look, captured from the live app."
+      },
+      {
+        "id": "dark",
+        "title": "Dark theme",
+        "accent": "#0D1B2A",
+        "note": "The same screens in dark mode, which fans switch with one tap and the app remembers."
+      }
+    ],
     "tagline": "Carrier-billed World Cup 2026 football portal for Arabic and Kurdish fans",
     "summary": "A mobile-first football companion sold through telcos via direct carrier billing: live scores, fixtures, standings, match detail (events, stats, lineups, head-to-head), predictions and a timed daily quiz. Arabic/Kurdish RTL by default, with sponsor-branded skins (Zain, Syriatel, MTN, Jawwal) and a Next.js BFF that proxies the CMS and seals carrier sessions in cookies.",
     "role": "Lead frontend engineer",
-    "org": "mw3abee (carrier partners: Zain, Syriatel, MTN, Jawwal)",
+    "org": "Media World Software",
     "years": "2026",
     "category": "client",
     "platforms": [
@@ -2998,46 +3012,100 @@
     "confidential": false,
     "shots": [
       {
-        "src": "/works/yalla-kora/01-home-mobile.webp",
-        "label": "Home: live now, today's fixtures with predictions",
+        "src": "/works/yalla-kora/01-home-light-mobile.webp",
+        "label": "Home: the prize competition and today’s fixtures with predictions",
         "kind": "mobile",
         "width": 780,
-        "height": 1688
+        "height": 1689,
+        "group": "light"
       },
       {
-        "src": "/works/yalla-kora/02-matches-mobile.webp",
-        "label": "Matches: upcoming / ended / live",
+        "src": "/works/yalla-kora/02-matches-light-mobile.webp",
+        "label": "Matches: upcoming, ended and live",
         "kind": "mobile",
         "width": 780,
-        "height": 1688
+        "height": 1689,
+        "group": "light"
       },
       {
-        "src": "/works/yalla-kora/03-match-detail-mobile.webp",
-        "label": "Match detail with events",
+        "src": "/works/yalla-kora/03-match-light-mobile.webp",
+        "label": "Match centre: final score and section tabs",
         "kind": "mobile",
         "width": 780,
-        "height": 1688
+        "height": 1689,
+        "group": "light"
       },
       {
-        "src": "/works/yalla-kora/04-quiz-mobile.webp",
-        "label": "Daily quiz mid-round",
+        "src": "/works/yalla-kora/04-quiz-light-mobile.webp",
+        "label": "Daily quiz, ready to start",
         "kind": "mobile",
         "width": 780,
-        "height": 1688
+        "height": 1689,
+        "group": "light"
       },
       {
-        "src": "/works/yalla-kora/05-news-article-mobile.webp",
-        "label": "News article with video hero",
+        "src": "/works/yalla-kora/05-news-light-mobile.webp",
+        "label": "News article with a video highlight",
         "kind": "mobile",
         "width": 780,
-        "height": 1688
+        "height": 1689,
+        "group": "light"
       },
       {
-        "src": "/works/yalla-kora/06-home-desktop.webp",
+        "src": "/works/yalla-kora/06-home-light-desktop.webp",
         "label": "Home on desktop",
         "kind": "desktop",
         "width": 1800,
-        "height": 1125
+        "height": 1125,
+        "group": "light"
+      },
+      {
+        "src": "/works/yalla-kora/11-home-dark-mobile.webp",
+        "label": "Home: the prize competition and today’s fixtures with predictions",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1689,
+        "group": "dark"
+      },
+      {
+        "src": "/works/yalla-kora/12-matches-dark-mobile.webp",
+        "label": "Matches: upcoming, ended and live",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1689,
+        "group": "dark"
+      },
+      {
+        "src": "/works/yalla-kora/13-match-dark-mobile.webp",
+        "label": "Match centre: final score and section tabs",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1689,
+        "group": "dark"
+      },
+      {
+        "src": "/works/yalla-kora/14-quiz-dark-mobile.webp",
+        "label": "Daily quiz, ready to start",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1689,
+        "group": "dark"
+      },
+      {
+        "src": "/works/yalla-kora/15-news-dark-mobile.webp",
+        "label": "News article with a video highlight",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1689,
+        "group": "dark"
+      },
+      {
+        "src": "/works/yalla-kora/16-home-dark-desktop.webp",
+        "label": "Home on desktop",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125,
+        "group": "dark"
       }
     ]
   }

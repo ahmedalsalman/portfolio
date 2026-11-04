@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Reveal } from '@/components/Reveal';
 import { languages } from '@/components/WallLabel';
-import { allWorks, catalogueNumber, demoHref, getWork, neighbours, type Shot } from '@/lib/works';
+import { allWorks, catalogueNumber, demoHref, getWork, liveLinks, neighbours, type Shot } from '@/lib/works';
 
 export const dynamicParams = false;
 
@@ -26,7 +26,9 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   const mobile = work.shots.filter((s) => s.kind === 'mobile');
   const desktop = work.shots.filter((s) => s.kind === 'desktop');
   const lang = languages(work);
-  const runCmd = work.demo?.dir ? `cd "${work.demo.dir}"\n${work.demo.run}` : null;
+  const live = liveLinks(work);
+  // Client work is shown through the live product; never point at a local copy of its code.
+  const runCmd = !live.length && work.demo?.dir ? `cd "${work.demo.dir}"\n${work.demo.run}` : null;
 
   return (
     <article>
@@ -45,6 +47,15 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
           </span>
         )}
         <p className="detail-tagline">{work.tagline}</p>
+        {live.length > 0 && (
+          <div style={{ marginTop: 28, display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
+            {live.map((l, i) => (
+              <a key={l.href} className={i === 0 ? 'btn' : 'link'} href={l.href} target="_blank" rel="noreferrer">
+                {l.label} <span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+        )}
         {demo && (
           <div style={{ marginTop: 28, display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
             <a className="btn" href={demo.href} target="_blank" rel="noreferrer">

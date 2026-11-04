@@ -34,8 +34,8 @@ export default function Home() {
             </h1>
             <p>
               Six years shipping products for mobile operators, sports clubs, labs and logistics companies, from the
-              first sketch to production, most of it remotely with teams in other countries. Every project below runs
-              as a live demo, so you can try it yourself.
+              first sketch to production, most of it remotely with teams in other countries. Client work links to the
+              live product; the rest runs as a demo, so you can try it yourself.
             </p>
           </div>
         </div>

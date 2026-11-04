@@ -66,5 +66,28 @@
   "hidden": [
     "first-step-mobile"
   ],
-  "demoUrls": {}
+  "demoUrls": {},
+  "_liveLinksReadme": "Client work shown through the real, public product instead of a demo copy. A work listed here gets these buttons and never a local demo link or run command.",
+  "liveLinks": {
+    "yalla-kora": [
+      { "label": "Visit the live app", "href": "https://waqtalkass.pulseio.online/" }
+    ],
+    "snap-games": [
+      { "label": "Visit the live app", "href": "https://sindbad.pulseio.online/" }
+    ],
+    "3abee": [
+      { "label": "Sudani 3abee", "href": "https://sudani.3abee.com/" },
+      { "label": "Syriatel 3abee", "href": "https://syriatel.3abee.com/" },
+      { "label": "Chinguitel Store", "href": "https://chinguitelstore.3abee.com/" },
+      { "label": "STORE 70", "href": "https://senegal-3abee-next.3abee.workers.dev/" },
+      { "label": "Prototype", "href": "https://prototype-3abee-next.3abee.workers.dev/" }
+    ],
+    "lumio": [
+      { "label": "App Store", "href": "https://apps.apple.com/iq/app/lumio-universe/id6809766158" },
+      { "label": "Google Play", "href": "https://play.google.com/store/apps/details?id=com.mediaworldiq.lumio" }
+    ],
+    "lumio-website": [
+      { "label": "Visit the live site", "href": "https://lumiouniverse.com/" }
+    ]
+  }
 }

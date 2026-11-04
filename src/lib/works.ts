@@ -108,7 +108,16 @@ export function catalogueNumber(slug: string) {
   return j >= 0 ? `R.${j + 1}` : '';
 }
 
+export type LiveLink = { label: string; href: string };
+const liveLinkMap = (curation as { liveLinks?: Record<string, LiveLink[]> }).liveLinks ?? {};
+
+/** Links to the real, public product (client work), shown instead of a demo. */
+export function liveLinks(w: Work): LiveLink[] {
+  return liveLinkMap[w.slug] ?? [];
+}
+
 export function demoHref(w: Work): { href: string; local: boolean } | null {
+  if (liveLinks(w).length) return null;
   if (demoUrls[w.slug]) return { href: demoUrls[w.slug], local: false };
   if (!w.demo?.port) return null;
   return { href: `http://localhost:${w.demo.port}${w.demo.path ?? '/'}`, local: true };

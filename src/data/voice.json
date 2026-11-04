@@ -1,7 +1,7 @@
 {
   "_readme": "Hand-written copy for each project, in Ahmed's own voice: confident and direct, crediting teams and clients. Overrides role / tagline / summary / highlights from the synced project.json files, so re-running `npm run sync` never undoes it. Leave a field out to fall back to the synced text.",
   "yalla-kora": {
-    "role": "Frontend developer at mw3abee",
+    "role": "Frontend developer at Media World Software",
     "tagline": "A World Cup 2026 app for football fans, sold through mobile operators",
     "summary": "A phone-first football app that mobile operators sell to their subscribers: live scores, fixtures, match centres, predictions and a daily quiz. Fans arrive from a text message on a mobile connection, so I built it to load fast and read naturally in Arabic and Kurdish, under four operator brands.",
     "highlights": [
@@ -12,7 +12,7 @@
     ]
   },
   "snap-games": {
-    "role": "Frontend developer at mw3abee",
+    "role": "Frontend developer at Media World Software",
     "tagline": "Swipe, play, level up: a game feed for mobile subscribers",
     "summary": "A game app sold through mobile operators in Iraq and Nigeria. Players swipe through a feed of HTML5 games, play in one tap, and earn points toward nine levels. I built the feed, the game player and the progression screens in Arabic, English and Kurdish.",
     "highlights": [
@@ -22,7 +22,7 @@
     ]
   },
   "3abee": {
-    "role": "Frontend developer at mw3abee",
+    "role": "Frontend developer at Media World Software",
     "tagline": "One voucher store, five storefronts, five currencies",
     "summary": "A store where subscribers buy gift cards, game credit and subscriptions and pay through their phone bill or a mobile wallet. I built it as one Next.js app that ships as a separate branded store for each operator: Sudani, Syriatel, Chinguitel and STORE 70 in Senegal, each with its own look, languages, currency and payment methods. A fifth, neutral Prototype store is what new operators see before they get their own.",
     "highlights": [
@@ -34,7 +34,7 @@
     ]
   },
   "lumio": {
-    "role": "Mobile developer at Media World",
+    "role": "Mobile developer at Media World Software",
     "tagline": "A kids' streaming app: shows, short clips and characters to collect",
     "summary": "A streaming app for Arabic-speaking children aged three to eight, with a PIN-protected area for parents. I built it in React Native from the team's design system, right-to-left from day one, with progress that survives a weak connection.",
     "highlights": [
@@ -45,7 +45,7 @@
     ]
   },
   "lumio-website": {
-    "role": "Frontend developer at Media World",
+    "role": "Frontend developer at Media World Software",
     "tagline": "The public website for the Lumio kids’ app",
     "summary": "The site parents land on before they install Lumio: the shows, the characters, how the app keeps children safe, and the pages the app stores require. I built it in Next.js, right-to-left, with one config file driving the store links, legal pages and social previews.",
     "highlights": [

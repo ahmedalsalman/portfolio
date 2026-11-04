@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { catalogueNumber, demoHref, type Work } from '@/lib/works';
+import { catalogueNumber, demoHref, liveLinks, type Work } from '@/lib/works';
 
 const LANG: Record<string, string> = {
   ar: 'Arabic', en: 'English', fr: 'French', ku: 'Kurdish', ckb: 'Kurdish', tr: 'Turkish',
@@ -19,6 +19,7 @@ export function madeFor(w: Work) {
 /** The small label that sits beside every project, like a gallery card. */
 export function WallLabel({ work, detailLink = true }: { work: Work; detailLink?: boolean }) {
   const demo = demoHref(work);
+  const live = liveLinks(work);
   const lang = languages(work);
   const forWhom = madeFor(work);
   return (
@@ -63,6 +64,11 @@ export function WallLabel({ work, detailLink = true }: { work: Work; detailLink?
         </p>
       )}
       <div className="actions">
+        {live.map((l, i) => (
+          <a key={l.href} className={i === 0 ? 'btn' : 'link'} href={l.href} target="_blank" rel="noreferrer">
+            {l.label} <span aria-hidden="true">↗</span>
+          </a>
+        ))}
         {demo && (
           <a className="btn" href={demo.href} target="_blank" rel="noreferrer">
             Open the demo <span aria-hidden="true">↗</span>

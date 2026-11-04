@@ -41,6 +41,10 @@ port (`:4100`–`:4289`). Until they're deployed, "Enter the work" links point a
 `http://localhost:<port>`, so start the demo first. After deploying one, put its
 URL in `curation.json → demoUrls` and rebuild.
 
+**Client work is never shown from a demo copy.** Works listed in `curation.json → liveLinks`
+(currently the Media World projects) link only to the real public product, with screenshots, and
+get no local demo link or run command. Don't deploy or publish their `-demo` folders.
+
 ## Deploy
 
 `wrangler.jsonc` serves `out/` as static assets: `npm run build && npx wrangler deploy`.
