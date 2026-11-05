@@ -67,7 +67,8 @@
     "kickoff-staff-app"
   ],
   "demoUrls": {
-    "kickoff-staff": "https://kickoff-staff.heartfeltcode.com"
+    "kickoff-staff": "https://kickoff-staff.heartfeltcode.com",
+    "kickoff-booking": "https://kickoff-booking.heartfeltcode.com"
   },
   "_liveLinksReadme": "Client work shown through the real, public product instead of a demo copy. A work listed here gets these buttons and never a local demo link.",
   "liveLinks": {
