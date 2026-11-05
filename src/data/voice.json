@@ -69,11 +69,13 @@
   },
   "kickoff-booking": {
     "role": "Designed and built it",
-    "tagline": "Players find a free field and request a booking in three steps",
-    "summary": "The public side of the academy. Players choose a sport, a date and a time, see what’s free, and send a booking request that lands straight in the staff portal. They can look up their bookings with just a name and phone number. Shown here under a placeholder brand, Kickoff.",
+    "tagline": "Players find a free field, book it in three steps, and follow the request until it’s confirmed",
+    "summary": "The public side of the academy. Players see what’s free today and across the week, compare fields and prices, and send a booking request that lands straight in the staff portal. Every request gets its own page showing where it stands, and a confirmed booking goes into the phone’s calendar in one tap. Shown here under a placeholder brand, Kickoff.",
     "highlights": [
-      "Three steps from picking a time to confirming on WhatsApp",
-      "Availability across football, padel and tennis in one grid",
+      "The home page shows the next free hour for each sport, one tap from booking it",
+      "A week view that shows the quietest days and the busiest hours at a glance",
+      "Evening peak prices, quoted exactly the way the staff portal charges them",
+      "A tracking page for every request, with add-to-calendar once it’s confirmed",
       "Requests go directly into the staff portal's inbox"
     ]
   },

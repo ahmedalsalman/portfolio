@@ -61,7 +61,7 @@
       "Arabic RTL, English and French; SDG, SYP, MRU, XOF and USD",
       "Game top-up (WL-169): Card/Top-up switch, pack ledger, player-ID validation and review/sent flow outside the cart",
       "Offline demo serves 38 / 20 / 19 / 19 captured categories per brand with a strict connect-src 'self' CSP",
-      "131 commits, 130 authored by Ahmed; 107 Vitest tests passing"
+      "135 commits, all authored by Ahmed; 107 Vitest tests passing"
     ],
     "locales": [
       "ar",
@@ -81,8 +81,8 @@
     },
     "repo": {
       "remote": "https://github.com/mw3abee/3abee-monorepo",
-      "commits": 131,
-      "authored": 130
+      "commits": 135,
+      "authored": 135
     },
     "confidential": false,
     "shots": [
@@ -1512,7 +1512,7 @@
     "title": "Kickoff Booking",
     "titleNative": "ضربة البداية",
     "tagline": "Customer site to check field availability and request a booking via WhatsApp",
-    "summary": "Public Arabic RTL booking site for a sports academy: customers pick an activity, date and time range on an availability grid, send a booking request that staff accept in the portal, and track their bookings by name and phone. Talks to the staff portal's public CORS API; the demo is a fully static export with an in-browser mock of those endpoints.",
+    "summary": "Public Arabic RTL booking site for a sports academy: a live \"available today\" strip, fields and prices with evening peak rates, a 7-day availability grid, a slot-range booking flow, request tracking with add-to-calendar, and a bookings lookup by name and phone. Talks to the staff portal's public CORS API (availability with peak rules, week range, requests, request status); the demo is a fully static export with an in-browser mock of those endpoints.",
     "role": "Solo build",
     "org": "a sports academy in Amman (shown under a placeholder brand)",
     "years": "2026",
@@ -1530,10 +1530,11 @@
       "date-fns"
     ],
     "highlights": [
-      "3-step request flow (time → details → WhatsApp) with live price estimate",
-      "Availability grid across 4 activities / 7 fields; auto-assigns a free tennis court",
-      "Booking requests land in the staff portal's /requests inbox via public API routes",
-      "\"My bookings\" lookup by name + phone merging confirmed bookings and pending requests",
+      "6 pages: home with a live next-free-hour strip, booking flow, fields and prices, 7-day availability grid, request tracking, my bookings",
+      "Peak pricing from the portal's pricing rules, billed per half hour exactly as staff bookings are (fixed a bug that priced customer requests at the off-peak rate)",
+      "Request tracking page: status timeline, add-to-calendar (.ics), phone-gated POST lookup that returns the same 404 for a wrong phone or unknown id",
+      "Every view deep-links into the booking flow with a free slot already chosen and scrolled into view",
+      "New public API routes in the staff portal: week range and request status; availability now carries peak windows",
       "Static export (no server) deployable as Workers static assets"
     ],
     "locales": [
@@ -1542,8 +1543,8 @@
     "rtl": true,
     "accent": "#0c81c2",
     "polished": true,
-    "polishScore": 4,
-    "polishNote": "Clean, mobile-first branded flow with clear steps; small surface (3 pages).",
+    "polishScore": 5,
+    "polishNote": "Branded mobile-first customer site with real depth: live availability on the home page, fields and peak prices, a 7-day grid, and request tracking, all on the staff portal's data. Six pages, consistent with the staff portal's navy-and-slot visual language.",
     "demo": {
       "port": 4121,
       "path": "/",
@@ -1565,29 +1566,71 @@
         "height": 1688
       },
       {
-        "src": "/works/kickoff-booking/02-availability-mobile.webp",
-        "label": "Availability — range selected",
+        "src": "/works/kickoff-booking/02-free-now-mobile.webp",
+        "label": "Available today — next free hour per sport",
         "kind": "mobile",
         "width": 780,
         "height": 1688
       },
       {
-        "src": "/works/kickoff-booking/03-request-details-mobile.webp",
+        "src": "/works/kickoff-booking/03-fields-mobile.webp",
+        "label": "Fields and prices, with today's availability",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-booking/04-week-mobile.webp",
+        "label": "This week — hour-by-hour availability",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-booking/05-availability-mobile.webp",
+        "label": "Booking — slot picked from the week view",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-booking/06-request-details-mobile.webp",
         "label": "Request details",
         "kind": "mobile",
         "width": 780,
         "height": 1688
       },
       {
-        "src": "/works/kickoff-booking/04-my-bookings-mobile.webp",
-        "label": "My bookings",
+        "src": "/works/kickoff-booking/07-tracking-mobile.webp",
+        "label": "Request tracking — confirmed",
         "kind": "mobile",
         "width": 780,
         "height": 1688
       },
       {
-        "src": "/works/kickoff-booking/05-home-desktop.webp",
+        "src": "/works/kickoff-booking/08-my-bookings-mobile.webp",
+        "label": "My bookings, with tracking links",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-booking/09-home-desktop.webp",
         "label": "Home (desktop)",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/kickoff-booking/10-fields-desktop.webp",
+        "label": "Fields and prices (desktop)",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/kickoff-booking/11-week-desktop.webp",
+        "label": "This week (desktop)",
         "kind": "desktop",
         "width": 1800,
         "height": 1125
@@ -1633,7 +1676,7 @@
     "accent": "#0c81c2",
     "polished": true,
     "polishScore": 4,
-    "polishNote": "Coherent branded RTL design and deep real-world booking logic; a few screens lean on generic card layouts.",
+    "polishNote": "Coherent branded RTL design and deep real-world booking logic. The dashboard, finances and owner screens share a navy scoreboard, slot-cell utilisation meters and a receipt-style ledger taken from the booking UI instead of stock stat cards.",
     "demo": {
       "port": 4120,
       "path": "/",
@@ -1685,6 +1728,55 @@
       {
         "src": "/works/kickoff-staff/06-dashboard-mobile.webp",
         "label": "Dashboard (mobile)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-staff/07-todays-bookings-mobile.webp",
+        "label": "Today's bookings (mobile)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-staff/08-booking-wizard-mobile.webp",
+        "label": "Booking wizard — slot range picked (mobile)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-staff/09-tennis-occupancy-mobile.webp",
+        "label": "Tennis shared occupancy timeline (mobile)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-staff/10-bookings-mobile.webp",
+        "label": "Bookings — payments and reminders (mobile)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-staff/11-requests-mobile.webp",
+        "label": "Booking requests (mobile)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-staff/12-finances-mobile.webp",
+        "label": "Finances (mobile)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/kickoff-staff/13-owner-mobile.webp",
+        "label": "Owner overview (mobile)",
         "kind": "mobile",
         "width": 780,
         "height": 1688

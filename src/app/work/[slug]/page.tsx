@@ -27,8 +27,6 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   const desktop = work.shots.filter((s) => s.kind === 'desktop');
   const lang = languages(work);
   const live = liveLinks(work);
-  // Client work is shown through the live product; never point at a local copy of its code.
-  const runCmd = !live.length && work.demo?.dir ? `cd "${work.demo.dir}"\n${work.demo.run}` : null;
 
   return (
     <article>
@@ -118,14 +116,6 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
                   {work.repo.authored > 0
                     ? `I wrote ${work.repo.authored.toLocaleString('en')} of its ${work.repo.commits.toLocaleString('en')} commits.`
                     : 'Built by my teammates, on the backend and dashboards I worked on.'}
-                </dd>
-              </div>
-            )}
-            {runCmd && (
-              <div>
-                <dt>Run the demo</dt>
-                <dd>
-                  <div className="runbox">{runCmd}</div>
                 </dd>
               </div>
             )}

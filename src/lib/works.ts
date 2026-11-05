@@ -119,7 +119,8 @@ export function liveLinks(w: Work): LiveLink[] {
 export function demoHref(w: Work): { href: string; local: boolean } | null {
   if (liveLinks(w).length) return null;
   if (demoUrls[w.slug]) return { href: demoUrls[w.slug], local: false };
-  if (!w.demo?.port) return null;
+  // A localhost link only works on this machine, so the public site never shows one.
+  if (!w.demo?.port || process.env.NODE_ENV !== 'development') return null;
   return { href: `http://localhost:${w.demo.port}${w.demo.path ?? '/'}`, local: true };
 }
 

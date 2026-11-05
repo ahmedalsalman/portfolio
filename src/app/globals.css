@@ -1015,16 +1015,6 @@ main,
   border: 1px solid var(--rule);
   background: var(--plinth);
 }
-.runbox {
-  margin-top: 4px;
-  font-family: var(--f-mono);
-  font-size: 12px;
-  background: var(--ink);
-  color: var(--wall);
-  padding: 12px 14px;
-  overflow-x: auto;
-  white-space: pre;
-}
 .plates {
   padding-block: clamp(24px, 4vw, 48px) clamp(56px, 8vw, 104px);
   display: grid;
