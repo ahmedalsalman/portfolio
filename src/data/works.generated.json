@@ -2579,6 +2579,26 @@
     "slug": "snap-games",
     "title": "Sindbad",
     "titleNative": "سندباد",
+    "groups": [
+      {
+        "id": "en",
+        "title": "English",
+        "accent": "#FF9E3D",
+        "note": "Left to right, captured from the live app."
+      },
+      {
+        "id": "ar",
+        "title": "Arabic",
+        "accent": "#0B1A2A",
+        "note": "The same screens in Arabic, with the whole layout mirrored right to left."
+      },
+      {
+        "id": "ku",
+        "title": "Kurdish (Sorani)",
+        "accent": "#2BA79B",
+        "note": "Sorani Kurdish, also right to left, translated across every screen."
+      }
+    ],
     "tagline": "Swipe-to-play HTML5 game portal with levels, streaks and leaderboards",
     "summary": "A carrier-subscription game portal where players swipe through a TikTok-style feed of HTML5 games, earn points toward nine tiers, keep login streaks and climb a play-time leaderboard. Built mobile-first in Arabic, English and Kurdish, with sandboxed game iframes, fullscreen and landscape handling, and a Next.js BFF that seals DCB sessions.",
     "role": "Lead frontend engineer",
@@ -2629,46 +2649,148 @@
     "confidential": false,
     "shots": [
       {
-        "src": "/works/snap-games/01-feed-mobile.webp",
+        "src": "/works/snap-games/01-feed-en-mobile.webp",
         "label": "Swipe-to-play feed: Angry Heroes",
         "kind": "mobile",
         "width": 780,
-        "height": 1689
+        "height": 1689,
+        "group": "en"
       },
       {
-        "src": "/works/snap-games/02-home-mobile.webp",
+        "src": "/works/snap-games/02-home-en-mobile.webp",
         "label": "Home: level, milestones, points and category rails",
         "kind": "mobile",
         "width": 780,
-        "height": 1689
+        "height": 1689,
+        "group": "en"
       },
       {
-        "src": "/works/snap-games/03-category-mobile.webp",
+        "src": "/works/snap-games/03-category-en-mobile.webp",
         "label": "Category page: racing and driving",
         "kind": "mobile",
         "width": 780,
-        "height": 1689
+        "height": 1689,
+        "group": "en"
       },
       {
-        "src": "/works/snap-games/04-game-mobile.webp",
+        "src": "/works/snap-games/04-game-en-mobile.webp",
         "label": "In-app game frame: Blocky Racers",
         "kind": "mobile",
         "width": 780,
-        "height": 1689
+        "height": 1689,
+        "group": "en"
       },
       {
-        "src": "/works/snap-games/05-leaderboard-mobile.webp",
+        "src": "/works/snap-games/05-leaderboard-en-mobile.webp",
         "label": "Play-time leaderboard (other players blurred)",
         "kind": "mobile",
         "width": 780,
-        "height": 1689
+        "height": 1689,
+        "group": "en"
       },
       {
-        "src": "/works/snap-games/06-home-desktop.webp",
+        "src": "/works/snap-games/06-home-en-desktop.webp",
         "label": "Home on desktop: level, milestones, points and category rails",
         "kind": "desktop",
         "width": 1800,
-        "height": 1125
+        "height": 1125,
+        "group": "en"
+      },
+      {
+        "src": "/works/snap-games/11-feed-ar-mobile.webp",
+        "label": "Swipe-to-play feed: Angry Heroes",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1689,
+        "group": "ar"
+      },
+      {
+        "src": "/works/snap-games/12-home-ar-mobile.webp",
+        "label": "Home: level, milestones, points and category rails",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1689,
+        "group": "ar"
+      },
+      {
+        "src": "/works/snap-games/13-category-ar-mobile.webp",
+        "label": "Category page: racing and driving",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1689,
+        "group": "ar"
+      },
+      {
+        "src": "/works/snap-games/14-game-ar-mobile.webp",
+        "label": "In-app game frame: Blocky Racers",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1689,
+        "group": "ar"
+      },
+      {
+        "src": "/works/snap-games/15-leaderboard-ar-mobile.webp",
+        "label": "Play-time leaderboard (other players blurred)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1689,
+        "group": "ar"
+      },
+      {
+        "src": "/works/snap-games/16-home-ar-desktop.webp",
+        "label": "Home on desktop: level, milestones, points and category rails",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125,
+        "group": "ar"
+      },
+      {
+        "src": "/works/snap-games/21-feed-ku-mobile.webp",
+        "label": "Swipe-to-play feed: Angry Heroes",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1689,
+        "group": "ku"
+      },
+      {
+        "src": "/works/snap-games/22-home-ku-mobile.webp",
+        "label": "Home: level, milestones, points and category rails",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1689,
+        "group": "ku"
+      },
+      {
+        "src": "/works/snap-games/23-category-ku-mobile.webp",
+        "label": "Category page: racing and driving",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1689,
+        "group": "ku"
+      },
+      {
+        "src": "/works/snap-games/24-game-ku-mobile.webp",
+        "label": "In-app game frame: Blocky Racers",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1689,
+        "group": "ku"
+      },
+      {
+        "src": "/works/snap-games/25-leaderboard-ku-mobile.webp",
+        "label": "Play-time leaderboard (other players blurred)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1689,
+        "group": "ku"
+      },
+      {
+        "src": "/works/snap-games/26-home-ku-desktop.webp",
+        "label": "Home on desktop: level, milestones, points and category rails",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125,
+        "group": "ku"
       }
     ]
   },
@@ -2963,7 +3085,7 @@
         "note": "The same screens in dark mode, which fans switch with one tap and the app remembers."
       }
     ],
-    "tagline": "Carrier-billed World Cup 2026 football portal for Arabic and Kurdish fans",
+    "tagline": "Carrier-billed football portal for Arabic and Kurdish fans: club leagues, cups and the World Cup",
     "summary": "A mobile-first football companion sold through telcos via direct carrier billing: live scores, fixtures, standings, match detail (events, stats, lineups, head-to-head), predictions and a timed daily quiz. Arabic/Kurdish RTL by default, with sponsor-branded skins (Zain, Syriatel, MTN, Jawwal) and a Next.js BFF that proxies the CMS and seals carrier sessions in cookies.",
     "role": "Lead frontend engineer",
     "org": "Media World Software",

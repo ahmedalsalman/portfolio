@@ -11,7 +11,7 @@ export const chronology = [
     what: 'Frontend engineer',
     where: 'Media World Software, Amman',
     detail:
-      'Building the consumer apps that mobile operators across the Middle East and Africa sell to their subscribers, as part of the Media World team: a World Cup fan app, a game feed, a voucher store running under several operator brands, and Lumio, a streaming app for children.',
+      'Building the consumer apps that mobile operators across the Middle East and Africa sell to their subscribers, as part of the Media World team: a football fan app, a game feed, a voucher store running under several operator brands, and Lumio, a streaming app for children.',
   },
   {
     when: '2022 — 2025',

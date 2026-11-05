@@ -2,7 +2,7 @@
   "_readme": "Hand-written copy for each project, in Ahmed's own voice: confident and direct, crediting teams and clients. Overrides role / tagline / summary / highlights from the synced project.json files, so re-running `npm run sync` never undoes it. Leave a field out to fall back to the synced text.",
   "yalla-kora": {
     "role": "Frontend developer at Media World Software",
-    "tagline": "A World Cup 2026 app for football fans, sold through mobile operators",
+    "tagline": "A football app for fans of every league, sold through mobile operators",
     "summary": "A phone-first football app that mobile operators sell to their subscribers: live scores, fixtures, match centres, predictions and a daily quiz. Fans arrive from a text message on a mobile connection, so I built it to load fast and read naturally in Arabic and Kurdish, under four operator brands.",
     "highlights": [
       "Match centres organised into focused tabs: events, stats, line-ups and head-to-head",
@@ -94,7 +94,8 @@
     "highlights": [
       "One timeline for all four courts instead of four calendars",
       "Shows which courts and durations are still open for the chosen time",
-      "Its own deployment and database, independent of the academy"
+      "Its own deployment and database, independent of the academy",
+      "A look of its own: a forest-green sidebar, a scoreboard for the day’s numbers, and court colours for availability"
     ]
   },
   "kinetiq": {
