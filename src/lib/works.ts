@@ -121,6 +121,37 @@ export function catalogueNumber(slug: string) {
   return j >= 0 ? `R.${j + 1}` : '';
 }
 
+/** A screen in a home-page layout: [x, y, width, height] crop as fractions of the screenshot. */
+export type HangPiece = { shot: Shot; crop: [number, number, number, number]; narrow: boolean };
+export type Hang = {
+  layout: 'row' | 'lean' | 'bento' | 'polyptych';
+  wide: boolean;
+  side: 'start' | 'end';
+  pieces: HangPiece[];
+};
+type HangConfig = {
+  layout: Hang['layout'];
+  wide?: boolean;
+  side?: Hang['side'];
+  pieces: { shot: string; crop?: number[]; narrow?: boolean }[];
+};
+const hangConfig = (curation as { hang?: Record<string, HangConfig> }).hang ?? {};
+const MIN_PIECES: Record<Hang['layout'], number> = { row: 2, lean: 2, bento: 3, polyptych: 2 };
+
+/** The hand-picked home-page layout for a work, or null to use the automatic one. */
+export function hangFor(w: Work): Hang | null {
+  const c = hangConfig[w.slug];
+  if (!c) return null;
+  const pieces = c.pieces.flatMap((p) => {
+    const shot = w.shots.find((s) => s.src.split('/').pop()?.startsWith(p.shot));
+    if (!shot) return [];
+    const crop = (p.crop?.length === 4 ? p.crop : [0, 0, 1, 1]) as HangPiece['crop'];
+    return [{ shot, crop, narrow: p.narrow !== false }];
+  });
+  if (pieces.length < MIN_PIECES[c.layout]) return null;
+  return { layout: c.layout, wide: c.layout === 'bento' || !!c.wide, side: c.side ?? 'end', pieces };
+}
+
 export type LiveLink = { label: string; href: string };
 const liveLinkMap = (curation as { liveLinks?: Record<string, LiveLink[]> }).liveLinks ?? {};
 

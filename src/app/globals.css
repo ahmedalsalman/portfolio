@@ -528,6 +528,30 @@ main,
   display: block;
   text-decoration: none;
 }
+/* A wide work spans the page; its caption runs underneath in two columns. */
+.work.wide {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  row-gap: clamp(24px, 3vw, 40px);
+}
+.work.wide .label {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  column-gap: clamp(24px, 4vw, 64px);
+  max-width: none;
+}
+.work.wide .label .pitch {
+  margin-top: 22px;
+  max-width: 40ch;
+}
+@media (max-width: 760px) {
+  .work.wide .label {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .work.wide .label .pitch {
+    margin-top: 14px;
+  }
+}
 
 /* Desktop screens hang as a matted, framed print */
 .frame {
@@ -598,6 +622,112 @@ main,
 }
 .work-art:hover .combo .panel {
   transform: translateY(-10px);
+}
+
+/* Hand-picked layouts (curation.json "hang"): screens cropped to the part that's different. */
+.hang {
+  --mat: clamp(7px, 0.9vw, 13px);
+  --hgap: clamp(10px, 1.6vw, 24px);
+}
+.piece {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--mat);
+  background: var(--plinth);
+  box-shadow: var(--shadow);
+  transition: transform 0.6s var(--ease);
+}
+/* The crop window: the image is scaled and shifted inside it (see WorkArt). */
+.piece .crop {
+  flex: 1 0 auto;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--rule);
+}
+.piece .crop img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+}
+.piece.is-phone {
+  border-radius: clamp(18px, 2.2vw, 30px);
+}
+.piece.is-phone .crop {
+  border-radius: clamp(12px, 1.6vw, 22px);
+  box-shadow: none;
+}
+.work-art:hover .piece,
+.work-art:focus-visible .piece {
+  transform: translateY(-4px);
+}
+
+/* Row: screens side by side at one height. Each grows by its aspect ratio from a basis of its mat. */
+.hang-row {
+  display: flex;
+  gap: var(--hgap);
+}
+.hang-row > .piece {
+  flex: var(--a) 1 calc(2 * var(--mat));
+}
+
+/* Lean: one large screen with phones leaning on a lower corner. */
+.hang-lean {
+  --mat: clamp(9px, 1.4vw, 20px);
+  position: relative;
+  padding-bottom: 8%;
+}
+.hang-lean > .piece:first-child {
+  width: 81%;
+  margin-inline-start: auto;
+}
+.hang-lean.lean-end > .piece:first-child {
+  margin-inline-start: 0;
+}
+.hang-lean > .piece + .piece {
+  --mat: clamp(5px, 0.7vw, 9px);
+  position: absolute;
+  bottom: 0;
+  inset-inline-start: 0;
+  width: 19%;
+}
+.hang-lean.lean-end > .piece + .piece {
+  inset-inline-start: auto;
+  inset-inline-end: 0;
+}
+.hang-lean.lean-end > .piece:nth-child(3) {
+  inset-inline-end: 21%;
+  bottom: 6%;
+}
+.work-art:hover .hang-lean > .piece + .piece {
+  transform: translateY(-10px);
+}
+
+/* Bento: one large screen with two smaller ones stacked beside it. */
+.hang-bento {
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+  gap: var(--hgap);
+}
+.hang-bento > .piece:first-child {
+  grid-row: span 2;
+}
+
+@media (max-width: 640px) {
+  .piece.hide-narrow {
+    display: none;
+  }
+  .hang-bento {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hang-bento > .piece:first-child {
+    grid-row: auto;
+  }
+  .hang-lean > .piece + .piece {
+    width: 25%;
+  }
 }
 
 /* The rest of a room: compact cards under the featured work(s). */

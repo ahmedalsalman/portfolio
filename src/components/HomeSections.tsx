@@ -4,11 +4,27 @@ import { WallLabel } from '@/components/WallLabel';
 import { WorkArt } from '@/components/WorkArt';
 import { IndexCard } from '@/components/IndexCard';
 import { NameCard } from '@/components/NameCard';
-import { backends, catalogueNumber, rooms, storeroom } from '@/lib/works';
+import { backends, catalogueNumber, hangFor, rooms, storeroom, type Hang } from '@/lib/works';
 import { chronology, contact, skills } from '@/data/artist';
+
+/**
+ * Where each featured work hangs. Wide ones span the page with the caption underneath; the others
+ * alternate sides down the whole page, not just within a room, so no two in a row line up the same.
+ */
+function placeFeatured() {
+  const placement = new Map<string, { hang: Hang | null; wide: boolean; flip: boolean }>();
+  let side = 0;
+  for (const w of rooms.flatMap((r) => r.works.slice(0, r.feature))) {
+    const hang = hangFor(w);
+    const wide = !!hang?.wide;
+    placement.set(w.slug, { hang, wide, flip: !wide && side++ % 2 === 1 });
+  }
+  return placement;
+}
 
 /** Everything below the hero: the rooms, the storeroom, about, contact and the footer. */
 export function HomeSections() {
+  const placement = placeFeatured();
   return (
     <>
       <div id="rooms">
@@ -21,14 +37,22 @@ export function HomeSections() {
                 <p>{room.note}</p>
               </Reveal>
 
-              {room.works.slice(0, room.feature).map((w, i) => (
-                <Reveal as="article" key={w.slug} className={`work${i % 2 ? ' flip' : ''}`} aria-label={w.title}>
-                  <Link href={`/work/${w.slug}/`} className="work-art" aria-label={`More about ${w.title}`}>
-                    <WorkArt work={w} />
-                  </Link>
-                  <WallLabel work={w} />
-                </Reveal>
-              ))}
+              {room.works.slice(0, room.feature).map((w) => {
+                const { hang, wide, flip } = placement.get(w.slug)!;
+                return (
+                  <Reveal
+                    as="article"
+                    key={w.slug}
+                    className={`work${wide ? ' wide' : ''}${flip ? ' flip' : ''}`}
+                    aria-label={w.title}
+                  >
+                    <Link href={`/work/${w.slug}/`} className="work-art" aria-label={`More about ${w.title}`}>
+                      <WorkArt work={w} hang={hang} />
+                    </Link>
+                    <WallLabel work={w} />
+                  </Reveal>
+                );
+              })}
 
               {room.works.length > room.feature && (
                 <Reveal as="section" className="also" aria-labelledby={`also-${room.id}`}>
@@ -144,8 +168,8 @@ export function HomeSections() {
           <h2 id="h-contact">Let&rsquo;s build something.</h2>
           <p className="contact-note">
             Have a product in mind, or a team that needs a frontend developer who can own a feature from design to
-            production? Get in touch. I&rsquo;m based in Amman and spent four years working remotely with teams in
-            Kuwait.
+            production? Get in touch. I&rsquo;m based in Amman and open to remote roles: I spent four years working
+            remotely with teams in Kuwait.
           </p>
           <div className="contact">
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
@@ -157,7 +181,7 @@ export function HomeSections() {
       <footer className="site-footer">
         <div className="wrap">
           <span>© {new Date().getFullYear()} Ahmed Al-Salman</span>
-          <span>Based in Amman, Jordan</span>
+          <span>Based in Amman · open to remote work worldwide</span>
         </div>
       </footer>
     </>
