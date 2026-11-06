@@ -16,15 +16,31 @@ export function madeFor(w: Work) {
   return /^(personal|own|self)/i.test(w.org) ? 'Personal project' : `For ${w.org}`;
 }
 
-/** The small label that sits beside every project, like a gallery card. */
+/** Languages worth pointing out on a caption: anything beyond English, plus right-to-left. */
+function captionLanguages(w: Work) {
+  const names = [...new Set(w.locales.map((l) => LANG[l] ?? l))];
+  if (!names.length || (names.length === 1 && names[0] === 'English')) return '';
+  return names.join(', ') + (w.rtl ? ' · RTL' : '');
+}
+
+/**
+ * The caption beside a featured project: the line that sells it comes straight after the title,
+ * then one line for my part and the client. The stack lives on the project page.
+ */
 export function WallLabel({ work, detailLink = true }: { work: Work; detailLink?: boolean }) {
   const demo = demoHref(work);
   const live = liveLinks(work);
-  const lang = languages(work);
-  const forWhom = madeFor(work);
+  const lang = captionLanguages(work);
+  // Skip the client when the role already names it ("Frontend developer at Media World Software").
+  const org = work.org?.split(/[,(]/)[0].trim().toLowerCase() ?? '';
+  const forWhom = org && work.role?.toLowerCase().includes(org) ? '' : madeFor(work);
+  const credit = [work.role, forWhom].filter(Boolean).join(' · ');
   return (
     <div className="label">
-      <div className="catno">{catalogueNumber(work.slug)}</div>
+      <div className="catno">
+        {catalogueNumber(work.slug)} · {work.years}
+        {lang && ` · ${lang}`}
+      </div>
       <h3 className="title">
         {work.title}
         {work.titleNative && (
@@ -33,31 +49,8 @@ export function WallLabel({ work, detailLink = true }: { work: Work; detailLink?
           </span>
         )}
       </h3>
-      <dl>
-        <dt>Year</dt>
-        <dd>{work.years}</dd>
-        {forWhom && (
-          <>
-            <dt>Made for</dt>
-            <dd>{forWhom}</dd>
-          </>
-        )}
-        {work.role && (
-          <>
-            <dt>My part</dt>
-            <dd>{work.role}</dd>
-          </>
-        )}
-        <dt>Built with</dt>
-        <dd className="medium">{work.stack.slice(0, 5).join(', ')}</dd>
-        {lang && (
-          <>
-            <dt>Languages</dt>
-            <dd>{lang}</dd>
-          </>
-        )}
-      </dl>
-      <p>{work.tagline}</p>
+      <p className="pitch">{work.tagline}</p>
+      {credit && <p className="credit">{credit}</p>}
       {work.confidential && process.env.NODE_ENV === 'development' && (
         <p className="stamp" style={{ color: '#b4232c' }} title="Only visible in dev. Set curation.hidden or remove before publishing.">
           Confidential: confirm before publishing
