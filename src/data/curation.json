@@ -1,5 +1,5 @@
 {
-  "_readme": "Editorial layer. Rooms decide what hangs in the main gallery and in what order. Any work not placed in a room, or listed in 'storeroom', goes to the Storeroom (the reserve collection) at the bottom of the page. Works their builder marked as not polished also go to the Storeroom unless listed in 'promote'. 'hidden' removes a work entirely. 'demoUrls' maps a work to its deployed demo (Cloudflare Workers, <slug>.heartfeltcode.com); without one, the local http://localhost:<port> link shows in dev only.",
+  "_readme": "Editorial layer. Rooms decide what hangs in the main gallery and in what order. Any work not placed in a room, or listed in 'storeroom', goes to the Storeroom (the reserve collection) at the bottom of the page. Works their builder marked as not polished also go to the Storeroom unless listed in 'promote'. 'hidden' removes a work entirely. In each room the first 'feature' works (default 1) hang large; the rest show as compact cards. 'heroShots' picks the works whose first phone screen fans out in the hero. 'demoUrls' maps a work to its deployed demo (Cloudflare Workers, <slug>.heartfeltcode.com); without one, the local http://localhost:<port> link shows in dev only.",
   "rooms": [
     {
       "id": "carrier",
@@ -15,6 +15,7 @@
       "id": "courts",
       "title": "Keeping the courts booked",
       "note": "One sports academy, three surfaces: a staff portal (with a phone app for staff out on the fields), a booking site for customers, and a tennis variant built for another club.",
+      "feature": 2,
       "works": [
         "kickoff-staff",
         "kickoff-booking",
@@ -61,6 +62,7 @@
       ]
     }
   ],
+  "heroShots": ["yalla-kora", "snap-games", "kickoff-booking"],
   "storeroom": [],
   "promote": [],
   "hidden": [

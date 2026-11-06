@@ -91,12 +91,13 @@
   },
   "tennis-booking": {
     "role": "Designed and built it",
-    "tagline": "A tennis club booking portal built around one shared court timeline",
-    "summary": "I adapted the academy staff portal for a club with four tennis courts. Staff see how many courts are taken in every half hour in a single view, then assign the player a free court.",
+    "tagline": "The front desk of a four-court tennis club: the day’s courts, members, coaches and rain",
+    "summary": "Built for how a tennis club actually runs. Staff work from a court sheet with every court side by side, members pay their own rate and can book further ahead, lessons book a court and a coach together, and when rain comes one screen moves players onto covered courts or cancels them and lines up a message for each. It started from the academy staff portal and grew into its own product.",
     "highlights": [
-      "One timeline for all four courts instead of four calendars",
-      "Shows which courts and durations are still open for the chosen time",
-      "Its own deployment and database, independent of the academy",
+      "A court sheet: every court in its own column, and any free half hour is one click from a booking",
+      "Members and guests, each with their own price and how far ahead they can book",
+      "Lessons that book a coach with the court, and never the same coach twice at once",
+      "A rain-out that moves who it can to covered courts and messages everyone else",
       "A look of its own: a forest-green sidebar, a scoreboard for the day’s numbers, and court colours for availability"
     ]
   },

@@ -3076,8 +3076,8 @@
     "slug": "tennis-booking",
     "title": "Tennis Court Booking",
     "titleNative": "حجز ملاعب التنس",
-    "tagline": "Multi-court tennis booking portal built around a shared occupancy heatmap",
-    "summary": "A tennis-only product derived from the sports academy staff portal (shown here as Kickoff): 4 courts booked from one shared timeline that shows how many courts are taken in every 30-minute slot, then lets staff pick the free court. Keeps the owner suite (finances, peak pricing, blocks, packages, users, audit) and runs on Cloudflare Workers + D1 with its own database.",
+    "tagline": "Tennis club portal: a court-by-court day sheet, members and guests, coached lessons and rain-outs",
+    "summary": "A tennis-club staff portal for four courts. Staff run the day from a court sheet (one column per court, bookings as blocks, click any free half hour to book); members get their own rate and a longer booking window; lessons book a court and a coach together and can never double-book the coach; and a rain-out moves outdoor bookings onto covered courts where there is room, cancels the rest and lines up a WhatsApp message for each player. Started from the sports academy staff portal (shown here as Kickoff) and extended into its own product; runs on Cloudflare Workers + D1.",
     "role": "Solo build",
     "org": "personal",
     "years": "2026",
@@ -3096,10 +3096,12 @@
       "Recharts"
     ],
     "highlights": [
-      "Shared 4-court occupancy heatmap (0/4 … 4/4) as the default booking UX",
-      "Free-court picker and duration choices computed for the chosen start slot",
-      "Owner KPIs, 30-day revenue and peak-hour charts, 7-day court utilization",
-      "Separate worker + D1 database so it deploys alongside the academy portal"
+      "Court sheet: four courts side by side, bookings as blocks (lesson, member, guest, academy, closed), click any free half hour to book it",
+      "Members and guests: tier with an end date, member discount on court hire, separate booking windows, lapsed members fall back to guest price",
+      "Coaches and lessons: working hours, per-hour fee on top of the court, coach clash checks across every date of a weekly series",
+      "Rain-out: plans moves onto covered courts in time order, cancels the rest, closes the outdoor courts and writes each player a WhatsApp message",
+      "Owner view splits court hire from lesson income, shows the members' share and each coach's month",
+      "Migration 0012 plus 3 new API routes; tested end to end on a fresh local D1 (27 API checks) and in the in-browser demo"
     ],
     "locales": [
       "ar"
@@ -3107,8 +3109,8 @@
     "rtl": true,
     "accent": "#16a34a",
     "polished": true,
-    "polishScore": 3,
-    "polishNote": "Polished UI inherited from the academy portal; as a product it is a fresh 2-commit adaptation.",
+    "polishScore": 4,
+    "polishNote": "Its own product now, not a 2-commit fork: a court sheet, members and guests, coached lessons with clash checks, and rain-outs, on top of the inherited booking and owner suite. Owner and finance screens still use the inherited stock stat cards.",
     "demo": {
       "port": 4123,
       "path": "/",
@@ -3123,36 +3125,78 @@
     "confidential": false,
     "shots": [
       {
-        "src": "/works/tennis-booking/01-dashboard-desktop.webp",
-        "label": "Dashboard",
+        "src": "/works/tennis-booking/01-court-sheet-desktop.webp",
+        "label": "Court sheet — four courts, lessons and members",
         "kind": "desktop",
         "width": 1800,
         "height": 1125
       },
       {
-        "src": "/works/tennis-booking/02-court-heatmap-desktop.webp",
+        "src": "/works/tennis-booking/02-lesson-booking-desktop.webp",
+        "label": "Booking a lesson for a member",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/tennis-booking/03-coaches-desktop.webp",
+        "label": "Coaches and their day",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/tennis-booking/04-rain-out-desktop.webp",
+        "label": "Rain-out plan",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/tennis-booking/05-owner-club-desktop.webp",
+        "label": "Owner view — court hire vs lessons",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/tennis-booking/06-member-desktop.webp",
+        "label": "Member profile",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
+      },
+      {
+        "src": "/works/tennis-booking/07-court-heatmap-desktop.webp",
         "label": "Shared court heatmap",
         "kind": "desktop",
         "width": 1800,
         "height": 1125
       },
       {
-        "src": "/works/tennis-booking/03-owner-desktop.webp",
-        "label": "Owner overview",
+        "src": "/works/tennis-booking/08-dashboard-desktop.webp",
+        "label": "Dashboard",
         "kind": "desktop",
         "width": 1800,
         "height": 1125
       },
       {
-        "src": "/works/tennis-booking/04-finances-desktop.webp",
-        "label": "Finances",
-        "kind": "desktop",
-        "width": 1800,
-        "height": 1125
+        "src": "/works/tennis-booking/09-court-sheet-mobile.webp",
+        "label": "Court sheet (mobile)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
       },
       {
-        "src": "/works/tennis-booking/05-court-heatmap-mobile.webp",
-        "label": "Court heatmap (mobile)",
+        "src": "/works/tennis-booking/10-lesson-booking-mobile.webp",
+        "label": "Coach picker and member rate (mobile)",
+        "kind": "mobile",
+        "width": 780,
+        "height": 1688
+      },
+      {
+        "src": "/works/tennis-booking/11-rain-out-mobile.webp",
+        "label": "Rain-out plan (mobile)",
         "kind": "mobile",
         "width": 780,
         "height": 1688

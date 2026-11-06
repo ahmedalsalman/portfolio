@@ -42,7 +42,8 @@ export type Work = {
   groups?: ShotGroup[];
 };
 
-export type Room = { id: string; numeral: string; title: string; note: string; works: Work[] };
+/** `feature`: how many of the room's works hang large; the rest show as compact cards. */
+export type Room = { id: string; numeral: string; title: string; note: string; feature: number; works: Work[] };
 
 export type Backend = {
   repo: string;
@@ -76,12 +77,22 @@ export const rooms: Room[] = curation.rooms
     id: r.id,
     title: r.title,
     note: r.note,
+    feature: (r as { feature?: number }).feature ?? 1,
     works: r.works.map((s) => bySlug.get(s)).filter((w): w is Work => !!w && hangsInGallery(w)),
   }))
   .filter((r) => r.works.length > 0)
   .map((r, i) => ({ ...r, numeral: NUMERALS[i] }));
 
 const placed = new Set(rooms.flatMap((r) => r.works.map((w) => w.slug)));
+
+/** The phone screens fanned out in the hero: each listed work's first phone shot. */
+export const heroShots: { work: Work; shot: Shot }[] = ((curation as { heroShots?: string[] }).heroShots ?? [])
+  .map((slug) => {
+    const work = bySlug.get(slug);
+    const shot = work?.shots.find((s) => s.kind === 'mobile');
+    return work && shot ? { work, shot } : null;
+  })
+  .filter((x): x is { work: Work; shot: Shot } => x !== null);
 
 /** The reserve collection: unpolished, unplaced, or explicitly stored works. */
 export const storeroom: Work[] = allWorks

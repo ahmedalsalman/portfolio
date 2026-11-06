@@ -2,7 +2,8 @@ import Link from 'next/link';
 import { Reveal } from '@/components/Reveal';
 import { WallLabel } from '@/components/WallLabel';
 import { WorkArt } from '@/components/WorkArt';
-import { backends, catalogueNumber, rooms, storeroom } from '@/lib/works';
+import { IndexCard } from '@/components/IndexCard';
+import { backends, catalogueNumber, heroShots, rooms, storeroom } from '@/lib/works';
 import { chronology, contact, skills } from '@/data/artist';
 
 export default function Home() {
@@ -12,32 +13,52 @@ export default function Home() {
     <>
       <section className="hero wrap" aria-labelledby="hero-title">
         <div className="hero-grid">
-          <div className="canvas" role="img" aria-label="Ahmed Al-Salman, written in Arabic and English">
-            <div className="name" aria-hidden="true">
-              <span className="name-ar" lang="ar">أحمد السلمان</span>
-              <span className="name-en">
-                Ahmed
-                <em>Al-Salman</em>
+          <div className="hero-id">
+            <div className="canvas" role="img" aria-label="Ahmed Al-Salman, written in Arabic and English">
+              <div className="name" aria-hidden="true">
+                <span className="name-ar" lang="ar">أحمد السلمان</span>
+                <span className="name-en">
+                  Ahmed
+                  <em>Al-Salman</em>
+                </span>
+              </div>
+              <span className="canvas-caption" aria-hidden="true">
+                <span lang="ar">مرحبا</span> · hello
               </span>
             </div>
-            <span className="seam" aria-hidden="true" />
-            <span className="canvas-caption" aria-hidden="true">
-              <span lang="ar">مرحبا</span> · hello
-            </span>
+
+            <div className="label hero-label">
+              <div className="mono" style={{ color: 'var(--muted)' }}>Frontend developer · based in Amman, working remotely</div>
+              <h1 id="hero-title" className="title">
+                I build fast web and mobile apps, from consumer products to the tools that run a business.
+              </h1>
+              <p>
+                Six years shipping products for mobile operators, sports clubs, labs and logistics companies, from the
+                first sketch to production, most of it remotely with teams in other countries. Client work links to the
+                live product; the rest runs as a demo, so you can try it yourself.
+              </p>
+            </div>
           </div>
 
-          <div className="label hero-label">
-            <div className="artist">Ahmed Al-Salman</div>
-            <div className="mono" style={{ color: 'var(--muted)' }}>Frontend developer · based in Amman, working remotely</div>
-            <h1 id="hero-title" className="title" style={{ marginTop: 14 }}>
-              I build fast web and mobile apps, from consumer products to the tools that run a business.
-            </h1>
-            <p>
-              Six years shipping products for mobile operators, sports clubs, labs and logistics companies, from the
-              first sketch to production, most of it remotely with teams in other countries. Client work links to the
-              live product; the rest runs as a demo, so you can try it yourself.
-            </p>
-          </div>
+          {heroShots.length > 0 && (
+            <figure className="hero-fan" aria-label="Screens from three of the projects below">
+              <div className="fan">
+                {heroShots.map(({ work, shot }) => (
+                  <Link key={work.slug} href={`/work/${work.slug}/`} className="panel" aria-label={work.title}>
+                    <img src={shot.src} alt={`${work.title}: ${shot.label || 'screen'}`} width={shot.width} height={shot.height} />
+                  </Link>
+                ))}
+              </div>
+              <figcaption>
+                {heroShots.map(({ work }, i) => (
+                  <span key={work.slug}>
+                    {i > 0 && <span aria-hidden="true"> · </span>}
+                    <Link href={`/work/${work.slug}/`}>{work.title}</Link>
+                  </span>
+                ))}
+              </figcaption>
+            </figure>
+          )}
         </div>
 
         <div className="now-showing">
@@ -63,7 +84,7 @@ export default function Home() {
                 <p>{room.note}</p>
               </Reveal>
 
-              {room.works.map((w, i) => (
+              {room.works.slice(0, room.feature).map((w, i) => (
                 <Reveal as="article" key={w.slug} className={`work${i % 2 ? ' flip' : ''}`} aria-label={w.title}>
                   <Link href={`/work/${w.slug}/`} className="work-art" aria-label={`More about ${w.title}`}>
                     <WorkArt work={w} />
@@ -71,6 +92,19 @@ export default function Home() {
                   <WallLabel work={w} />
                 </Reveal>
               ))}
+
+              {room.works.length > room.feature && (
+                <Reveal as="section" className="also" aria-labelledby={`also-${room.id}`}>
+                  <h3 id={`also-${room.id}`} className="also-head">
+                    Also in this room
+                  </h3>
+                  <div className="also-grid">
+                    {room.works.slice(room.feature).map((w) => (
+                      <IndexCard key={w.slug} work={w} />
+                    ))}
+                  </div>
+                </Reveal>
+              )}
 
               {room.id === 'shopraha' && backends.length > 0 && <TheServicesBehind />}
             </div>
