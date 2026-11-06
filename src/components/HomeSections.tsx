@@ -3,6 +3,7 @@ import { Reveal } from '@/components/Reveal';
 import { WallLabel } from '@/components/WallLabel';
 import { WorkArt } from '@/components/WorkArt';
 import { IndexCard } from '@/components/IndexCard';
+import { NameCard } from '@/components/NameCard';
 import { backends, catalogueNumber, rooms, storeroom } from '@/lib/works';
 import { chronology, contact, skills } from '@/data/artist';
 
@@ -84,6 +85,11 @@ export function HomeSections() {
       )}
 
       <section id="about" className="chron" aria-labelledby="h-about">
+        <div className="wrap">
+          <Reveal>
+            <NameCard />
+          </Reveal>
+        </div>
         <div className="wrap chron-grid">
           <Reveal>
             <figure className="portrait">
@@ -138,7 +144,8 @@ export function HomeSections() {
           <h2 id="h-contact">Let&rsquo;s build something.</h2>
           <p className="contact-note">
             Have a product in mind, or a team that needs a frontend developer who can own a feature from design to
-            production? Get in touch. I work remotely with teams anywhere.
+            production? Get in touch. I&rsquo;m based in Amman and spent four years working remotely with teams in
+            Kuwait.
           </p>
           <div className="contact">
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
@@ -150,7 +157,7 @@ export function HomeSections() {
       <footer className="site-footer">
         <div className="wrap">
           <span>© {new Date().getFullYear()} Ahmed Al-Salman</span>
-          <span>Based in Amman · open to remote work worldwide</span>
+          <span>Based in Amman, Jordan</span>
         </div>
       </footer>
     </>

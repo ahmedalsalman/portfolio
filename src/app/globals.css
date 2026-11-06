@@ -1,22 +1,36 @@
 /* ─────────────────────────────────────────────────────────────
-   Tokens. The page is a gallery wall; the one loud thing is Slack's
-   brand primary, Aubergine, used only where something is "on show".
-   Per Slack's guidelines: Aubergine Active for hover, Aubergine Null
-   for the dark-theme field, and no logo colours on text or fields.
+   Tokens. The page is a gallery wall in the Heartfelt Code palette
+   (heartfeltcode.com, src/styles/brand.css), one role each:
+     Plum        #41093A  panels and bands: the hero strip, the name card, contact
+     Gold        #F4B63F  main buttons; links and numerals on the dark wall
+     Warm white  #FBF6F0  the light wall
+     Night       #1A1119  the dark wall, and text on the light one
+   Gold is never text on the light wall (too faint); plum is never text on the dark one.
    ───────────────────────────────────────────────────────────── */
 :root {
-  --wall: #f2eff0;
-  --wall-2: #e7e2e4;
-  --plinth: #fbfafa;
-  --ink: #1d1c1d;
-  --muted: #5f5a5e;
-  --rule: #d9d3d6;
-  --accent: #4a154b; /* Aubergine */
-  --accent-hover: #7c3085; /* Aubergine Active */
+  --plum: #41093a;
+  --plum-hover: color-mix(in srgb, #41093a 78%, white);
+  --gold: #f4b63f;
+  --gold-hover: #f7c86e;
+  --warm-white: #fbf6f0;
+  --night: #1a1119;
+  --on-plum: color-mix(in srgb, #fbf6f0 84%, #41093a); /* secondary text on plum */
+
+  --wall: var(--warm-white);
+  --wall-2: #f4ebe1;
+  --plinth: #ffffff;
+  --ink: var(--night);
+  --muted: #5e525c;
+  --rule: #e5dbd2;
+  --accent: var(--plum);
+  --accent-hover: var(--plum-hover);
   --accent-ink: #ffffff;
-  --accent-text: #4a154b;
-  --shadow: 0 1px 0 rgb(0 0 0 / 0.04), 0 18px 40px -18px rgb(29 28 29 / 0.35), 0 40px 80px -40px rgb(29 28 29 / 0.25);
-  --spot: rgb(124 48 133 / 0.09);
+  --accent-text: var(--plum);
+  --btn: var(--gold);
+  --btn-hover: var(--gold-hover);
+  --btn-ink: var(--plum);
+  --shadow: 0 1px 0 rgb(26 17 25 / 0.04), 0 18px 40px -18px rgb(65 9 58 / 0.32), 0 40px 80px -40px rgb(26 17 25 / 0.22);
+  --spot: rgb(244 182 63 / 0.11);
 
   --f-display: 'Bodoni Moda', serif;
   --f-sans: 'IBM Plex Sans', system-ui, sans-serif;
@@ -28,37 +42,37 @@
   color-scheme: light;
 }
 
-/* Gallery after hours */
+/* Gallery after hours: the night wall, with gold where plum would disappear */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --wall: #1a1d21;
-    --wall-2: #222529;
-    --plinth: #1d2024;
-    --ink: #e6e6e7;
-    --muted: #9c9da0;
-    --rule: #33363a;
-    --accent: #611f69; /* Aubergine Null */
-    --accent-hover: #7c3085;
+    --wall: var(--night);
+    --wall-2: #241722;
+    --plinth: #221520;
+    --ink: var(--warm-white);
+    --muted: #b6a7b3;
+    --rule: #3b2a38;
+    --accent: var(--plum);
+    --accent-hover: var(--plum-hover);
     --accent-ink: #ffffff;
-    --accent-text: #d3a6db; /* aubergine can't be read on a dark wall */
+    --accent-text: var(--gold);
     --shadow: 0 1px 0 rgb(255 255 255 / 0.03), 0 24px 60px -24px rgb(0 0 0 / 0.9);
-    --spot: rgb(124 48 133 / 0.12);
+    --spot: rgb(244 182 63 / 0.07);
     color-scheme: dark;
   }
 }
 :root[data-theme='dark'] {
-  --wall: #1a1d21;
-  --wall-2: #222529;
-  --plinth: #1d2024;
-  --ink: #e6e6e7;
-  --muted: #9c9da0;
-  --rule: #33363a;
-  --accent: #611f69;
-  --accent-hover: #7c3085;
+  --wall: var(--night);
+  --wall-2: #241722;
+  --plinth: #221520;
+  --ink: var(--warm-white);
+  --muted: #b6a7b3;
+  --rule: #3b2a38;
+  --accent: var(--plum);
+  --accent-hover: var(--plum-hover);
   --accent-ink: #ffffff;
-  --accent-text: #d3a6db;
+  --accent-text: var(--gold);
   --shadow: 0 1px 0 rgb(255 255 255 / 0.03), 0 24px 60px -24px rgb(0 0 0 / 0.9);
-  --spot: rgb(124 48 133 / 0.12);
+  --spot: rgb(244 182 63 / 0.07);
   color-scheme: dark;
 }
 
@@ -703,12 +717,13 @@ main,
   letter-spacing: 0.04em;
   text-decoration: none;
   padding: 9px 14px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  transition: transform 0.2s var(--ease), filter 0.2s;
+  font-weight: 500;
+  background: var(--btn);
+  color: var(--btn-ink);
+  transition: transform 0.2s var(--ease), background-color 0.2s;
 }
 .btn:hover {
-  background: var(--accent-hover);
+  background: var(--btn-hover);
 }
 .btn:active {
   transform: translateY(1px);
@@ -875,6 +890,111 @@ main,
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   gap: clamp(32px, 6vw, 96px);
+}
+
+/* The name card that opens About: the Heartfelt Code front door, with the name in two halves. */
+.namecard {
+  position: relative;
+  height: clamp(240px, 30vw, 420px);
+  margin-bottom: clamp(48px, 7vw, 96px);
+  background: var(--plum);
+  color: #ffffff;
+  overflow: hidden;
+  isolation: isolate;
+  container-type: inline-size;
+  box-shadow: var(--shadow);
+  cursor: pointer; /* a click sends a heart through the code */
+}
+.namecard-ripple {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--plum);
+}
+.namecard-halves {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: clamp(20px, 4.5cqi, 64px);
+  pointer-events: none;
+  /* A plum halo keeps the drifting code out of the letters, as on heartfeltcode.com. */
+  text-shadow: 0 0 22px var(--plum), 0 0 8px var(--plum), 0 0 2px var(--plum);
+}
+/* The gold bar between the two languages (the brand's mark colour). */
+.namecard-halves::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 24%;
+  bottom: 24%;
+  width: 2px;
+  background: var(--gold);
+}
+.namecard-en {
+  justify-self: start;
+  font: italic 400 clamp(38px, 7.2cqi, 100px) / 0.94 var(--f-display);
+  letter-spacing: -0.02em;
+}
+.namecard-en em {
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+}
+.namecard-ar {
+  justify-self: end;
+  font: 700 clamp(40px, 7.2cqi, 104px) / 1.15 var(--f-kufi), sans-serif;
+  white-space: nowrap;
+}
+.namecard-hint {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(14px, 2.6cqi, 30px);
+  transform: translateX(-50%);
+  padding: 6px 10px;
+  background: var(--plum);
+  color: var(--gold);
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.namecard-hint [lang='ar'] {
+  letter-spacing: 0;
+  font-size: 13px;
+  text-transform: none;
+}
+/* Phones: one language above the other, Arabic first as on the old card. */
+@media (max-width: 640px) {
+  .namecard {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .namecard-halves {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .namecard-halves::before {
+    display: none;
+  }
+  .namecard-ar {
+    grid-row: 1;
+    align-self: start;
+    font-size: 14cqi;
+  }
+  .namecard-en {
+    grid-row: 2;
+    align-self: end;
+    font-size: 12cqi;
+  }
+  /* With the names stacked there's no free corner for the greeting; it's decoration, so it goes. */
+  .namecard-hint {
+    display: none;
+  }
 }
 @media (max-width: 900px) {
   .chron-grid {

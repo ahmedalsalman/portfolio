@@ -17,7 +17,7 @@ export function HeroStrip() {
           <span className="hb-sig">
             Ahmed Al-Salman <span lang="ar">أحمد السلمان</span>
           </span>
-          <span className="hb-role">Frontend developer · based in Amman, working remotely</span>
+          <span className="hb-role">Frontend developer · based in Amman</span>
         </p>
         <h1 id="hero-title" className="hb-title">
           I build <em>fast</em> web and mobile apps, from consumer products to the tools that run a business.
@@ -25,8 +25,8 @@ export function HeroStrip() {
         <div className="hb-foot">
           <p>
             Six years shipping products for mobile operators, sports clubs, labs and logistics companies, from the
-            first sketch to production, most of it remotely with teams in other countries. Client work links to the
-            live product; the rest runs as a demo, so you can try it yourself.
+            first sketch to production: four of those years remotely for teams in Kuwait, and now onsite in Amman.
+            Client work links to the live product; the rest runs as a demo, so you can try it yourself.
           </p>
           <div className="hb-cta">
             <a className="btn" href="#rooms">
