@@ -85,11 +85,13 @@ export const rooms: Room[] = curation.rooms
 
 const placed = new Set(rooms.flatMap((r) => r.works.map((w) => w.slug)));
 
-/** The phone screens fanned out in the hero: each listed work's first phone shot. */
-export const heroShots: { work: Work; shot: Shot }[] = ((curation as { heroShots?: string[] }).heroShots ?? [])
-  .map((slug) => {
+/** The screens in the hero strip: for each entry, that work's first shot of the given kind. */
+export const heroStrip: { work: Work; shot: Shot }[] = (
+  (curation as { heroStrip?: { slug: string; kind: Shot['kind'] }[] }).heroStrip ?? []
+)
+  .map(({ slug, kind }) => {
     const work = bySlug.get(slug);
-    const shot = work?.shots.find((s) => s.kind === 'mobile');
+    const shot = work?.shots.find((s) => s.kind === kind);
     return work && shot ? { work, shot } : null;
   })
   .filter((x): x is { work: Work; shot: Shot } => x !== null);

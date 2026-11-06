@@ -1,5 +1,5 @@
 {
-  "_readme": "Editorial layer. Rooms decide what hangs in the main gallery and in what order. Any work not placed in a room, or listed in 'storeroom', goes to the Storeroom (the reserve collection) at the bottom of the page. Works their builder marked as not polished also go to the Storeroom unless listed in 'promote'. 'hidden' removes a work entirely. In each room the first 'feature' works (default 1) hang large; the rest show as compact cards. 'heroShots' picks the works whose first phone screen fans out in the hero. 'demoUrls' maps a work to its deployed demo (Cloudflare Workers, <slug>.heartfeltcode.com); without one, the local http://localhost:<port> link shows in dev only.",
+  "_readme": "Editorial layer. Rooms decide what hangs in the main gallery and in what order. Any work not placed in a room, or listed in 'storeroom', goes to the Storeroom (the reserve collection) at the bottom of the page. Works their builder marked as not polished also go to the Storeroom unless listed in 'promote'. 'hidden' removes a work entirely. In each room the first 'feature' works (default 1) hang large; the rest show as compact cards. 'heroStrip' lists the screens in the hero strip, in order: each entry is a work and whether to show its first phone ('mobile') or desktop shot. 'demoUrls' maps a work to its deployed demo (Cloudflare Workers, <slug>.heartfeltcode.com); without one, the local http://localhost:<port> link shows in dev only.",
   "rooms": [
     {
       "id": "carrier",
@@ -62,7 +62,14 @@
       ]
     }
   ],
-  "heroShots": ["yalla-kora", "snap-games", "kickoff-booking"],
+  "heroStrip": [
+    { "slug": "yalla-kora", "kind": "mobile" },
+    { "slug": "kickoff-staff", "kind": "desktop" },
+    { "slug": "snap-games", "kind": "mobile" },
+    { "slug": "kinetiq", "kind": "desktop" },
+    { "slug": "kickoff-booking", "kind": "mobile" },
+    { "slug": "shopraha-dashboard", "kind": "desktop" }
+  ],
   "storeroom": [],
   "promote": [],
   "hidden": [
