@@ -1190,7 +1190,7 @@ main,
   padding-top: 8px;
 }
 .factsheet dt {
-  font: 500 11px/1.6 var(--f-mono);
+  font: 500 12px/1.6 var(--f-mono);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -1205,31 +1205,125 @@ main,
 }
 .chips span {
   font-family: var(--f-mono);
-  font-size: 11.5px;
+  font-size: 12.5px;
   padding: 3px 8px;
   border: 1px solid var(--rule);
   background: var(--plinth);
 }
+/* The lead: real screens straight under the title. */
+.detail-lead {
+  margin-block: 0;
+  padding-bottom: clamp(32px, 5vw, 64px);
+}
+/* One large desktop screen, cropped to a screen's shape even when it's a full-page capture. */
+.detail-lead-desk .frame img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+}
 .plates {
   padding-block: clamp(24px, 4vw, 48px) clamp(56px, 8vw, 104px);
   display: grid;
+  /* minmax(0, …) so a strip scrolls inside the column instead of widening the page. */
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(40px, 6vw, 88px);
 }
-.plates .polyptych {
-  flex-wrap: wrap;
+.plate {
+  margin-block: 0;
 }
-.plates .panel:nth-child(2) {
-  transform: none;
-}
-.plates .panel {
-  flex-basis: 196px;
-}
-.plate figcaption {
-  margin-top: 12px;
-  font-family: var(--f-mono);
-  font-size: 11px;
+.plate figcaption,
+.detail-lead figcaption {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--muted);
-  letter-spacing: 0.06em;
+}
+
+/* Phone screens in a sideways strip that runs to the window's edge, lined up with the page. */
+.strip {
+  position: relative;
+}
+.strip-row {
+  display: flex;
+  gap: clamp(16px, 2vw, 32px);
+  margin: 0;
+  padding: 8px var(--gutter) 20px;
+  padding-inline-start: max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule) transparent;
+}
+.strip-row:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: -2px;
+}
+.strip-item {
+  flex: none;
+  width: clamp(210px, 20vw, 290px);
+  scroll-snap-align: start;
+}
+.strip-item figure {
+  margin: 0;
+}
+.strip-frame {
+  display: block;
+  background: var(--plinth);
+  padding: clamp(6px, 0.8vw, 10px);
+  border-radius: clamp(24px, 2.4vw, 34px);
+  box-shadow: var(--shadow);
+}
+.strip-frame img {
+  width: 100%;
+  aspect-ratio: 390 / 844;
+  object-fit: cover;
+  object-position: top;
+  border-radius: clamp(18px, 1.8vw, 26px);
+}
+.strip figcaption {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+/* Arrows for mouse users, just outside the page's edges; touch screens swipe instead. */
+.strip-nav button {
+  position: absolute;
+  z-index: 2;
+  top: calc(8px + clamp(210px, 20vw, 290px) * 0.95);
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--rule);
+  background: var(--plinth);
+  color: var(--ink);
+  font: 18px/1 var(--f-sans);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s var(--ease);
+}
+.strip-nav .prev {
+  left: max(10px, calc((100% - var(--max)) / 2 - 23px));
+}
+.strip-nav .next {
+  right: max(10px, calc((100% - var(--max)) / 2 - 23px));
+}
+.strip-nav button:hover {
+  transform: scale(1.06);
+}
+.strip-nav button:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+@media (hover: none) {
+  .strip-nav {
+    display: none;
+  }
 }
 .pager {
   display: grid;
@@ -1322,11 +1416,12 @@ main,
 /* ───────────── Grouped screens (one heading per brand) ───────────── */
 .shot-group {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(28px, 4vw, 56px);
-  padding-top: clamp(28px, 4vw, 48px);
-  border-top: 1px solid var(--rule);
 }
 .shot-group-head {
+  padding-top: clamp(28px, 4vw, 48px);
+  border-top: 1px solid var(--rule);
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 14px;

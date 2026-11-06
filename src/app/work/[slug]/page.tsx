@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Reveal } from '@/components/Reveal';
+import { ShotStrip, type StripItem } from '@/components/ShotStrip';
 import { languages } from '@/components/WallLabel';
 import { allWorks, catalogueNumber, demoHref, getWork, liveLinks, neighbours, type Shot } from '@/lib/works';
 
@@ -27,6 +28,24 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   const desktop = work.shots.filter((s) => s.kind === 'desktop');
   const lang = languages(work);
   const live = liveLinks(work);
+
+  // The lead: real screens straight under the title. Phone-first products lead with their phone
+  // screens in a strip (one per group when grouped, e.g. per brand or language); the rest lead
+  // with one large desktop screen, preferring one that isn't a full-page capture.
+  const phoneLed = mobile.length >= 2 && mobile.length >= desktop.length;
+  const leadStrip: StripItem[] = !phoneLed
+    ? []
+    : work.groups?.length
+      ? work.groups.flatMap((g) => {
+          const s = mobile.find((m) => m.group === g.id);
+          return s ? [{ shot: s, caption: g.title, alt: `${work.title}, ${g.title}: ${s.label || 'screen'}` }] : [];
+        })
+      : stripItems(work.title, mobile);
+  const isFullPage = (s: Shot) => !!s.width && !!s.height && s.height / s.width > 0.8;
+  const leadDesk = phoneLed ? undefined : (desktop.find((s) => !isFullPage(s)) ?? desktop[0]);
+  // A full-page capture is cropped in the lead, so it still appears whole further down.
+  const galleryDesktop = desktop.filter((s) => s !== leadDesk || isFullPage(s));
+  const galleryShots = phoneLed ? galleryDesktop : [...mobile, ...galleryDesktop];
 
   return (
     <article>
@@ -63,6 +82,26 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
           </div>
         )}
       </header>
+
+      {leadStrip.length > 0 && (
+        <div className="detail-lead">
+          <ShotStrip items={leadStrip} label={`${work.title}: screens`} eager />
+        </div>
+      )}
+      {leadDesk && (
+        <figure className="detail-lead detail-lead-desk wrap">
+          <div className="frame">
+            <img
+              src={leadDesk.src}
+              alt={`${work.title}: ${leadDesk.label || 'screen'}`}
+              width={leadDesk.width}
+              height={leadDesk.height}
+              fetchPriority="high"
+            />
+          </div>
+          {leadDesk.label && <figcaption>{leadDesk.label}</figcaption>}
+        </figure>
+      )}
 
       <div className="wrap">
         <div className="detail-body">
@@ -130,26 +169,30 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
       </div>
 
       {work.groups?.length ? (
-        <section className="plates wrap" aria-label="Screens">
+        <section className="plates" aria-label="Screens">
           {work.groups.map((g) => {
             const shots = work.shots.filter((s) => s.group === g.id);
             if (!shots.length) return null;
             return (
               <section key={g.id} className="shot-group" aria-labelledby={`g-${g.id}`}>
-                <Reveal className="shot-group-head">
-                  <span className="shot-group-swatch" style={{ background: g.accent ?? work.accent }} aria-hidden="true" />
-                  <h2 id={`g-${g.id}`}>{g.title}</h2>
-                  <p>{g.note}</p>
-                </Reveal>
+                <div className="wrap">
+                  <Reveal className="shot-group-head">
+                    <span className="shot-group-swatch" style={{ background: g.accent ?? work.accent }} aria-hidden="true" />
+                    <h2 id={`g-${g.id}`}>{g.title}</h2>
+                    <p>{g.note}</p>
+                  </Reveal>
+                </div>
                 <Plates title={`${work.title}, ${g.title}`} shots={shots} />
               </section>
             );
           })}
         </section>
       ) : (
-        <section className="plates wrap" aria-label="Screens">
-          <Plates title={work.title} shots={[...mobile, ...desktop]} />
-        </section>
+        galleryShots.length > 0 && (
+          <section className="plates" aria-label="More screens">
+            <Plates title={work.title} shots={galleryShots} />
+          </section>
+        )
       )}
 
       <nav className="pager wrap" aria-label="More projects">
@@ -180,30 +223,27 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   );
 }
 
-/** Phone screens as one row, then each desktop screen in its own frame. */
+function stripItems(title: string, shots: Shot[]): StripItem[] {
+  return shots.map((s) => ({ shot: s, caption: s.label, alt: `${title}: ${s.label || 'screen'}` }));
+}
+
+/** Phone screens as a sideways strip, each captioned, then each desktop screen in its own frame. */
 function Plates({ title, shots }: { title: string; shots: Shot[] }) {
   const mobile = shots.filter((s) => s.kind === 'mobile');
   const desktop = shots.filter((s) => s.kind === 'desktop');
   return (
     <>
       {mobile.length > 0 && (
-        <Reveal as="figure" className="plate" style={{ margin: 0 }}>
-          <div className="polyptych">
-            {mobile.map((s) => (
-              <div className="panel" key={s.src}>
-                <img src={s.src} alt={`${title} — ${s.label}`} loading="lazy" width={s.width} height={s.height} />
-              </div>
-            ))}
-          </div>
-          <figcaption>{mobile.map((s) => s.label).filter(Boolean).join(' · ')}</figcaption>
+        <Reveal>
+          <ShotStrip items={stripItems(title, mobile)} label={`${title}: phone screens`} />
         </Reveal>
       )}
       {desktop.map((s) => (
-        <Reveal as="figure" className="plate" key={s.src} style={{ margin: 0 }}>
+        <Reveal as="figure" className="plate wrap" key={s.src}>
           <div className="frame">
-            <img src={s.src} alt={`${title} — ${s.label}`} loading="lazy" width={s.width} height={s.height} />
+            <img src={s.src} alt={`${title}: ${s.label || 'screen'}`} loading="lazy" width={s.width} height={s.height} />
           </div>
-          <figcaption>{s.label}</figcaption>
+          {s.label && <figcaption>{s.label}</figcaption>}
         </Reveal>
       ))}
     </>
