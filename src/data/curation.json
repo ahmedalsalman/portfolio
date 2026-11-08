@@ -71,13 +71,24 @@
     { "slug": "shopraha-dashboard", "kind": "desktop" }
   ],
   "storeroom": [],
-  "promote": [],
+  "promote": [
+    "drift-academy"
+  ],
   "hidden": [
-    "kickoff-staff-app"
+    "kickoff-staff-app",
+    "augment-clone",
+    "saas-starter",
+    "eliteshop",
+    "gym-pwa",
+    "sports-booking"
   ],
   "demoUrls": {
     "kickoff-staff": "https://kickoff-staff.heartfeltcode.com",
-    "kickoff-booking": "https://kickoff-booking.heartfeltcode.com"
+    "kickoff-booking": "https://kickoff-booking.heartfeltcode.com",
+    "tennis-booking": "https://tennis-booking.heartfeltcode.com",
+    "kinetiq": "https://kinetiq.heartfeltcode.com",
+    "ims": "https://ims.heartfeltcode.com",
+    "drift-academy": "https://drift-academy.heartfeltcode.com"
   },
   "_hangReadme": "How each featured work is laid out on the home page. 'layout': 'row' (screens side by side at the same height), 'lean' (one large screen with phones leaning on a corner; 'side' says which corner, 'start' or 'end'), 'bento' (one large screen with two smaller ones stacked beside it) or 'polyptych' (three phones). 'wide': true spans the full width with the caption underneath; bento is always wide. Each piece names a screenshot by the start of its file name; 'crop' is [x, y, width, height] as fractions of the screenshot, to show the part that's different; 'narrow': false hides that piece on phones. A work without an entry falls back to an automatic layout.",
   "hang": {
@@ -129,6 +140,10 @@
       ]
     }
   },
+  "_leadReadme": "The desktop screen a project page opens with, named by the start of its file name. Without an entry the page picks the first desktop screen that isn't a full-page capture.",
+  "lead": {
+    "kinetiq": "04-manager-dashboard"
+  },
   "_liveLinksReadme": "Client work shown through the real, public product instead of a demo copy. A work listed here gets these buttons and never a local demo link.",
   "liveLinks": {
     "yalla-kora": [
@@ -150,6 +165,15 @@
     ],
     "lumio-website": [
       { "label": "Visit the live site", "href": "https://lumiouniverse.com/" }
+    ],
+    "aiwin": [
+      { "label": "Visit the live site", "href": "https://aiwin-jo.com/" }
+    ],
+    "soho-cafe": [
+      { "label": "Visit the live menu", "href": "https://menu.sohomidtown.org/" }
+    ],
+    "heartfeltcode": [
+      { "label": "Visit the live site", "href": "https://heartfeltcode.com/" }
     ]
   }
 }

@@ -212,10 +212,11 @@ main,
     font-size: 17px;
   }
 }
+/* Set like the hero signature: at regular weight the Kufi reads as a struck-through line at this size. */
 .mark span {
-  font-size: 18px;
-  line-height: 1;
-  color: var(--muted);
+  align-self: center;
+  font: 600 18px/1 var(--f-kufi), sans-serif;
+  color: var(--accent-text);
 }
 .nav {
   display: flex;
@@ -938,68 +939,6 @@ main,
   }
 }
 
-/* ───────────── Storeroom ───────────── */
-.storeroom {
-  padding-block: clamp(56px, 9vw, 120px);
-  border-top: 1px dashed var(--rule);
-  background:
-    repeating-linear-gradient(90deg, transparent 0 79px, color-mix(in srgb, var(--rule) 45%, transparent) 79px 80px),
-    var(--wall-2);
-}
-.storeroom h2 {
-  margin: 0;
-  font: 400 clamp(30px, 4.4vw, 60px) / 1 var(--f-display);
-}
-.storeroom .lede {
-  max-width: 60ch;
-  color: var(--muted);
-  margin: 12px 0 40px;
-}
-.crates {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 18px;
-}
-.crate {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  background: var(--plinth);
-  border: 1px solid var(--rule);
-  text-decoration: none;
-  transition: transform 0.3s var(--ease), border-color 0.3s;
-}
-.crate:hover {
-  transform: translateY(-3px);
-  border-color: var(--ink);
-}
-.crate .thumb {
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  background: var(--wall-2);
-  filter: grayscale(0.85) contrast(0.95);
-  transition: filter 0.4s;
-}
-.crate:hover .thumb {
-  filter: none;
-}
-.crate .thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-}
-.crate .body {
-  padding: 14px 16px 16px;
-}
-.crate h3 {
-  margin: 4px 0 6px;
-  font: italic 400 20px/1.15 var(--f-display);
-}
-.crate p {
-  margin: 0;
-  font-size: 13px;
-  color: var(--muted);
-}
 .stamp {
   display: inline-block;
   font: 500 10px/1 var(--f-mono);
@@ -1011,9 +950,13 @@ main,
 }
 
 /* ───────────── Chronology ───────────── */
+/* The ruled wall that used to sit behind the Experiments section, so About still reads as a change of room. */
 .chron {
   padding-block: clamp(56px, 9vw, 120px);
   border-top: 1px solid var(--rule);
+  background:
+    repeating-linear-gradient(90deg, transparent 0 79px, color-mix(in srgb, var(--rule) 45%, transparent) 79px 80px),
+    var(--wall-2);
 }
 .chron-grid {
   display: grid;

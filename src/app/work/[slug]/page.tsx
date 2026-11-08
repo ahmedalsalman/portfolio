@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { Reveal } from '@/components/Reveal';
 import { ShotStrip, type StripItem } from '@/components/ShotStrip';
 import { languages } from '@/components/WallLabel';
-import { allWorks, catalogueNumber, demoHref, getWork, liveLinks, neighbours, type Shot } from '@/lib/works';
+import { allWorks, catalogueNumber, demoHref, getWork, leadShot, liveLinks, neighbours, type Shot } from '@/lib/works';
 
 export const dynamicParams = false;
 
@@ -42,7 +42,9 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
         })
       : stripItems(work.title, mobile);
   const isFullPage = (s: Shot) => !!s.width && !!s.height && s.height / s.width > 0.8;
-  const leadDesk = phoneLed ? undefined : (desktop.find((s) => !isFullPage(s)) ?? desktop[0]);
+  const leadDesk = phoneLed
+    ? undefined
+    : (leadShot(work) ?? desktop.find((s) => !isFullPage(s)) ?? desktop[0]);
   // A full-page capture is cropped in the lead, so it still appears whole further down.
   const galleryDesktop = desktop.filter((s) => s !== leadDesk || isFullPage(s));
   const galleryShots = phoneLed ? galleryDesktop : [...mobile, ...galleryDesktop];

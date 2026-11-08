@@ -4,7 +4,7 @@ import { WallLabel } from '@/components/WallLabel';
 import { WorkArt } from '@/components/WorkArt';
 import { IndexCard } from '@/components/IndexCard';
 import { NameCard } from '@/components/NameCard';
-import { backends, catalogueNumber, hangFor, rooms, storeroom, type Hang } from '@/lib/works';
+import { backends, hangFor, rooms, type Hang } from '@/lib/works';
 import { chronology, contact, skills } from '@/data/artist';
 
 /**
@@ -22,7 +22,7 @@ function placeFeatured() {
   return placement;
 }
 
-/** Everything below the hero: the rooms, the storeroom, about, contact and the footer. */
+/** Everything below the hero: the rooms, about, contact and the footer. */
 export function HomeSections() {
   const placement = placeFeatured();
   return (
@@ -72,41 +72,6 @@ export function HomeSections() {
           </section>
         ))}
       </div>
-
-      {storeroom.length > 0 && (
-        <section id="storeroom" className="storeroom" aria-labelledby="h-store">
-          <div className="wrap">
-            <span className="eyebrow">Experiments</span>
-            <h2 id="h-store">Experiments and early work</h2>
-            <p className="lede">
-              Prototypes and starters where I tried out new tools and ideas before using them on client work. Each
-              one runs as a demo.
-            </p>
-            <div className="crates">
-              {storeroom.map((w) => {
-                const thumb = w.shots.find((s) => s.kind === 'desktop') ?? w.shots[0];
-                return (
-                  <Link key={w.slug} href={`/work/${w.slug}/`} className="crate">
-                    <div className="thumb">{thumb && <img src={thumb.src} alt="" loading="lazy" />}</div>
-                    <div className="body">
-                      <span className="stamp">
-                        {catalogueNumber(w.slug)} · {w.years}
-                      </span>
-                      <h3>{w.title}</h3>
-                      <p>{w.tagline}</p>
-                      {process.env.NODE_ENV === 'development' && w.polishNote && (
-                        <p style={{ marginTop: 8, fontStyle: 'italic' }} title="Dev only: builder's condition note">
-                          {w.polishScore}/5 · {w.polishNote}
-                        </p>
-                      )}
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
 
       <section id="about" className="chron" aria-labelledby="h-about">
         <div className="wrap">

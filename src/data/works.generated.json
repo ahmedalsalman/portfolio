@@ -975,7 +975,7 @@
     "accent": "#ff3d71",
     "polished": false,
     "polishScore": 3,
-    "polishNote": "Strong mobile look and real content, but the desktop header shows duplicate booking buttons and a stray hamburger, and the forms are alert-only.",
+    "polishNote": "Strong mobile look and real content. Desktop header and course-list bullets fixed for the live demo; the booking and contact forms still only show an alert.",
     "demo": {
       "port": 4201,
       "path": "/",
@@ -1311,9 +1311,9 @@
   {
     "slug": "heartfeltcode",
     "title": "Heartfelt Code",
-    "titleNative": null,
-    "tagline": "Marketing site for Ahmed's one-person consultancy for non-technical founders",
-    "summary": "Editorial-style marketing site for Heartfelt Code, Ahmed's solo software consultancy for early-stage founders without a technical co-founder. Built with Astro 7 and Tailwind 4 as a static site with no client framework, a light/dark theme, case studies stored in a content collection, and a validated contact form.",
+    "titleNative": "كود من القلب",
+    "tagline": "Bilingual site for Ahmed's 30-day MVP studio, with an edition for each market",
+    "summary": "heartfeltcode.com: a front door in English and Arabic sends each visitor to the edition for their market, a day-by-day planner for North America and Europe or a bilingual sign for the Middle East, in English or Arabic. Static Next.js export on Cloudflare Workers; the only server code is an edge country lookup that stores nothing.",
     "role": "Solo build (design, copy, code)",
     "org": "Heartfelt Code (own consultancy)",
     "years": "2026",
@@ -1323,80 +1323,74 @@
       "mobile-web"
     ],
     "stack": [
-      "Astro 7",
-      "Tailwind 4",
+      "Next.js 16 (static export)",
+      "React 19",
       "TypeScript",
-      "astro-icon",
-      "Cloudflare static assets"
+      "CSS Modules",
+      "Cloudflare Workers"
     ],
     "highlights": [
-      "Zero-framework static output; the only JS is the theme toggle, mobile menu, scroll reveal and form handler",
-      "4 case studies as an Astro content collection with typed frontmatter (problem / built / outcome)",
-      "Light and dark themes from CSS tokens with documented contrast ratios",
-      "Responsive WebP images generated at build time (44 variants)"
+      "Front door picks the edition: last one opened, then the visitor's country from the edge, then the browser language",
+      "Two designs, four markets, English and Arabic with right-to-left designed in",
+      "Cross-document view transitions; speculation rules prerender the next edition so the heart animation carries across pages",
+      "hreflang sitemap, security headers and immutable caching for hashed build files"
     ],
     "locales": [
-      "en"
+      "en",
+      "ar"
     ],
-    "rtl": false,
-    "accent": "#C4552E",
+    "rtl": true,
+    "accent": "#41093A",
     "polished": true,
     "polishScore": 4,
-    "polishNote": "Restrained, well-typeset editorial design with careful copy; still uses stand-in stock photography and placeholder booking/social links.",
+    "polishNote": "Live at heartfeltcode.com. The contact pages still show bracketed placeholders ('[2] builds a month', '[one working day]'), and on phones the edition header stacks nav, region and button into a tall block.",
     "demo": {
-      "port": 4203,
+      "port": 4100,
       "path": "/",
       "run": "npm run dev",
-      "dir": "D:/Work/heartfeltcode-demo"
+      "dir": "D:/Work/new heartfelt code"
     },
     "repo": {
       "remote": null,
-      "commits": 1,
-      "authored": 1
+      "commits": 7,
+      "authored": 7
     },
     "confidential": false,
     "shots": [
       {
-        "src": "/works/heartfeltcode/01-home-desktop.webp",
-        "label": "Home (full page)",
-        "kind": "desktop",
-        "width": 1800,
-        "height": 11715
-      },
-      {
-        "src": "/works/heartfeltcode/02-home-mobile.webp",
-        "label": "Hero",
-        "kind": "mobile",
-        "width": 780,
-        "height": 1688
-      },
-      {
-        "src": "/works/heartfeltcode/03-work-desktop.webp",
-        "label": "Selected work (dark theme)",
+        "src": "/works/heartfeltcode/01-door-desktop.webp",
+        "label": "Front door, in English and Arabic",
         "kind": "desktop",
         "width": 1800,
         "height": 1125
       },
       {
-        "src": "/works/heartfeltcode/04-case-study-mobile.webp",
-        "label": "Case study: lab inventory",
+        "src": "/works/heartfeltcode/02-door-mobile.webp",
+        "label": "Front door on a phone",
         "kind": "mobile",
         "width": 780,
         "height": 1688
       },
       {
-        "src": "/works/heartfeltcode/05-contact-desktop.webp",
-        "label": "Contact form",
+        "src": "/works/heartfeltcode/03-us-home-desktop.webp",
+        "label": "North America edition: the 30-day planner",
         "kind": "desktop",
         "width": 1800,
         "height": 1125
       },
       {
-        "src": "/works/heartfeltcode/06-contact-sent-mobile.webp",
-        "label": "Contact sent (simulated)",
+        "src": "/works/heartfeltcode/04-ar-home-mobile.webp",
+        "label": "Arabic edition, right to left",
         "kind": "mobile",
         "width": 780,
         "height": 1688
+      },
+      {
+        "src": "/works/heartfeltcode/05-mena-home-desktop.webp",
+        "label": "Middle East edition: the bilingual sign",
+        "kind": "desktop",
+        "width": 1800,
+        "height": 1125
       }
     ]
   },

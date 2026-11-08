@@ -19,7 +19,6 @@ export function SiteHeader() {
         </Link>
         <nav className="nav" aria-label="Sections">
           <Link href="/#rooms">Work</Link>
-          <Link href="/#storeroom" className="hide-sm">Experiments</Link>
           <Link href="/#about" className="hide-sm">About</Link>
           <Link href="/#contact">Contact</Link>
           <ThemeButton />

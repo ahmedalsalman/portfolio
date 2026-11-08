@@ -152,6 +152,14 @@ export function hangFor(w: Work): Hang | null {
   return { layout: c.layout, wide: c.layout === 'bento' || !!c.wide, side: c.side ?? 'end', pieces };
 }
 
+const leadConfig = (curation as { lead?: Record<string, string> }).lead ?? {};
+
+/** The hand-picked screen a project page opens with, if any. */
+export function leadShot(w: Work): Shot | undefined {
+  const name = leadConfig[w.slug];
+  return name ? w.shots.find((s) => s.src.split('/').pop()?.startsWith(name)) : undefined;
+}
+
 export type LiveLink = { label: string; href: string };
 const liveLinkMap = (curation as { liveLinks?: Record<string, LiveLink[]> }).liveLinks ?? {};
 

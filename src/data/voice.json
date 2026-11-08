@@ -249,12 +249,13 @@
   },
   "heartfeltcode": {
     "role": "Design, writing and development",
-    "tagline": "The site for my consultancy for non-technical founders",
-    "summary": "The website for Heartfelt Code, my consultancy helping early-stage founders without a technical co-founder turn an idea into a working product. A fast static site with almost no JavaScript, case studies and a contact form.",
+    "tagline": "The site for my studio that takes founders from idea to launch in 30 days",
+    "summary": "The website for Heartfelt Code, my studio that builds a founder's first product in 30 days. A front door in English and Arabic sends each visitor to the edition for their market: a day-by-day planner for North America and Europe, and a bilingual sign for the Middle East, in English or Arabic.",
     "highlights": [
-      "Fast and lightweight, with almost no JavaScript",
-      "Case studies written as problem, what we built, and the outcome",
-      "Light and dark themes with accessible contrast"
+      "Opens the right edition for each visitor: the one they last read, then their country, then their browser language",
+      "English and Arabic, with right-to-left designed in from the start",
+      "Pages hand over with a view transition, and the heart keeps beating from one page to the next",
+      "A static site on Cloudflare; the only server code is a country lookup that stores nothing"
     ]
   },
   "drift-academy": {
