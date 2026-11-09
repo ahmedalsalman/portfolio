@@ -47,5 +47,14 @@ get no local demo link or run command. Don't deploy or publish their `-demo` fol
 
 ## Deploy
 
-`wrangler.jsonc` serves `out/` as static assets: `npm run build && npx wrangler deploy`.
-Not deployed yet.
+Live at https://ahmedalsalman.dev. `wrangler.jsonc` serves `out/` as static assets:
+`npm run build && npx wrangler deploy`.
+
+## Share previews
+
+Every page has Open Graph and Twitter tags (`src/app/layout.tsx`, `src/app/work/[slug]/page.tsx`).
+The images are rendered, not generated at build: `node scripts/render-share.mjs` writes
+`public/og/home.jpg` (the name card on its code field, with three phone screens) and one
+`public/og/work/<slug>.jpg` per project (title, line and its opening screen). Re-run it after
+`npm run sync` when a project's title, line or screens change, and commit the output; a project
+without a card shares the home one. It needs Chrome and Playwright (from `portfolio-shots/_tools`).

@@ -1,6 +1,7 @@
 {
-  // Static assets only — `npm run build` then `npx wrangler deploy`. Not deployed yet.
+  // Static assets only: `npm run build` then `npx wrangler deploy`  ->  https://ahmedalsalman.dev
   "name": "ahmed-alsalman-portfolio",
   "compatibility_date": "2026-10-01",
+  "routes": [{ "pattern": "ahmedalsalman.dev", "custom_domain": true }],
   "assets": { "directory": "./out", "not_found_handling": "404-page" }
 }

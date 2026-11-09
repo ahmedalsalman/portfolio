@@ -1,0 +1,8 @@
+{
+  // Redirects www.ahmedalsalman.dev to ahmedalsalman.dev.
+  // Deploy: npx wrangler deploy -c wrangler.www.jsonc
+  "name": "ahmed-alsalman-portfolio-www",
+  "main": "worker/www.js",
+  "compatibility_date": "2026-10-01",
+  "routes": [{ "pattern": "www.ahmedalsalman.dev", "custom_domain": true }]
+}

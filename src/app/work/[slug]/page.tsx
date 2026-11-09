@@ -1,3 +1,5 @@
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -15,7 +17,24 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const w = getWork((await params).slug);
-  return w ? { title: w.title, description: w.tagline } : {};
+  if (!w) return {};
+  const url = `/work/${w.slug}/`;
+  // Each project shares with its own card; one added since the last render falls back to the home card.
+  const card = existsSync(join(process.cwd(), 'public/og/work', `${w.slug}.jpg`)) ? `/og/work/${w.slug}.jpg` : '/og/home.jpg';
+  return {
+    title: w.title,
+    description: w.tagline,
+    alternates: { canonical: url },
+    openGraph: {
+      type: 'website',
+      siteName: 'Ahmed Al-Salman',
+      locale: 'en',
+      url,
+      title: `${w.title} — Ahmed Al-Salman`,
+      description: w.tagline,
+      images: [{ url: card, width: 1200, height: 630, alt: `${w.title}: ${w.tagline}` }],
+    },
+  };
 }
 
 export default async function WorkPage({ params }: { params: Promise<{ slug: string }> }) {

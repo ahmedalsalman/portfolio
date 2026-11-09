@@ -10,10 +10,25 @@ const sans = IBM_Plex_Sans({ subsets: ['latin'], weight: ['400', '500', '600'], 
 const sansAr = IBM_Plex_Sans_Arabic({ subsets: ['arabic'], weight: ['400', '500', '600'], variable: '--f-sans-ar', display: 'swap' });
 const mono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--f-mono', display: 'swap' });
 
+const TITLE = 'Ahmed Al-Salman — Frontend developer';
+const DESCRIPTION =
+  'Frontend developer building fast web and mobile apps, from consumer products to internal tools. Based in Amman, open to remote roles. Try the live products and demos.';
+
+// Share previews: the images are rendered by scripts/render-share.mjs into public/og/.
 export const metadata: Metadata = {
-  title: { default: 'Ahmed Al-Salman — Frontend developer', template: '%s — Ahmed Al-Salman' },
-  description:
-    'Frontend developer building fast web and mobile apps, from consumer products to internal tools. Based in Amman, open to remote roles. Try the live products and demos.',
+  metadataBase: new URL('https://ahmedalsalman.dev'),
+  title: { default: TITLE, template: '%s — Ahmed Al-Salman' },
+  description: DESCRIPTION,
+  openGraph: {
+    type: 'website',
+    siteName: 'Ahmed Al-Salman',
+    locale: 'en',
+    url: '/',
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [{ url: '/og/home.jpg', width: 1200, height: 630, alt: 'Ahmed Al-Salman, frontend developer, with screens from three of his apps' }],
+  },
+  twitter: { card: 'summary_large_image' },
 };
 
 export const viewport: Viewport = {
