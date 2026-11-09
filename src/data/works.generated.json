@@ -1343,7 +1343,7 @@
     "accent": "#41093A",
     "polished": true,
     "polishScore": 4,
-    "polishNote": "Live at heartfeltcode.com. The contact pages still show bracketed placeholders ('[2] builds a month', '[one working day]'), and on phones the edition header stacks nav, region and button into a tall block.",
+    "polishNote": "Live at heartfeltcode.com. Still has placeholder prices, project day counts, email and booking link (all marked in brackets).",
     "demo": {
       "port": 4100,
       "path": "/",
